@@ -28,7 +28,8 @@ To start playing MatMech Quest:
 3. Follow the on-screen instructions to navigate through the game.
 
 ## Contributors
-- [Your Name](https://github.com/yourusername)
+- [Nick](https://github.com/nickdevcomp/)
+- [Artem](https://github.com/PurpleCat404/)
 
 ## Feedback
 We welcome any feedback or suggestions for improvement. Feel free to open an issue or create a pull request.
