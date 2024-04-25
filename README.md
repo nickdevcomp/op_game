@@ -1,25 +1,27 @@
-# MatMech Quest
+# C# Horror Quest
 
-Welcome to MatMech Quest, the game where you step into the shoes of a regular student at the most prestigious university in the Ural region. Life seems perfect with delicious cafeteria food, great classmates, and a variety of extracurricular activities.
+## Plot
+After a boring calculus lecture, our hero is too tired to take the stairs to the ground floor, so he decides to take the elevator. This will be a humorous floor with various Easter eggs, maybe even a mini-game. We can also add some signs, like quotes from professors on our floor. If the player wants to take the stairs, we should respond with something like: "Hey, I'm too tired, I'll take the elevator instead."
 
-## Objective
-Your objective is simple: collect enough BRS points to pass your exams. But here's the catch - you need to earn these points by completing various assignments from your professors. These tasks can really challenge your intellect, so be prepared. Fail to meet the requirements, and you might receive some unpleasant letters from the dean's office. 
+The elevator unexpectedly breaks down and transports the hero not to the ground floor, but to the -1 floor. There's no light, and we can only move around by the light of our phone's flashlight. This floor needs to be something eerie.
 
-## How to Play
-1. **Accept Challenges**: Take on assignments from your professors.
-2. **Solve Tasks**: Use your problem-solving skills to tackle the tasks given to you.
-3. **Earn BRS Points**: Successfully completing assignments will earn you BRS points.
-4. **Avoid Dismissal**: Make sure you don't accumulate too many demerits, or you might face expulsion.
+## Locations
+1. **Elevator**: 
+A portable location. The player will stand in the elevator with pleasant, unobtrusive music playing. Lots of people will enter and exit on each floor. We need to make an icon for the current floor. Make it so we can't exit the elevator prematurely (perhaps make it seem like a crowd pushes him back).
+   
+2. **MatMech, 6th floor**.
+   
+3. **Location: 52nd floor**: 
+If we die, we end up on the 52nd floor. Here, we can drink kvass. And that's it. We can't descend from it.
+   
+4. **-1st Floor**.
 
-## Features
-- Engaging storyline set in a university environment.
-- Challenging tasks that test your cognitive abilities.
-- Dynamic gameplay with consequences for your actions.
-- Multiple endings based on your performance.
+## Game Genre: Horror-Quest
+## Engine: Unity
+## Programming Language**: C#
+## Technologies: Neural networks for drawing
+## Features: Heartbeat, atmosphere, lighting, Easter eggs, and references
 
-## Tech Stack
-- **Development Framework**: Unity
-- **Programming Language**: C#
 
 ## Get Started
 To start playing MatMech Quest:
