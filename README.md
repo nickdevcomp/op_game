@@ -16,11 +16,12 @@ If we die, we end up on the 52nd floor. Here, we can drink kvass. And that's it.
    
 4. **-1st Floor**.
 
-- Game Genre: Horror-Quest
-- Engine: Unity
-- Programming Language**: C#
-- Technologies: Neural networks for drawing
-- Features: Heartbeat, atmosphere, lighting, Easter eggs, and references
+## Programming stack
+1. **Game Genre**: Horror-Quest
+2. **Engine**: Unity
+3. **Programming Language**: C#
+4. **Technologies**: Neural networks for drawing
+5. **Features**: Heartbeat, atmosphere, lighting, Easter eggs, and references
 
 
 ## Get Started
