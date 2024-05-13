@@ -60,7 +60,6 @@ public class PlayerController : MonoBehaviour
             Fear.sharedValue = 0;
             startTime = Time.realtimeSinceStartup;
         }
-        
     }
 
 
