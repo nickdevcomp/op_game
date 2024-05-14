@@ -20,15 +20,6 @@ public class CameraFollow : MonoBehaviour
                 Mathf.Clamp(transform.position.y, -10, 10),
                 transform.position.z
             );
-            
-            if (sharedValue == 1) 
-            {
-                var camTransform = GetComponent<Transform>();
-                var originPos = camTransform.localPosition;
-                float shakeDur = 1f, shakeAmount = 0.1f, decreaseFact = 1.5f;
-
-                camTransform.localPosition = originPos + UnityEngine.Random.insideUnitSphere * shakeAmount;
-            }
         }
         
     }

@@ -6,9 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class LiftButtonTrig : MonoBehaviour
 {
+    public GameObject otherObject; // ссылка на другой объект
+
+    private Animator otherObjectAnimator; // компонент аниматора другого объекта
+
     private Animator animator;
+    
     public float timeToCount = 1f; // Время таймера в секундах
     private bool isCounting = false; // Флаг, показывающий, запущен ли таймер
+
+    
+    void Start()
+    {
+        // Получаем компонент аниматора другого объекта
+        otherObjectAnimator = otherObject.GetComponent<Animator>();
+    }
 
     IEnumerator StartTimer()
     {
@@ -29,14 +41,7 @@ public class LiftButtonTrig : MonoBehaviour
         {
             GetComponent<AudioSource>().Play();
             StartCoroutine(StartTimer());
-        }
-    }
-    
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            animator.SetTrigger("isTriggered");
+            otherObjectAnimator.SetBool("IsSwitchOn", true);
         }
     }
 }

@@ -30,9 +30,5 @@ public class LiftController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.E))
-        {
-            animator.SetBool("IsSwitchOn", true);
-        }
     }
 }

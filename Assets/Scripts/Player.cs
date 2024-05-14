@@ -4,49 +4,58 @@ using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    [SerializeField] private float speed = 5;
+    [SerializeField] private float speed = 15;
+    private Vector3 input;
+    private bool isWalking;
+    private bool isRunning;
+    private CharacterAnimations animations;
+    [SerializeField] private SpriteRenderer characterSprite;
+
     public float Speed
     {
         get => speed;
         set => speed = value;
     }
+    
     private Animator animator;
     private bool isRight;
     private float timer = 0f;
     private float startTime;
     private float endTime;
     private float elapsedTime;
+    private Rigidbody2D rb;
 
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         startTime = Time.realtimeSinceStartup;
+        rb = new Rigidbody2D();
     }
+    
+    private void FixedUpdate() => Update();
 
     private void Update()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
-        Vector2 movement = new Vector2(moveHorizontal, 0);
+        input = new Vector2(moveHorizontal, 0);
         animator.SetFloat("moveX", Mathf.Abs(moveHorizontal));
+        isWalking = input.x != 0;
+        isRunning = input.x != 0 && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift));
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (isWalking || isRunning)
         {
-            animator.SetBool("running", true);
-            rb.velocity = movement * speed * 2;
+            var animationToPlay = isRunning ? "Run" : "Walk";
+            var movementSpeed = isRunning ? 3f * speed : speed;
+            animator.Play(animationToPlay);
+            Reflect(input);
+            transform.position += input * (movementSpeed * Time.deltaTime);
         }
         else
-        {
-            animator.SetBool("running", false);
-            rb.velocity = movement * speed;
-        }
-        Reflect(movement);
+            animator.Play("Calm");
 
         endTime = Time.realtimeSinceStartup;
         elapsedTime = endTime - startTime;
-
         if (elapsedTime >= 5f)
             Fear.sharedValue = 1;
     }
@@ -61,6 +70,4 @@ public class PlayerController : MonoBehaviour
             startTime = Time.realtimeSinceStartup;
         }
     }
-
-
 }

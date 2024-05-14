@@ -140,7 +140,6 @@ GameObject:
   - component: {fileID: 630106715}
   - component: {fileID: 630106714}
   - component: {fileID: 630106713}
-  - component: {fileID: 630106716}
   m_Layer: 5
   m_Name: Lift
   m_TagString: Untagged
@@ -174,12 +173,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630106711}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41b2f81e00bb3ce459b36752455fc73f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToCount: 4
+  Animator: {fileID: 0}
 --- !u!95 &630106714
 Animator:
   serializedVersion: 5
@@ -253,18 +252,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &630106716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 630106711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 515ad70d307e25c4ea4953feb3e8f306, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &872612966
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,19 +680,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7636995130610903201, guid: 892a5161a0e34a74b957bf4906301ee4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1960251687}
+      addedObject: {fileID: 1960251680}
   m_SourcePrefab: {fileID: 100100000, guid: 892a5161a0e34a74b957bf4906301ee4, type: 3}
 --- !u!1 &1960251679 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7636995130610903201, guid: 892a5161a0e34a74b957bf4906301ee4, type: 3}
   m_PrefabInstance: {fileID: 1960251678}
   m_PrefabAsset: {fileID: 0}
---- !u!212 &1960251685 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 7506072296651536184, guid: 892a5161a0e34a74b957bf4906301ee4, type: 3}
-  m_PrefabInstance: {fileID: 1960251678}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1960251687
+--- !u!114 &1960251680
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -714,11 +696,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1960251679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0c6789307b67fa4d9dbcf06b5ab9294, type: 3}
+  m_Script: {fileID: 11500000, guid: 26d19bc270cedf84db7b3696b3d8654c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  characterSprite: {fileID: 1960251685}
 --- !u!1 &2128665786
 GameObject:
   m_ObjectHideFlags: 0

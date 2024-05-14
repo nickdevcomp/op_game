@@ -23,12 +23,11 @@ public class Fear : MonoBehaviour
             {
                 //Camera.main.gameObject.AddComponent<CameraShake>();
                 GetComponent<AudioSource>().Play();
-                CameraFollow.sharedValue = 1;
+                CameraController.sharedValue = 1;
             }
-            else if (sharedValue == 0) 
-            {
+            else if (sharedValue == 0) {
                 GetComponent<AudioSource>().Pause();
-                CameraFollow.sharedValue = 0;
+                CameraController.sharedValue = 0;
             }
         }
        

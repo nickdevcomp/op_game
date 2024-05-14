@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+public class CameraMovement : MonoBehaviour
 {
     public Transform target; 
     public float smoothSpeed = 0.125f; 
