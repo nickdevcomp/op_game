@@ -7,7 +7,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public static int sharedValue = 0;
-    private float dumping = 1.5f;
+    private float dumping = 4f;
     private Vector2 offset = new (2f, 1f);
     private bool isLeft;
     

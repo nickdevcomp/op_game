@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1280
     height: 629.3334
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 150}
   m_MaxSize: {x: 24288, y: 24288}
   vertical: 0
-  controlID: 137
+  controlID: 141
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 150}
   m_MaxSize: {x: 16192, y: 24288}
   vertical: 1
-  controlID: 46
+  controlID: 19
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 47
+  controlID: 20
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -190,8 +190,8 @@ MonoBehaviour:
     y: 0
     width: 242
     height: 256.66666
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -388,9 +388,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 14760000
-      m_LastClickedID: 30228
-      m_ExpandedIDs: 4a6afffffe6cffff5680ffff2a81ffff3aa3ffff46baffff54c1ffff1afbffff46610000f66b0000d46e0000e06e000014760000
+      m_SelectedIDs: 28630000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 6cf9ffff1afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -785,7 +785,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 316.681, y: 79.53515, z: 5.3884273}
     speed: 2
-    m_Value: {x: 323.08664, y: 77.64976, z: 5.3517733}
+    m_Value: {x: 316.681, y: 79.53515, z: 5.3884273}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -837,7 +837,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 77.78766
     speed: 2
-    m_Value: 81.45305
+    m_Value: 77.78766
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1092,14 +1092,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scenes
   m_LastFoldersGridSize: 96
-  m_LastProjectPath: "C:\\Users\\\u0422\u0451\u043C\u0430\\Documents\\GitHub\\C--Game-Lift"
+  m_LastProjectPath: "C:\\Users\\\u0422\u0451\u043C\u0430\\Desktop\\-3 floor"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 46.333374}
-    m_SelectedIDs: bc620000
-    m_LastClickedID: 25276
-    m_ExpandedIDs: 0000000086620000886200008a6200008c6200008e6200009062000000ca9a3bffffff7f
+    m_SelectedIDs: d8620000
+    m_LastClickedID: 25304
+    m_ExpandedIDs: 00000000a4620000a6620000a8620000aa620000ac620000ae62000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1127,7 +1127,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000086620000886200008a6200008c6200008e62000090620000
+    m_ExpandedIDs: 00000000a4620000a6620000a8620000aa620000ac620000ae620000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
