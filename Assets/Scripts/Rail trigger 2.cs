@@ -71,7 +71,6 @@ public class RailTrig2 : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         btns = false;
-            // Здесь можно добавить необходимую логику
     }
 
 }

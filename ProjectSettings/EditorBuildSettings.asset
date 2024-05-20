@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dungeon.unity
     guid: 1fa66ea77abe8cc4db90d723a2713004
+  - enabled: 1
+    path: Assets/Scenes/Plotinka.unity
+    guid: b891e610ca1bc0647aa0572e9b24aa67
   m_configObjects: {}

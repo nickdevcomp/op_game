@@ -12,8 +12,10 @@ public class LiftButtonTrig : MonoBehaviour
 
     private Animator animator;
     
-    public float timeToCount = 1f; // Время таймера в секундах
-    private bool isCounting = false; // Флаг, показывающий, запущен ли таймер
+    [SerializeField]
+    public float timeToCount; // Время таймера в секундах
+    private bool isCounting; // Флаг, показывающий, запущен ли таймер
+    private bool startLoadScene;
 
     
     void Start()
@@ -37,11 +39,21 @@ public class LiftButtonTrig : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        startLoadScene = other.CompareTag("Player");
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        startLoadScene = false;
+    }
+
+    private void Update()
+    {
+        if (startLoadScene && Input.GetKey(KeyCode.E))
         {
+            otherObjectAnimator.SetBool("IsSwitchOn", true);
             GetComponent<AudioSource>().Play();
             StartCoroutine(StartTimer());
-            otherObjectAnimator.SetBool("IsSwitchOn", true);
         }
     }
 }

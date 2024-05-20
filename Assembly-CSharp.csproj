@@ -51,6 +51,7 @@
     <Compile Include="Assets\Scripts\FlashSW.cs" />
     <Compile Include="Assets\Scripts\Fear.cs" />
     <Compile Include="Assets\Scripts\LevelTransition.cs" />
+    <Compile Include="Assets\Scripts\WinTrigger.cs" />
     <Compile Include="Assets\Scripts\WST.cs" />
     <Compile Include="Assets\Scripts\OpenLift.cs" />
     <Compile Include="Assets\Scripts\Rail trigger 2.cs" />
