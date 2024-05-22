@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 473737804}
   - component: {fileID: 473737803}
   m_Layer: 5
-  m_Name: LiftInside
+  m_Name: Plotinka
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f3e22a6aae410494b86f98d77885aed4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ed4b72e7071059546ac2c24fb69dd440, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -539,7 +539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2122595834576748164, guid: 892a5161a0e34a74b957bf4906301ee4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 289
+      value: 345
       objectReference: {fileID: 0}
     - target: {fileID: 2122595834576748164, guid: 892a5161a0e34a74b957bf4906301ee4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -590,9 +590,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -30542257, guid: 135f9426acbb9c74a9ff6de760ad3430, type: 3}
     - target: {fileID: 7506072296651536184, guid: 892a5161a0e34a74b957bf4906301ee4, type: 3}
+      propertyPath: m_Color.b
+      value: 0.711022
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506072296651536184, guid: 892a5161a0e34a74b957bf4906301ee4, type: 3}
+      propertyPath: m_Color.g
+      value: 0.34300452
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506072296651536184, guid: 892a5161a0e34a74b957bf4906301ee4, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7735849
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506072296651536184, guid: 892a5161a0e34a74b957bf4906301ee4, type: 3}
       propertyPath: m_SortingOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7506072296651536184, guid: 892a5161a0e34a74b957bf4906301ee4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7636995130610903201, guid: 892a5161a0e34a74b957bf4906301ee4, type: 3}
       propertyPath: m_Name
       value: Player
