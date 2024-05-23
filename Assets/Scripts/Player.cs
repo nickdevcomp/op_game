@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour
     private float elapsedTime;
     private Rigidbody2D rb;
 
+    public static int ticket = 0;
+    public static int dkr = 0;
+
 
     private void Start()
     {
@@ -37,6 +40,16 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            ticket = 1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            dkr = 1;
+        }
+
         float moveHorizontal = Input.GetAxis("Horizontal");
         input = new Vector2(moveHorizontal, 0);
         animator.SetFloat("moveX", Mathf.Abs(moveHorizontal));
@@ -56,7 +69,7 @@ public class PlayerController : MonoBehaviour
 
         endTime = Time.realtimeSinceStartup;
         elapsedTime = endTime - startTime;
-        if (elapsedTime >= 5f)
+        if (elapsedTime >= 10f)
             Fear.sharedValue = 1;
     }
 
