@@ -11,11 +11,6 @@ public class PlayerController : MonoBehaviour
     private CharacterAnimations animations;
     [SerializeField] private SpriteRenderer characterSprite;
 
-    public float Speed
-    {
-        get => speed;
-        set => speed = value;
-    }
     
     private Animator animator;
     private bool isRight;
@@ -25,8 +20,8 @@ public class PlayerController : MonoBehaviour
     private float elapsedTime;
     private Rigidbody2D rb;
 
-    public static int ticket = 0;
-    public static int dkr = 0;
+    public static int ticket;
+    public static int dkr;
 
 
     private void Start()
@@ -36,8 +31,6 @@ public class PlayerController : MonoBehaviour
         rb = new Rigidbody2D();
     }
     
-    private void FixedUpdate() => Update();
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
@@ -50,9 +43,8 @@ public class PlayerController : MonoBehaviour
             dkr = 1;
         }
 
-        float moveHorizontal = Input.GetAxis("Horizontal");
+        var moveHorizontal = Input.GetAxis("Horizontal");
         input = new Vector2(moveHorizontal, 0);
-        animator.SetFloat("moveX", Mathf.Abs(moveHorizontal));
         isWalking = input.x != 0;
         isRunning = input.x != 0 && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift));
 
@@ -70,16 +62,16 @@ public class PlayerController : MonoBehaviour
         endTime = Time.realtimeSinceStartup;
         elapsedTime = endTime - startTime;
         if (elapsedTime >= 10f)
-            Fear.sharedValue = 1;
+            Fear.FearValue = 1;
     }
-
+    
     private void Reflect(Vector2 movement)
     {
         if (movement.x > 0 && !isRight || movement.x < 0 && isRight)
         {
             transform.localScale *= new Vector2(-1, 1);
             isRight = !isRight;
-            Fear.sharedValue = 0;
+            Fear.FearValue = 0;
             startTime = Time.realtimeSinceStartup;
         }
     }

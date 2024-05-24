@@ -30,16 +30,16 @@ public class WinTrigger : MonoBehaviour
 
     IEnumerator StartTimer()
     {
-        isCounting = true; // Устанавливаем флаг, что таймер запущен
-        while (timeToCount > 0) // Пока время не истечет
+        isCounting = true;
+        while (timeToCount > 0) 
         {
-            yield return new WaitForSeconds(1f); // Ждем одну секунду
-            timeToCount -= 1f; // Уменьшаем время на одну секунду
-            Debug.Log(timeToCount); // Выводим оставшееся время в консоль
+            yield return new WaitForSeconds(1f);
+            timeToCount -= 1f;
+            Debug.Log(timeToCount);
         }
-        isCounting = false; // Таймер закончился, сбрасываем флаг
+        isCounting = false;
         timeToCount = 4f;
-        SceneManager.LoadScene("Plotinka"); // Сообщаем, что время истекло
+        SceneManager.LoadScene("Plotinka");
     }
 
     private void OnTriggerEnter2D(Collider2D other)

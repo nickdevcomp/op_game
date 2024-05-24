@@ -48,7 +48,7 @@ public class RailTrig0 : MonoBehaviour
 
     IEnumerator StartTimer()
     {
-        isCounting = true; // Устанавливаем флаг, что таймер запущен
+        isCounting = true;
         while (timeToCount > 0) // Пока время не истечет
         {
             yield return new WaitForSeconds(1f); // Ждем одну секунду

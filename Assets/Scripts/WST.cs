@@ -36,7 +36,7 @@ public class WST : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(4); // Ждем 2 секунды
+        yield return new WaitForSeconds(4);
 
         StartCoroutine(FadeOut());
     }

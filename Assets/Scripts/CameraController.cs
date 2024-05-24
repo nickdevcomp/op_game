@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public static int sharedValue = 0;
+    public static int FearValue = 0;
     private float dumping = 4f;
     private Vector2 offset = new (2f, 1f);
     private bool isLeft;
@@ -79,7 +79,7 @@ public class CameraController : MonoBehaviour
             Mathf.Clamp(transform.position.y, bottomLimit, upperLimit),
             transform.position.z
         );
-        if (sharedValue == 1) {
+        if (FearValue == 1) {
             var camTransform = GetComponent<Transform>();
             var originPos = camTransform.localPosition;
             float shakeDur = 1f, shakeAmount = 0.1f, decreaseFact = 1.5f;

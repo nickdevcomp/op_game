@@ -14,7 +14,6 @@ public class FlashSW : MonoBehaviour
         FL = GetComponent<Light>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyUp(FLC))

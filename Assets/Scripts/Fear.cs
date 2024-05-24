@@ -5,29 +5,23 @@ using UnityEngine;
 public class Fear : MonoBehaviour
 {
 
-    public static int sharedValue = 0;
+    public static int FearValue = 0;
     public int saved = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
-        if (saved != sharedValue)
+        if (saved != FearValue)
         {
-            saved = sharedValue;
-            if (sharedValue == 1)
+            saved = FearValue;
+            if (FearValue == 1)
             {
                 //Camera.main.gameObject.AddComponent<CameraShake>();
                 GetComponent<AudioSource>().Play();
-                CameraController.sharedValue = 1;
+                CameraController.FearValue = 1;
             }
-            else if (sharedValue == 0) {
+            else if (FearValue == 0) {
                 GetComponent<AudioSource>().Pause();
-                CameraController.sharedValue = 0;
+                CameraController.FearValue = 0;
             }
         }
        

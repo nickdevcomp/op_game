@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class GooseT : MonoBehaviour
 {
-    [FormerlySerializedAs("k")] public int meetingCount = 0;
+    public int meetingCount;
     public GameObject balance;
     public GameObject feather;
     public GameObject ticket;
@@ -18,48 +18,42 @@ public class GooseT : MonoBehaviour
     public Image ticketV;
     public Image imageComponent;
 
-    public float timeToCount = 5f; // Время таймера в секундах
-    private bool isCounting = false;
+    public float timeToCount = 5f;
+    private bool isCounting;
 
     // Новое изображение для замены
     public Sprite Big;
     public Sprite SVD;
 
-    public bool d = false;
-    public bool t = false;
+    public bool IsDKRInInventory;
+    public bool IsTicketInInventory;
 
     // Метод для замены изображения
-    public void ChangeSourceImage(int t)
+    public void ChangeSourceImage(int meetingCount)
     {
-        if (t == 1)
+        if (meetingCount == 1)
         {
             imageComponent.sprite = Big;
             money.SetActive(true);
         }
             
-        if (t == 3) 
+        if (meetingCount == 3) 
         {
             imageComponent.sprite = SVD;
             wool.SetActive(true);
-            meetingCount += 1;
+            this.meetingCount += 1;
         }
             
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         if (PlayerController.dkr == 1)
         {
             PlayerController.dkr = 0;
             dkrV.enabled = true;
-            d = true;
+            IsDKRInInventory = true;
             StartCoroutine(FadeInD());
             GetComponent<AudioSource>().Play();
         }
@@ -67,7 +61,7 @@ public class GooseT : MonoBehaviour
         {
             PlayerController.ticket = 0;
             ticketV.enabled = true;
-            t = true;
+            IsTicketInInventory = true;
             StartCoroutine(FadeInT());
             GetComponent<AudioSource>().Play();
         }
@@ -83,7 +77,7 @@ public class GooseT : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(1); // Ждем 2 секунды
+        yield return new WaitForSeconds(1);
 
         StartCoroutine(FadeOutD());
     }
@@ -110,7 +104,7 @@ public class GooseT : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(1); // Ждем 2 секунды
+        yield return new WaitForSeconds(1);
 
         StartCoroutine(FadeOutT());
     }
@@ -137,9 +131,9 @@ public class GooseT : MonoBehaviour
             meetingCount += 1;
         }
 
-        if (meetingCount == 2 && d)
+        if (meetingCount == 2 && IsDKRInInventory)
         {
-            d = false;
+            IsDKRInInventory = false;
             dkr.SetActive(false);
             GetComponent<AudioSource>().Play();
             meetingCount += 1;
@@ -154,9 +148,9 @@ public class GooseT : MonoBehaviour
             meetingCount += 1;
         }
         
-        if (meetingCount == 0 && t)
+        if (meetingCount == 0 && IsTicketInInventory)
         {
-            t = false;
+            IsTicketInInventory = false;
             ticket.SetActive(false);
             GetComponent<AudioSource>().Play();
             meetingCount += 1;
@@ -173,14 +167,14 @@ public class GooseT : MonoBehaviour
 
     IEnumerator StartTimer()
     {
-        isCounting = true; // Устанавливаем флаг, что таймер запущен
-        while (timeToCount > 0) // Пока время не истечет
+        isCounting = true;
+        while (timeToCount > 0)
         {
-            yield return new WaitForSeconds(1f); // Ждем одну секунду
-            timeToCount -= 1f; // Уменьшаем время на одну секунду
-            Debug.Log(timeToCount); // Выводим оставшееся время в консоль
+            yield return new WaitForSeconds(1f);
+            timeToCount -= 1f;
+            Debug.Log(timeToCount);
         }
-        isCounting = false; // Таймер закончился, сбрасываем флаг
-        balance.SetActive(false); // Сообщаем, что время истекло
+        isCounting = false;
+        balance.SetActive(false);
     }
 }

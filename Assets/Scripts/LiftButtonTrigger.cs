@@ -20,21 +20,20 @@ public class LiftButtonTrig : MonoBehaviour
     
     void Start()
     {
-        // Получаем компонент аниматора другого объекта
         otherObjectAnimator = otherObject.GetComponent<Animator>();
     }
 
     IEnumerator StartTimer()
     {
-        isCounting = true; // Устанавливаем флаг, что таймер запущен
-        while (timeToCount > 0) // Пока время не истечет
+        isCounting = true;
+        while (timeToCount > 0 && isCounting)
         {
-            yield return new WaitForSeconds(1f); // Ждем одну секунду
-            timeToCount -= 1f; // Уменьшаем время на одну секунду
-            Debug.Log(timeToCount); // Выводим оставшееся время в консоль
+            yield return new WaitForSeconds(1f);
+            timeToCount -= 1f;
+            Debug.Log(timeToCount);
         }
-        isCounting = false; // Таймер закончился, сбрасываем флаг
-        SceneManager.LoadScene("Lift"); // Сообщаем, что время истекло
+        isCounting = false;
+        SceneManager.LoadScene("Lift");
     }
 
     private void OnTriggerEnter2D(Collider2D other)

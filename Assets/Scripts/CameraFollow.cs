@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public static int sharedValue = 0;
     public Transform target; 
     public float smoothSpeed = 0.125f; 
     public Vector3 offset; 
