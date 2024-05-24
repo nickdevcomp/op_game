@@ -50,10 +50,12 @@
     <Compile Include="Assets/Scripts/CharacterMovement.cs" />
     <Compile Include="Assets/Scripts/GooseT.cs" />
     <Compile Include="Assets/Scripts/OldLiftButtonTrigger.cs" />
+    <Compile Include="Assets/Scripts/HintManager.cs" />
     <Compile Include="Assets/Scripts/Manager.cs" />
     <Compile Include="Assets/Scripts/FlashSW.cs" />
     <Compile Include="Assets/Scripts/Fear.cs" />
     <Compile Include="Assets/Scripts/LevelTransition.cs" />
+    <Compile Include="Assets/Scripts/PostersManager.cs" />
     <Compile Include="Assets/Scripts/WinTrigger.cs" />
     <Compile Include="Assets/Scripts/WST.cs" />
     <Compile Include="Assets/Scripts/OpenLift.cs" />
