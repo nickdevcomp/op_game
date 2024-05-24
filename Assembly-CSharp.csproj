@@ -45,31 +45,6 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.24f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
-    <Compile Include="Assets\Scripts\LiftController.cs" />
-    <Compile Include="Assets\Scripts\CameraMovement.cs" />
-    <Compile Include="Assets\Scripts\CharacterMovement.cs" />
-    <Compile Include="Assets\Scripts\GooseT.cs" />
-    <Compile Include="Assets\Scripts\OldLiftButtonTrigger.cs" />
-    <Compile Include="Assets\Scripts\FlashSW.cs" />
-    <Compile Include="Assets\Scripts\Fear.cs" />
-    <Compile Include="Assets\Scripts\LevelTransition.cs" />
-    <Compile Include="Assets\Scripts\WinTrigger.cs" />
-    <Compile Include="Assets\Scripts\WST.cs" />
-    <Compile Include="Assets\Scripts\OpenLift.cs" />
-    <Compile Include="Assets\Scripts\Rail trigger 2.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\CameraFollow.cs" />
-    <Compile Include="Assets\Scripts\Rail trigger 1.cs" />
-    <Compile Include="Assets\Scripts\LiftButtonTrigger.cs" />
-    <Compile Include="Assets\Scripts\CharacterAnimations.cs" />
-    <Compile Include="Assets\Scripts\Rail trigger 0.cs" />
-    <Compile Include="Assets\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Scripts\CasinoT.cs" />
-    <Compile Include="Assets\GoToLift.cs" />
-    <Compile Include="Assets\Scripts\ShipT.cs" />
-    <Compile Include="Assets\Scripts\clownT.cs" />
-=======
     <Compile Include="Assets/Scripts/LiftController.cs" />
     <Compile Include="Assets/Scripts/CameraMovement.cs" />
     <Compile Include="Assets/Scripts/CharacterMovement.cs" />
@@ -85,13 +60,16 @@
     <Compile Include="Assets/Scripts/Rail trigger 2.cs" />
     <Compile Include="Assets/Scripts/Player.cs" />
     <Compile Include="Assets/Scripts/CameraFollow.cs" />
+    <Compile Include="Assets/Scripts/Sounds/GetVolumeByDistance.cs" />
     <Compile Include="Assets/Scripts/Rail trigger 1.cs" />
     <Compile Include="Assets/Scripts/LiftButtonTrigger.cs" />
     <Compile Include="Assets/Scripts/CharacterAnimations.cs" />
     <Compile Include="Assets/Scripts/Rail trigger 0.cs" />
     <Compile Include="Assets/Scripts/CameraController.cs" />
+    <Compile Include="Assets/Scripts/CasinoT.cs" />
     <Compile Include="Assets/GoToLift.cs" />
->>>>>>> Stashed changes
+    <Compile Include="Assets/Scripts/ShipT.cs" />
+    <Compile Include="Assets/Scripts/clownT.cs" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/Hub/Editor/2022.3.24f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
