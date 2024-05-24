@@ -64,7 +64,10 @@
     <Compile Include="Assets\Scripts\CharacterAnimations.cs" />
     <Compile Include="Assets\Scripts\Rail trigger 0.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\CasinoT.cs" />
     <Compile Include="Assets\GoToLift.cs" />
+    <Compile Include="Assets\Scripts\ShipT.cs" />
+    <Compile Include="Assets\Scripts\clownT.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.24f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour
 
     public static int ticket;
     public static int dkr;
+    public static int ship;
+    public static int balance;
+
 
 
     private void Start()
@@ -33,16 +36,6 @@ public class PlayerController : MonoBehaviour
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            ticket = 1;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            dkr = 1;
-        }
-
         var moveHorizontal = Input.GetAxis("Horizontal");
         input = new Vector2(moveHorizontal, 0);
         isWalking = input.x != 0;

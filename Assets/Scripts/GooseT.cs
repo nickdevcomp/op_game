@@ -144,7 +144,7 @@ public class GooseT : MonoBehaviour
             money.SetActive(false);
             balance.SetActive(true);
             GetComponent<AudioSource>().Play();
-            StartCoroutine(StartTimer());
+            PlayerController.balance = 1;
             meetingCount += 1;
         }
         
@@ -163,18 +163,5 @@ public class GooseT : MonoBehaviour
         {
             ChangeSourceImage(meetingCount);
         }
-    }
-
-    IEnumerator StartTimer()
-    {
-        isCounting = true;
-        while (timeToCount > 0)
-        {
-            yield return new WaitForSeconds(1f);
-            timeToCount -= 1f;
-            Debug.Log(timeToCount);
-        }
-        isCounting = false;
-        balance.SetActive(false);
     }
 }
