@@ -1,6 +1,4 @@
 using UnityEngine;
-using System.Collections;
-using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,9 +6,6 @@ public class PlayerController : MonoBehaviour
     private Vector3 input;
     private bool isWalking;
     private bool isRunning;
-    private CharacterAnimations animations;
-    [SerializeField] private SpriteRenderer characterSprite;
-
     
     private Animator animator;
     private bool isRight;
@@ -25,6 +20,12 @@ public class PlayerController : MonoBehaviour
     public static int ship;
     public static int balance;
 
+    [SerializeField] 
+    private bool isScaryFloor;
+    
+    [SerializeField] 
+    private SpriteRenderer characterSprite;
+
 
 
     private void Start()
@@ -36,8 +37,7 @@ public class PlayerController : MonoBehaviour
     
     private void Update()
     {
-        var moveHorizontal = Input.GetAxis("Horizontal");
-        input = new Vector2(moveHorizontal, 0);
+        input = new Vector2(Input.GetAxis("Horizontal"), 0);
         isWalking = input.x != 0;
         isRunning = input.x != 0 && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift));
 
@@ -46,12 +46,17 @@ public class PlayerController : MonoBehaviour
             var animationToPlay = isRunning ? "Run" : "Walk";
             var movementSpeed = isRunning ? 3f * speed : speed;
             animator.Play(animationToPlay);
-            Reflect(input);
+            characterSprite.flipX = input.x > 0 && !isScaryFloor;
             transform.position += input * (movementSpeed * Time.deltaTime);
         }
         else
             animator.Play("Calm");
 
+        
+        if (!isScaryFloor)
+            return;
+        
+        Reflect(input);
         endTime = Time.realtimeSinceStartup;
         elapsedTime = endTime - startTime;
         if (elapsedTime >= 10f)

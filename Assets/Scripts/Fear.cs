@@ -6,7 +6,7 @@ public class Fear : MonoBehaviour
 {
 
     public static int FearValue = 0;
-    public int saved = 0;
+    public int saved;
 
     void Update()
     {

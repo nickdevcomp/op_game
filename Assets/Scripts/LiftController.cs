@@ -27,8 +27,4 @@ public class LiftController : MonoBehaviour
         animator = GetComponent<Animator>();
         StartCoroutine(StartTimer());
     }
-
-    private void Update()
-    {
-    }
 }

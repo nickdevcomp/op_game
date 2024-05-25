@@ -4,23 +4,14 @@ using UnityEngine;
 
 public class CasinoT : MonoBehaviour
 {
-    public float timeToCount = 2f; // Время таймера в секундах
-    private bool isCounting = false; // Флаг, показывающий, запущен ли таймер
-    private bool btns = false;
+    public float timeToCount = 2f;
+    private bool isCounting;
+    private bool btns;
 
     public int meetingCount;
 
     public GameObject balance;
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (btns)

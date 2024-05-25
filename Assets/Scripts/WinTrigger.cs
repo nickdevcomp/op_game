@@ -8,23 +8,22 @@ using UnityEngine.SceneManagement;
 public class WinTrigger : MonoBehaviour
 {
 
-    public GameObject otherObject; // ссылка на другой объект
+    public GameObject otherObject;
 
-    private Animator otherObjectAnimator; // компонент аниматора другого объекта
+    private Animator otherObjectAnimator;
 
     private Animator animator;
 
-    private bool triger = true;
+    private bool trigger = true;
     
     [SerializeField]
-    public float timeToCount = 2f; // Время таймера в секундах
-    private bool isCounting; // Флаг, показывающий, запущен ли таймер
+    public float timeToCount = 2f;
+    private bool isCounting;
     private bool startLoadScene;
 
     
     void Start()
     {
-        // Получаем компонент аниматора другого объекта
         otherObjectAnimator = otherObject.GetComponent<Animator>();
     }
 
@@ -54,9 +53,9 @@ public class WinTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (startLoadScene && Input.GetKey(KeyCode.E) && triger)
+        if (startLoadScene && Input.GetKey(KeyCode.E) && trigger)
         {
-            triger = false;
+            trigger = false;
             otherObjectAnimator.SetBool("IsSwitchOn", true);
             GetComponent<AudioSource>().Play();
             StartCoroutine(StartTimer());

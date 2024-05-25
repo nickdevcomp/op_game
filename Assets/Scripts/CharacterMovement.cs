@@ -9,13 +9,11 @@ public class CharacterMovement : MonoBehaviour
     private bool isWalking;
     private bool isRunning;
     private Animator animator;
-    private CharacterAnimations animations;
     [SerializeField] private SpriteRenderer characterSprite;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
-        animations = GetComponentInChildren<CharacterAnimations>();
     }
 
     private void FixedUpdate() => Move();
@@ -36,8 +34,5 @@ public class CharacterMovement : MonoBehaviour
         }
         else
             animator.Play("Calm");
-        
-        animations.IsWalking = isWalking;
-        animations.IsRunning = isRunning;
     }
 }

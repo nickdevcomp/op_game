@@ -133,8 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 72810423}
   - component: {fileID: 72810422}
-  - component: {fileID: 72810424}
   - component: {fileID: 72810420}
+  - component: {fileID: 72810424}
   m_Layer: 0
   m_Name: Rail trigger 1
   m_TagString: Untagged
@@ -307,11 +307,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 72810419}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5487c8880bef30e4ea0b1f82545116b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 44556d78aeba09841b1081c3902e033b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 830493600}
   timeToCount: 2
+  upY: 128
+  downY: -63.5
+  isHighestFloor: 0
+  isLowestFloor: 0
 --- !u!1 &79977217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1559,6 +1563,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 830493600}
   timeToCount: 2
+  upY: 0
+  downY: 31
+  isHighestFloor: 1
+  isLowestFloor: 0
 --- !u!1 &381124384
 GameObject:
   m_ObjectHideFlags: 0
@@ -3334,7 +3342,7 @@ GameObject:
   - component: {fileID: 1487583263}
   m_Layer: 0
   m_Name: PlayerPoint
-  m_TagString: Player
+  m_TagString: CameraView
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3550,7 +3558,8 @@ PrefabInstance:
       propertyPath: m_SpotAngle
       value: 94
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7867830303587252846, guid: ba6413bbddff6ed4aacf8cb42d03769a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3731806384638003315, guid: ba6413bbddff6ed4aacf8cb42d03769a, type: 3}
@@ -3700,7 +3709,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 25
-  characterSprite: {fileID: 1577804265}
+  isScaryFloor: 1
+  characterSprite: {fileID: 1577804264}
 --- !u!114 &1577804260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3714,7 +3724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 206631953}
---- !u!212 &1577804265 stripped
+--- !u!212 &1577804264 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 2437860715664004767, guid: ba6413bbddff6ed4aacf8cb42d03769a, type: 3}
   m_PrefabInstance: {fileID: 1545983448}
@@ -4300,6 +4310,7 @@ GameObject:
   - component: {fileID: 1910267918}
   - component: {fileID: 1910267920}
   - component: {fileID: 1910267916}
+  - component: {fileID: 1910267921}
   m_Layer: 0
   m_Name: Rail trigger 2
   m_TagString: Untagged
@@ -4475,8 +4486,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8dca8eb63281b94689e66ce8490dc7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1910267921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910267915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44556d78aeba09841b1081c3902e033b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   Player: {fileID: 830493600}
   timeToCount: 2
+  upY: 31
+  downY: 0
+  isHighestFloor: 0
+  isLowestFloor: 1
 --- !u!1 &1995631651
 GameObject:
   m_ObjectHideFlags: 0
