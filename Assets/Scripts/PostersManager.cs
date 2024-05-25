@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ImageManager : MonoBehaviour
+public class PostersManager : MonoBehaviour
 {
     public Transform player;
     public Transform hintObject;
@@ -11,10 +11,7 @@ public class ImageManager : MonoBehaviour
     public float fadeSpeed = 0.5f;
     public float hintDistance = 0.5f;
 
-    private void Start()
-    {
-        image.gameObject.SetActive(false);
-    }
+    private void Start() => image.gameObject.SetActive(false);
 
     private void Update()
     {
@@ -43,7 +40,7 @@ public class ImageManager : MonoBehaviour
             }
         }
     }
-    
+
     private IEnumerator FadeIn()
     {
         var delta = 0.0f;
