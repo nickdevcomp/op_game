@@ -16,16 +16,16 @@ public class CasinoT : MonoBehaviour
     {
         if (btns)
         {
-            if (Input.GetKeyDown(KeyCode.E) && PlayerController.balance != 0 && meetingCount == 0)
+            if (Input.GetKeyDown(KeyCode.E) && PlayerController.Balance != 0 && meetingCount == 0)
             {
-                PlayerController.balance -= 1;
+                PlayerController.Balance -= 1;
                 balance.SetActive(false);
                 GetComponent<AudioSource>().Play();
                 StartCoroutine(StartTimer());
             }
-            if (Input.GetKeyDown(KeyCode.E) && PlayerController.balance != 0 && meetingCount == 1)
+            if (Input.GetKeyDown(KeyCode.E) && PlayerController.Balance != 0 && meetingCount == 1)
             {
-                PlayerController.balance -= 1;
+                PlayerController.Balance -= 1;
                 balance.SetActive(false);
                 GetComponent<AudioSource>().Play();
                 StartCoroutine(StartTimer());
@@ -46,9 +46,9 @@ public class CasinoT : MonoBehaviour
                         
         timeToCount = 2f;
         if (meetingCount == 1)
-            PlayerController.dkr = 1;
+            PlayerController.Dkr = 1;
         if (meetingCount == 0)
-            PlayerController.ticket = 1;
+            PlayerController.Ticket = 1;
         meetingCount += 1;
     }
 

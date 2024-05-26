@@ -49,17 +49,17 @@ public class GooseT : MonoBehaviour
 
     void Update()
     {
-        if (PlayerController.dkr == 1)
+        if (PlayerController.Dkr == 1)
         {
-            PlayerController.dkr = 0;
+            PlayerController.Dkr = 0;
             dkrV.enabled = true;
             IsDKRInInventory = true;
             StartCoroutine(FadeInD());
             GetComponent<AudioSource>().Play();
         }
-        if (PlayerController.ticket == 1)
+        if (PlayerController.Ticket == 1)
         {
-            PlayerController.ticket = 0;
+            PlayerController.Ticket = 0;
             ticketV.enabled = true;
             IsTicketInInventory = true;
             StartCoroutine(FadeInT());
@@ -144,7 +144,7 @@ public class GooseT : MonoBehaviour
             money.SetActive(false);
             balance.SetActive(true);
             GetComponent<AudioSource>().Play();
-            PlayerController.balance = 1;
+            PlayerController.Balance = 1;
             meetingCount += 1;
         }
         

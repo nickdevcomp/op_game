@@ -30,13 +30,13 @@ public class clownT : MonoBehaviour
             meetingCount += 1;
             money.SetActive(false);
             balance.SetActive(true);
-            PlayerController.balance = 1;
+            PlayerController.Balance = 1;
         }
-        if (meetingCount == 0 && PlayerController.ship == 1)
+        if (meetingCount == 0 && PlayerController.Ship == 1)
         {
             shipInventary.SetActive(false);
             meetingCount += 1;
-            PlayerController.ship = 0;
+            PlayerController.Ship = 0;
         }
     }
 

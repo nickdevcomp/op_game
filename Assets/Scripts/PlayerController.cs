@@ -13,29 +13,43 @@ public class PlayerController : MonoBehaviour
     private float startTime;
     private float endTime;
     private float elapsedTime;
-    private Rigidbody2D rb;
 
-    public static int ticket;
-    public static int dkr;
-    public static int ship;
-    public static int balance;
+    public static int Ticket;
+    public static int Dkr;
+    public static int Ship;
+    public static int Balance;
 
     [SerializeField] 
     private bool isScaryFloor;
     
     [SerializeField] 
-    private SpriteRenderer characterSprite;
-
-
-
+    private SpriteRenderer characterSprite; 
+    
     private void Start()
     {
         animator = GetComponent<Animator>();
         startTime = Time.realtimeSinceStartup;
-        rb = new Rigidbody2D();
+    }
+
+    private void Update()
+    {
+        if (!isScaryFloor)
+            return;
+        MoveCharacter();
+        UpdateFear();
     }
     
-    private void Update()
+    // Нет, тебе не мерещится, методы одинаковые,
+    // просто чтобы анимация персонажа не шакалилась, нужно делать так.
+    private void FixedUpdate()
+    {
+        if (isScaryFloor)
+            return;
+        MoveCharacter();
+        UpdateFear();
+    }
+
+    private void MoveCharacter()
     {
         input = new Vector2(Input.GetAxis("Horizontal"), 0);
         isWalking = input.x != 0;
@@ -46,23 +60,23 @@ public class PlayerController : MonoBehaviour
             var animationToPlay = isRunning ? "Run" : "Walk";
             var movementSpeed = isRunning ? 3f * speed : speed;
             animator.Play(animationToPlay);
-            characterSprite.flipX = input.x > 0 && !isScaryFloor;
+            Reflect(input);
             transform.position += input * (movementSpeed * Time.deltaTime);
         }
         else
             animator.Play("Calm");
+    }
 
-        
+    private void UpdateFear()
+    {
         if (!isScaryFloor)
             return;
-        
-        Reflect(input);
         endTime = Time.realtimeSinceStartup;
         elapsedTime = endTime - startTime;
         if (elapsedTime >= 10f)
             Fear.FearValue = 1;
     }
-    
+
     private void Reflect(Vector2 movement)
     {
         if (movement.x > 0 && !isRight || movement.x < 0 && isRight)

@@ -30,7 +30,7 @@ public class ShipT : MonoBehaviour
             puddle.SetActive(true);
             shipInventary.SetActive(true);
             meetingCount++;
-            PlayerController.ship = 1;
+            PlayerController.Ship = 1;
         }
     }
 }
