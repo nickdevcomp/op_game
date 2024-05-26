@@ -30,21 +30,9 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         startTime = Time.realtimeSinceStartup;
     }
-
+    
     private void Update()
     {
-        if (!isScaryFloor)
-            return;
-        MoveCharacter();
-        UpdateFear();
-    }
-    
-    // Нет, тебе не мерещится, методы одинаковые,
-    // просто чтобы анимация персонажа не шакалилась, нужно делать так.
-    private void FixedUpdate()
-    {
-        if (isScaryFloor)
-            return;
         MoveCharacter();
         UpdateFear();
     }
