@@ -1,29 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Fear : MonoBehaviour
 {
 
     public static int FearValue = 0;
-    public int saved;
+    public int Saved;
 
     void Update()
     {
-        if (saved != FearValue)
+        if (Saved == FearValue) 
+            return;
+        Saved = FearValue;
+        switch (FearValue)
         {
-            saved = FearValue;
-            if (FearValue == 1)
-            {
+            case 1:
                 //Camera.main.gameObject.AddComponent<CameraShake>();
                 GetComponent<AudioSource>().Play();
                 CameraController.FearValue = 1;
-            }
-            else if (FearValue == 0) {
+                break;
+            case 0:
                 GetComponent<AudioSource>().Pause();
                 CameraController.FearValue = 0;
-            }
+                break;
         }
-       
     }
 }

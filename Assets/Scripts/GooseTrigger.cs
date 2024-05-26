@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class GooseT : MonoBehaviour
+public class GooseTrigger : MonoBehaviour
 {
     public int meetingCount;
     public GameObject balance;
@@ -29,25 +29,24 @@ public class GooseT : MonoBehaviour
     public bool IsTicketInInventory;
 
     // Метод для замены изображения
-    public void ChangeSourceImage(int meetingCount)
+    private void ChangeSourceImage(int meetingCount)
     {
-        if (meetingCount == 1)
+        switch (meetingCount)
         {
-            imageComponent.sprite = Big;
-            money.SetActive(true);
+            case 1:
+                imageComponent.sprite = Big;
+                money.SetActive(true);
+                break;
+            case 3:
+                imageComponent.sprite = SVD;
+                wool.SetActive(true);
+                this.meetingCount += 1;
+                break;
         }
-            
-        if (meetingCount == 3) 
-        {
-            imageComponent.sprite = SVD;
-            wool.SetActive(true);
-            this.meetingCount += 1;
-        }
-            
     }
 
 
-    void Update()
+    private void Update()
     {
         if (PlayerController.Dkr == 1)
         {

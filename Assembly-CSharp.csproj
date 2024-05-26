@@ -46,27 +46,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Scripts/LiftController.cs" />
-    <Compile Include="Assets/Scripts/GooseT.cs" />
     <Compile Include="Assets/Scripts/OldLiftButtonTrigger.cs" />
     <Compile Include="Assets/Scripts/HintManager.cs" />
     <Compile Include="Assets/Scripts/Manager.cs" />
-    <Compile Include="Assets/Scripts/FlashSW.cs" />
     <Compile Include="Assets/Scripts/Fear.cs" />
-    <Compile Include="Assets/Scripts/LevelTransition.cs" />
     <Compile Include="Assets/Scripts/PostersManager.cs" />
+    <Compile Include="Assets/Scripts/GooseTrigger.cs" />
     <Compile Include="Assets/Scripts/WinTrigger.cs" />
     <Compile Include="Assets/Scripts/WST.cs" />
     <Compile Include="Assets/Scripts/OpenLift.cs" />
     <Compile Include="Assets/Scripts/CameraFollow.cs" />
     <Compile Include="Assets/Scripts/MA sound.cs" />
     <Compile Include="Assets/Scripts/Sounds/GetVolumeByDistance.cs" />
+    <Compile Include="Assets/Scripts/CasinoTrigger.cs" />
+    <Compile Include="Assets/Scripts/ClownTrigger.cs" />
     <Compile Include="Assets/Scripts/PlayerController.cs" />
     <Compile Include="Assets/Scripts/LiftButtonTrigger.cs" />
     <Compile Include="Assets/Scripts/Rail trigger.cs" />
     <Compile Include="Assets/Scripts/CameraController.cs" />
-    <Compile Include="Assets/Scripts/CasinoT.cs" />
     <Compile Include="Assets/Scripts/ShipT.cs" />
-    <Compile Include="Assets/Scripts/clownT.cs" />
+    <Compile Include="Assets/Scripts/FlashSwitch.cs" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />

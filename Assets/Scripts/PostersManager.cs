@@ -8,8 +8,8 @@ public class PostersManager : MonoBehaviour
     public Transform hintObject;
     public Image image;
     private const KeyCode KeyToPress = KeyCode.E;
-    public float fadeSpeed = 0.5f;
-    public float hintDistance = 0.5f;
+    private float fadeSpeed = 4;
+    private float hintDistance = 0.5f;
 
     private void Start() => image.gameObject.SetActive(false);
 
@@ -26,18 +26,19 @@ public class PostersManager : MonoBehaviour
             image.gameObject.SetActive(false);
             return;
         }
-        if (Input.GetKeyDown(KeyToPress))
+
+        if (!Input.GetKeyDown(KeyToPress)) 
+            return;
+        
+        if (!image.gameObject.activeInHierarchy)
         {
-            if (!image.gameObject.activeInHierarchy)
-            {
-                image.gameObject.SetActive(true);
-                StartCoroutine(FadeIn());
-            }
-            else
-            {
-                image.gameObject.SetActive(false);
-                StartCoroutine(FadeOut());
-            }
+            image.gameObject.SetActive(true);
+            StartCoroutine(FadeIn());
+        }
+        else
+        {
+            image.gameObject.SetActive(false);
+            StartCoroutine(FadeOut());
         }
     }
 

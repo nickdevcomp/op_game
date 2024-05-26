@@ -155,8 +155,6 @@ MonoBehaviour:
   player: {fileID: 1643112835}
   hintObject: {fileID: 1128691992}
   image: {fileID: 2067324341}
-  fadeSpeed: 4
-  hintDistance: 0.5
 --- !u!4 &59334093
 Transform:
   m_ObjectHideFlags: 0
@@ -172,6 +170,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &86702715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 86702716}
+  - component: {fileID: 86702718}
+  - component: {fileID: 86702717}
+  m_Layer: 5
+  m_Name: "Kost\u044Bl for Artemiy"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &86702716
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86702715}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1609793080}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -26.3, y: -0.6148}
+  m_SizeDelta: {x: 11.3228, y: 8.3808}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &86702717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86702715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &86702718
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86702715}
+  m_CullTransparentMesh: 1
 --- !u!1 &223981356
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,8 +1202,6 @@ MonoBehaviour:
   player: {fileID: 1643112835}
   hintObject: {fileID: 1601731848}
   image: {fileID: 909191270}
-  fadeSpeed: 4
-  hintDistance: 0.5
 --- !u!4 &802103139
 Transform:
   m_ObjectHideFlags: 0
@@ -1480,8 +1551,6 @@ MonoBehaviour:
   player: {fileID: 1643112835}
   hintObject: {fileID: 1595707573}
   image: {fileID: 755605779}
-  fadeSpeed: 4
-  hintDistance: 0.5
 --- !u!1 &1128691989
 GameObject:
   m_ObjectHideFlags: 0
@@ -2092,8 +2161,6 @@ MonoBehaviour:
   player: {fileID: 1643112835}
   hintObject: {fileID: 1197432131}
   image: {fileID: 2027358999}
-  fadeSpeed: 4
-  hintDistance: 0.5
 --- !u!4 &1313410125
 Transform:
   m_ObjectHideFlags: 0
@@ -2247,8 +2314,6 @@ MonoBehaviour:
   player: {fileID: 1643112835}
   hintObject: {fileID: 984260621}
   image: {fileID: 329835736}
-  fadeSpeed: 4
-  hintDistance: 0.5
 --- !u!4 &1478438956
 Transform:
   m_ObjectHideFlags: 0
@@ -2784,6 +2849,7 @@ RectTransform:
   - {fileID: 1194227385}
   - {fileID: 909191269}
   - {fileID: 1994560369}
+  - {fileID: 86702716}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3034,8 +3100,6 @@ MonoBehaviour:
   player: {fileID: 1643112835}
   hintObject: {fileID: 1281970582}
   image: {fileID: 654669517}
-  fadeSpeed: 4
-  hintDistance: 0.5
 --- !u!1 &1860974838
 GameObject:
   m_ObjectHideFlags: 0
@@ -3305,7 +3369,7 @@ GameObject:
   - component: {fileID: 1941261995}
   - component: {fileID: 1941261994}
   - component: {fileID: 1941261993}
-  - component: {fileID: 1941261996}
+  - component: {fileID: 1941261997}
   m_Layer: 5
   m_Name: Lift
   m_TagString: Untagged
@@ -3405,7 +3469,7 @@ RectTransform:
   m_AnchoredPosition: {x: -14.517, y: 0.024}
   m_SizeDelta: {x: 1.57, y: 1.547}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1941261996
+--- !u!114 &1941261997
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3414,12 +3478,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1941261991}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dfc55849b06c46c38b30baa22c4643e, type: 3}
+  m_Script: {fileID: 11500000, guid: 740a9de96fb3b49f791a528ad7b692e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1643112835}
   hintObject: {fileID: 1352191633}
-  hintDistance: 0.6
+  image: {fileID: 86702717}
 --- !u!1 &1994560368
 GameObject:
   m_ObjectHideFlags: 0
@@ -3764,8 +3828,6 @@ MonoBehaviour:
   player: {fileID: 1643112835}
   hintObject: {fileID: 924846843}
   image: {fileID: 1558062568}
-  fadeSpeed: 4
-  hintDistance: 0.5
 --- !u!4 &2077402938
 Transform:
   m_ObjectHideFlags: 0
@@ -3813,8 +3875,6 @@ MonoBehaviour:
   player: {fileID: 1643112835}
   hintObject: {fileID: 1241633387}
   image: {fileID: 1194227386}
-  fadeSpeed: 4
-  hintDistance: 0.5
 --- !u!4 &2117006888
 Transform:
   m_ObjectHideFlags: 0

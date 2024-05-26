@@ -1,26 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Net.Sockets;
 using UnityEngine;
 
-public class clownT : MonoBehaviour
+public class ClownTrigger : MonoBehaviour
 {
     public GameObject shipInventary;
     public GameObject money;
     public GameObject balance;
     public int meetingCount;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -42,10 +27,9 @@ public class clownT : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            if (meetingCount == 1)
-                money.SetActive(true);
-        }
+        if (!other.CompareTag("Player")) 
+            return;
+        if (meetingCount == 1)
+            money.SetActive(true);
     }
 }

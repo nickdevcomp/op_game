@@ -32,14 +32,14 @@ public class RailTrigger : MonoBehaviour
     {
         if (!btns)
             return;
-        if (Input.GetKeyDown(KeyCode.E) && !isHighestFloor)
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && !isHighestFloor)
         {
             Player.SetActive(false);
             GetComponent<AudioSource>().Play();
             StartCoroutine(StartTimer());
             Player.transform.position = new Vector3(1126, upY, -1);
         }
-        if (Input.GetKeyDown(KeyCode.R) && !isLowestFloor)
+        if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && !isLowestFloor)
         {
             Player.SetActive(false);
             GetComponent<AudioSource>().Play();
@@ -66,14 +66,8 @@ public class RailTrigger : MonoBehaviour
 
     
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        btns = true;
-    }
+    private void OnTriggerEnter2D(Collider2D other) => btns = true;
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        btns = false;
-    }
+    private void OnTriggerExit2D(Collider2D other) => btns = false;
 
 }
