@@ -62,9 +62,9 @@
     <Compile Include="Assets/Scripts/ClownTrigger.cs" />
     <Compile Include="Assets/Scripts/PlayerController.cs" />
     <Compile Include="Assets/Scripts/LiftButtonTrigger.cs" />
+    <Compile Include="Assets/Scripts/ShipTrigger.cs" />
     <Compile Include="Assets/Scripts/Rail trigger.cs" />
     <Compile Include="Assets/Scripts/CameraController.cs" />
-    <Compile Include="Assets/Scripts/ShipT.cs" />
     <Compile Include="Assets/Scripts/FlashSwitch.cs" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />

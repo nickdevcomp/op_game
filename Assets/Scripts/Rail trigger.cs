@@ -27,8 +27,8 @@ public class RailTrigger : MonoBehaviour
     [SerializeField] 
     private bool isLowestFloor;
 
-    
-    void Update()
+
+    private void Update()
     {
         if (!btns)
             return;
