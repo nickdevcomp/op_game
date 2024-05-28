@@ -16,6 +16,7 @@ public class ButtonManager : MonoBehaviour
     {
         fadeImage.GameObject().SetActive(false);
         audioSource.Pause();
+        Application.targetFrameRate = 120;
     }
 
     public void Play()

@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         startTime = Time.realtimeSinceStartup;
+        Application.targetFrameRate = 120;
     }
     
     private void Update()
