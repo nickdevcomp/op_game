@@ -19,9 +19,6 @@ public class CameraController : MonoBehaviour
     private float bottomLimit;
     [SerializeField] 
     private float upperLimit;
-
-    // [SerializeField] 
-    // private bool isScaryFloor;
     
 
     private void Start()

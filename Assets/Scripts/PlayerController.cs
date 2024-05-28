@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     public static int Ship;
     public static int Balance;
     public static int Feather;
+    
+    public AudioSource footstepSound;
 
 
     [SerializeField] 
@@ -76,5 +78,10 @@ public class PlayerController : MonoBehaviour
             Fear.FearValue = 0;
             startTime = Time.realtimeSinceStartup;
         }
+    }
+    
+    public void PlayFootstep()
+    {
+        footstepSound.Play();
     }
 }
