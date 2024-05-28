@@ -128,6 +128,7 @@ public class GooseTrigger : MonoBehaviour
             feather.SetActive(true);
             GetComponent<AudioSource>().Play();
             meetingCount += 1;
+            PlayerController.Feather = 1;
         }
 
         if (meetingCount == 2 && IsDKRInInventory)

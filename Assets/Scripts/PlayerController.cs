@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     public static int Dkr;
     public static int Ship;
     public static int Balance;
+    public static int Feather;
+
 
     [SerializeField] 
     private bool isScaryFloor;
