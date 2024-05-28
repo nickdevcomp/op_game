@@ -5,13 +5,15 @@ using UnityEngine.UI;
 public class WST : MonoBehaviour
 {
     public Image image;
+    public AudioSource sound;
 
-    void Start()
+    private void Start()
     {
         image.enabled = false;
+        sound.Pause();
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
@@ -19,11 +21,11 @@ public class WST : MonoBehaviour
         }
     }
 
-    void ShowWastedScreen()
+    private void ShowWastedScreen()
     {
         image.enabled = true;
         StartCoroutine(FadeIn());
-        GetComponent<AudioSource>().Play();
+        sound.Play();
     }
 
     IEnumerator FadeIn()
