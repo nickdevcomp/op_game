@@ -2888,6 +2888,7 @@ GameObject:
   - component: {fileID: 1643112840}
   - component: {fileID: 1643112843}
   - component: {fileID: 1643112844}
+  - component: {fileID: 1643112845}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3068,9 +3069,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.7
-  footstepSound: {fileID: 626144275}
   isScaryFloor: 0
   characterSprite: {fileID: 1643112836}
+--- !u!114 &1643112845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643112834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af2bb1ed775494eeab2f584e6d35e653, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footstepSound: {fileID: 626144275}
 --- !u!1 &1759986427
 GameObject:
   m_ObjectHideFlags: 0

@@ -37,14 +37,14 @@ public class RailTrigger : MonoBehaviour
             Player.SetActive(false);
             GetComponent<AudioSource>().Play();
             StartCoroutine(StartTimer());
-            Player.transform.position = new Vector3(1126, upY, -1);
+            Player.transform.position = new Vector3(980, upY, -2);
         }
         if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && !isLowestFloor)
         {
             Player.SetActive(false);
             GetComponent<AudioSource>().Play();
             StartCoroutine(StartTimer());
-            Player.transform.position = new Vector3(1126, downY, -1);
+            Player.transform.position = new Vector3(980, downY, -2);
         }
     }
 

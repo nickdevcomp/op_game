@@ -16,7 +16,7 @@ public class CasinoTrigger : MonoBehaviour
     {
         if (!isPlayerNear) 
             return;
-        if (Input.GetKeyDown(KeyCode.E) && PlayerController.Balance != 0 && meetingCount <= 1)
+        if (Input.GetKeyDown(KeyCode.E) && PlayerController.Balance != 0 && meetingCount <= 2)
         {
             PlayerController.Balance -= 1;
             balance.SetActive(false);
@@ -37,10 +37,19 @@ public class CasinoTrigger : MonoBehaviour
         isCounting = false; 
                         
         timeToCount = 2f;
-        if (meetingCount == 1)
-            PlayerController.Dkr = 1;
-        if (meetingCount == 0)
-            PlayerController.Ticket = 1;
+        switch (meetingCount)
+        {
+            case 2:
+                PlayerController.Morsynka = 1;
+                break;
+            case 1:
+                PlayerController.Dkr = 1;
+                break;
+            case 0:
+                PlayerController.Ticket = 1;
+                break;
+        }
+
         meetingCount += 1;
     }
 

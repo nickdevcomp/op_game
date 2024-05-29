@@ -5,7 +5,7 @@ public class CameraController : MonoBehaviour
 {
     public static int FearValue = 0;
     private float dumping = 4f;
-    private Vector2 offset = new (2f, 1f);
+    private Vector2 offset = new (4f, 1f);
     private bool isLeft;
     
     private Transform player;
@@ -19,6 +19,9 @@ public class CameraController : MonoBehaviour
     private float bottomLimit;
     [SerializeField] 
     private float upperLimit;
+
+    // [SerializeField] 
+    // private bool isScaryFloor;
     
 
     private void Start()

@@ -17,10 +17,9 @@ public class PlayerController : MonoBehaviour
     public static int Ticket;
     public static int Dkr;
     public static int Ship;
+    public static int Morsynka;
     public static int Balance;
     public static int Feather;
-    
-    public AudioSource footstepSound;
 
 
     [SerializeField] 
@@ -33,7 +32,6 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         startTime = Time.realtimeSinceStartup;
-        Application.targetFrameRate = 120;
     }
     
     private void Update()
@@ -79,10 +77,5 @@ public class PlayerController : MonoBehaviour
             Fear.FearValue = 0;
             startTime = Time.realtimeSinceStartup;
         }
-    }
-    
-    public void PlayFootstep()
-    {
-        footstepSound.Play();
     }
 }

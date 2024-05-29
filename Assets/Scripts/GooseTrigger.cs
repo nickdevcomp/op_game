@@ -16,6 +16,7 @@ public class GooseTrigger : MonoBehaviour
     public GameObject wool;
     public Image dkrV;
     public Image ticketV;
+    public Image MorsynkaV;
     public Image imageComponent;
 
     public float timeToCount = 5f;
@@ -62,6 +63,13 @@ public class GooseTrigger : MonoBehaviour
             ticketV.enabled = true;
             IsTicketInInventory = true;
             StartCoroutine(FadeInT());
+            GetComponent<AudioSource>().Play();
+        }
+        if (PlayerController.Morsynka == 1)
+        {
+            PlayerController.Morsynka = 0;
+            MorsynkaV.enabled = true;
+            StartCoroutine(FadeInM());
             GetComponent<AudioSource>().Play();
         }
     }
@@ -118,6 +126,34 @@ public class GooseTrigger : MonoBehaviour
 
         ticketV.enabled = false;
         ticket.SetActive(true);
+    }
+
+    IEnumerator FadeInM()
+    {
+        MorsynkaV.color = new Color(MorsynkaV.color.r, MorsynkaV.color.g, MorsynkaV.color.b, 0);
+
+        while (MorsynkaV.color.a < 1)
+        {
+            MorsynkaV.color = new Color(MorsynkaV.color.r, MorsynkaV.color.g, MorsynkaV.color.b, MorsynkaV.color.a + Time.deltaTime);
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(1);
+
+        StartCoroutine(FadeOutM());
+    }
+
+    IEnumerator FadeOutM()
+    {
+        while (MorsynkaV.color.a > 0)
+        {
+            MorsynkaV.color = new Color(MorsynkaV.color.r, MorsynkaV.color.g, MorsynkaV.color.b, MorsynkaV.color.a - Time.deltaTime);
+            yield return null;
+        }
+
+        MorsynkaV.enabled = false;
+        MorsyankaTrigger.MorsynkaPlay = 1;
+        feather.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
