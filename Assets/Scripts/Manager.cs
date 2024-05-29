@@ -15,6 +15,7 @@ public class ButtonManager : MonoBehaviour
     {
         fadeImage.GameObject().SetActive(false);
         audioSource.Pause();
+        Application.targetFrameRate = 120;
     }
 
     public void Play()
@@ -24,6 +25,7 @@ public class ButtonManager : MonoBehaviour
         Invoke("Fade", 0);
         Invoke("PlayAudio", 2f);
         Invoke("LoadFirstScene", 9f);
+        Application.targetFrameRate = 120;
     }
 
     private void Fade() =>  StartCoroutine(FadeIn());
