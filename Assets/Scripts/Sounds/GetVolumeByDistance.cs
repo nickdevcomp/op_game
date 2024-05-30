@@ -8,6 +8,9 @@ public class SoundManager : MonoBehaviour
     public float maxVolume = 1f;
     public float minVolume;
     public float volumeRange = 5f;
+    public int PlayingCount;
+    private int count;
+    public float DistanceToActivate;
 
     private void Start()
     {
@@ -16,12 +19,17 @@ public class SoundManager : MonoBehaviour
 
     void Update()
     {
-        if (!audioSource.isPlaying)
+        var distance = Vector2.Distance(player.position, transform.position);
+
+        if (!audioSource.isPlaying && distance <= DistanceToActivate)
         {
-            audioSource.Play();
+            if (count < PlayingCount)
+            {
+                audioSource.Play();
+                count += 1;
+            }
         }
 
-        var distance = Vector2.Distance(player.position, transform.position);
         var volume = maxVolume - distance / volumeRange * (maxVolume - minVolume);
         audioSource.volume = Mathf.Clamp(volume, minVolume, maxVolume);
     }

@@ -592,6 +592,8 @@ MonoBehaviour:
   maxVolume: 1
   minVolume: 0
   volumeRange: 5
+  PlayingCount: 100
+  DistanceToActivate: 100
 --- !u!82 &534937121
 AudioSource:
   m_ObjectHideFlags: 0
