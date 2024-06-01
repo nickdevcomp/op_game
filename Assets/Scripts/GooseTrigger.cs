@@ -8,10 +8,10 @@ using UnityEngine.UI;
 public class GooseTrigger : MonoBehaviour
 {
     public int meetingCount;
-    public GameObject balance;
-    public GameObject feather;
-    public GameObject ticket;
-    public GameObject dkr;
+    public Image balance;
+    public Image feather;
+    public Image ticket;
+    public Image dkr;
     public GameObject money;
     public GameObject wool;
     public Image dkrV;
@@ -44,6 +44,22 @@ public class GooseTrigger : MonoBehaviour
                 this.meetingCount += 1;
                 break;
         }
+    }
+
+    private void Start()
+    {
+
+        Color color = feather.color;
+        color.a = 0.03f;
+        feather.color = color;
+
+        color = ticket.color;
+        color.a = 0.03f;
+        ticket.color = color;
+
+        color = dkr.color;
+        color.a = 0.03f;
+        dkr.color = color;
     }
 
 
@@ -98,7 +114,9 @@ public class GooseTrigger : MonoBehaviour
         }
 
         dkrV.enabled = false;
-        dkr.SetActive(true);
+        Color color = dkr.color;
+        color.a = 1f;
+        dkr.color = color;
     }
 
     IEnumerator FadeInT()
@@ -125,7 +143,9 @@ public class GooseTrigger : MonoBehaviour
         }
 
         ticketV.enabled = false;
-        ticket.SetActive(true);
+        Color color = ticket.color;
+        color.a = 1f;
+        ticket.color = color;
     }
 
     IEnumerator FadeInM()
@@ -153,7 +173,9 @@ public class GooseTrigger : MonoBehaviour
 
         MorsynkaV.enabled = false;
         MorsyankaTrigger.MorsynkaPlay = 1;
-        feather.SetActive(false);
+        Color color = feather.color;
+        color.a = 1f;
+        feather.color = color;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -161,7 +183,9 @@ public class GooseTrigger : MonoBehaviour
         if (meetingCount == 4)
         {
             wool.SetActive(false);
-            feather.SetActive(true);
+            Color color = feather.color;
+            color.a = 1f;
+            feather.color = color;
             GetComponent<AudioSource>().Play();
             meetingCount += 1;
             PlayerController.Feather = 1;
@@ -170,7 +194,9 @@ public class GooseTrigger : MonoBehaviour
         if (meetingCount == 2 && IsDKRInInventory)
         {
             IsDKRInInventory = false;
-            dkr.SetActive(false);
+            Color color = dkr.color;
+            color.a = 0.03f;
+            dkr.color = color;
             GetComponent<AudioSource>().Play();
             meetingCount += 1;
         }
@@ -178,16 +204,17 @@ public class GooseTrigger : MonoBehaviour
         if (meetingCount == 1)
         {
             money.SetActive(false);
-            balance.SetActive(true);
             GetComponent<AudioSource>().Play();
-            PlayerController.Balance = 1;
+            PlayerController.Balance += 1;
             meetingCount += 1;
         }
         
         if (meetingCount == 0 && IsTicketInInventory)
         {
             IsTicketInInventory = false;
-            ticket.SetActive(false);
+            Color color = ticket.color;
+            color.a = 0.03f;
+            ticket.color = color;
             GetComponent<AudioSource>().Play();
             meetingCount += 1;
         }

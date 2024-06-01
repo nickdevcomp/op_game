@@ -1,13 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShipTrigger : MonoBehaviour
 {
-    public GameObject shipInventary;
+    public Image shipInventary;
     public GameObject puddle;
     public GameObject shipWithPuddle;
     public int meetingCount;
+
+    private void Start()
+    {
+        Color color = shipInventary.color;
+        color.a = 0.03f;
+        shipInventary.color = color;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,7 +24,9 @@ public class ShipTrigger : MonoBehaviour
         GetComponent<AudioSource>().Play();
         shipWithPuddle.SetActive(false);
         puddle.SetActive(true);
-        shipInventary.SetActive(true);
+        Color color = shipInventary.color;
+        color.a = 1f;
+        shipInventary.color = color;
         meetingCount++;
         PlayerController.Ship = 1;
     }

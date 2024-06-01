@@ -1,4 +1,7 @@
+using System.Drawing;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,12 +16,13 @@ public class PlayerController : MonoBehaviour
     private float startTime;
     private float endTime;
     private float elapsedTime;
+    public Text quantity;
 
     public static int Ticket;
     public static int Dkr;
     public static int Ship;
     public static int Morsynka;
-    public static int Balance;
+    public static int Balance = 0;
     public static int Feather;
 
 
@@ -38,6 +42,12 @@ public class PlayerController : MonoBehaviour
     {
         MoveCharacter();
         UpdateFear();
+        UpdateQuantity();
+    }
+
+    private void UpdateQuantity()
+    {
+        quantity.text = "<size=10><color=#fff>x " + Balance.ToString() + "</color></size>";
     }
 
     private void MoveCharacter()

@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClownTrigger : MonoBehaviour
 {
-    public GameObject shipInventary;
+    public Image shipInventary;
     public GameObject money;
     public GameObject balance;
     public int meetingCount;
@@ -15,11 +16,13 @@ public class ClownTrigger : MonoBehaviour
             meetingCount += 1;
             money.SetActive(false);
             balance.SetActive(true);
-            PlayerController.Balance = 1;
+            PlayerController.Balance += 1;
         }
         if (meetingCount == 0 && PlayerController.Ship == 1)
         {
-            shipInventary.SetActive(false);
+            Color color = shipInventary.color;
+            color.a = 0.03f;
+            shipInventary.color = color;
             meetingCount += 1;
             PlayerController.Ship = 0;
         }

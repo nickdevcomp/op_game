@@ -14,12 +14,11 @@ public class CasinoTrigger : MonoBehaviour
 
     public void Update()
     {
-        if (!isPlayerNear) 
+        if (!isPlayerNear || (PlayerController.Feather == 0 && meetingCount == 2)) 
             return;
         if (Input.GetKeyDown(KeyCode.E) && PlayerController.Balance != 0 && meetingCount <= 2)
         {
             PlayerController.Balance -= 1;
-            balance.SetActive(false);
             GetComponent<AudioSource>().Play();
             StartCoroutine(StartTimer());
         }

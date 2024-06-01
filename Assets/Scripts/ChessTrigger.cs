@@ -36,7 +36,7 @@ public class ChessTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((!isPlayerNear && isPlay == 0) || PlayerController.Feather == 0)
+        if ((!isPlayerNear && isPlay == 0))
             return;
         if (Input.GetKeyDown(KeyCode.E) && win == 0 && isPlay == 0)
         {
@@ -75,7 +75,7 @@ public class ChessTrigger : MonoBehaviour
             gameState = 2;
             audioSource.PlayOneShot(buttonClickSound);
             win = 1;
-            PlayerController.Balance = 1;
+            PlayerController.Balance += 1;
             balance.SetActive(true);
             StartCoroutine(StartTimer());
         }
