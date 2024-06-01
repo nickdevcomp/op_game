@@ -17,7 +17,6 @@ public class Fear : MonoBehaviour
         switch (FearValue)
         {
             case 1:
-                //Camera.main.gameObject.AddComponent<CameraShake>();
                 GetComponent<AudioSource>().Play();
                 CameraController.FearValue = 1;
                 break;

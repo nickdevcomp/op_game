@@ -24,17 +24,14 @@ public class ChessTrigger : MonoBehaviour
     public float timeToCount = 2f;
     private bool isCounting;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         ButtonONE.onClick.AddListener(OnButtonClick1);
         ButtonTWO.onClick.AddListener(OnButtonClick2);
         audioSource = gameObject.AddComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if ((!isPlayerNear && isPlay == 0))
             return;
@@ -56,7 +53,7 @@ public class ChessTrigger : MonoBehaviour
         }
     }
 
-    public void OnButtonClick1()
+    private void OnButtonClick1()
     {
         if (isPlay == 1 && gameState == 0)
         {
@@ -67,7 +64,7 @@ public class ChessTrigger : MonoBehaviour
         
     }
 
-    public void OnButtonClick2()
+    private void OnButtonClick2()
     {
         if (isPlay == 1 && gameState == 1)
         {

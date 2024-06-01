@@ -1,10 +1,16 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WST : MonoBehaviour
 {
     public Image image;
+    private bool isShowed;
+    public AudioSource wastedSound;
+    [SerializeField] 
+    public PlayerController Player;
 
     void Start()
     {
@@ -13,8 +19,9 @@ public class WST : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Player.IsDied && !isShowed)
         {
+            isShowed = true;
             ShowWastedScreen();
         }
     }
@@ -23,7 +30,7 @@ public class WST : MonoBehaviour
     {
         image.enabled = true;
         StartCoroutine(FadeIn());
-        GetComponent<AudioSource>().Play();
+        wastedSound.Play();
     }
 
     IEnumerator FadeIn()
@@ -36,7 +43,9 @@ public class WST : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(10);
+        
+        SceneManager.LoadScene("Menu");
 
         StartCoroutine(FadeOut());
     }
@@ -48,7 +57,7 @@ public class WST : MonoBehaviour
             image.color = new Color(image.color.r, image.color.g, image.color.b, image.color.a - Time.deltaTime);
             yield return null;
         }
-
+        
         image.enabled = false;
     }
 }

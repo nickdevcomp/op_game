@@ -3071,6 +3071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.7
+  quantity: {fileID: 0}
   isScaryFloor: 0
   characterSprite: {fileID: 1643112836}
 --- !u!114 &1643112845

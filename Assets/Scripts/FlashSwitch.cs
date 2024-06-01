@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 public class FlashSwitch : MonoBehaviour
 {
-    private Light flashLight;
+    public static Light flashLight;
     private readonly KeyCode flashLightKeyCode = KeyCode.F;
     public AudioClip FlashLightSwitchSound;
 

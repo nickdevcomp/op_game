@@ -1,6 +1,7 @@
 using System.Drawing;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public static int Morsynka;
     public static int Balance = 0;
     public static int Feather;
+    public bool IsDied;
 
 
     [SerializeField] 
@@ -52,6 +54,9 @@ public class PlayerController : MonoBehaviour
 
     private void MoveCharacter()
     {
+        if (IsDied)
+            return;
+        
         input = new Vector2(Input.GetAxis("Horizontal"), 0);
         isWalking = input.x != 0;
         isRunning = input.x != 0 && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift));
@@ -65,7 +70,9 @@ public class PlayerController : MonoBehaviour
             transform.position += input * (movementSpeed * Time.deltaTime);
         }
         else
+        {
             animator.Play("Calm");
+        }
     }
 
     private void UpdateFear()
@@ -74,8 +81,21 @@ public class PlayerController : MonoBehaviour
             return;
         endTime = Time.realtimeSinceStartup;
         elapsedTime = endTime - startTime;
-        if (elapsedTime >= 10f)
+        
+        if (elapsedTime >= 10f && !IsDied)
+        {
             Fear.FearValue = 1;
+        }
+
+        if (elapsedTime >= 15f)
+        {
+            IsDied = true;
+            animator.Play("Falling");
+            Fear.FearValue = 0;
+            elapsedTime = 0f;
+        }
+        
+        
     }
 
     private void Reflect(Vector2 movement)
