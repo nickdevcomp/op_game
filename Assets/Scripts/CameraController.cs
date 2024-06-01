@@ -19,9 +19,6 @@ public class CameraController : MonoBehaviour
     private float bottomLimit;
     [SerializeField] 
     private float upperLimit;
-
-    // [SerializeField] 
-    // private bool isScaryFloor;
     
 
     private void Start()
@@ -72,7 +69,7 @@ public class CameraController : MonoBehaviour
         {
             var camTransform = GetComponent<Transform>();
             var originPos = camTransform.localPosition;
-            float shakeDur = 1f, shakeAmount = 0.1f, decreaseFact = 1.5f;
+            float shakeDur = 0.1f, shakeAmount = 0.01f, decreaseFact = 0.5f;
 
             camTransform.localPosition = originPos + UnityEngine.Random.insideUnitSphere * shakeAmount;
         }
