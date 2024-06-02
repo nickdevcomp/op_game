@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 public class LiftController : MonoBehaviour
 {
     private Animator animator;
-    public float timeToCount = 4f; // Время таймера в секундах
+    public float timeToCount; // Время таймера в секундах
     private bool isCounting = false; // Флаг, показывающий, запущен ли таймер
+    public AudioSource WhyDidntStop;
 
     IEnumerator StartTimer()
     {
@@ -16,6 +17,8 @@ public class LiftController : MonoBehaviour
         {
             yield return new WaitForSeconds(1f); // Ждем одну секунду
             timeToCount -= 1f; // Уменьшаем время на одну секунду
+            if (Mathf.Approximately(timeToCount, 4f))
+                WhyDidntStop.Play();
             Debug.Log(timeToCount); // Выводим оставшееся время в консоль
         }
         isCounting = false; // Таймер закончился, сбрасываем флаг
