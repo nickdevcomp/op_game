@@ -5,20 +5,17 @@ using UnityEngine.SceneManagement;
 public class OldLiftButtonTrigger : MonoBehaviour
 {
     public GameObject otherObject;
-
     private Animator otherObjectAnimator;
-
     private Animator animator;
     
-    [SerializeField]
     public float timeToCount;
     private bool isCounting;
     private bool startLoadScene;
-
     
     void Start()
     {
         otherObjectAnimator = otherObject.GetComponent<Animator>();
+        timeToCount = 5f;
     }
 
     IEnumerator StartTimer()
@@ -31,6 +28,7 @@ public class OldLiftButtonTrigger : MonoBehaviour
             Debug.Log(timeToCount);
         }
         isCounting = false;
+        
         SceneManager.LoadScene("Plotinka");
     }
 

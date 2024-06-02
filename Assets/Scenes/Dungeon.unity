@@ -1055,7 +1055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 736de12b2c8730242be2c18c0a4ed2f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipInventary: {fileID: 2086376060}
+  shipInventory: {fileID: 2086376060}
   money: {fileID: 1454051219}
   balance: {fileID: 888324520}
   meetingCount: 0
@@ -1478,7 +1478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc78b9f5650a0848a478b13411c730f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipInventary: {fileID: 2086376060}
+  shipInventory: {fileID: 2086376060}
   puddle: {fileID: 1873058268}
   shipWithPuddle: {fileID: 303337113}
   meetingCount: 0
@@ -3140,7 +3140,6 @@ MonoBehaviour:
   maxVolume: 1
   minVolume: 0
   volumeRange: 100
-  PlayingCount: 1
   DistanceToActivate: 2
 --- !u!82 &752351042
 AudioSource:
@@ -3417,7 +3416,6 @@ MonoBehaviour:
   maxVolume: 1
   minVolume: 0
   volumeRange: 8
-  PlayingCount: 1
   DistanceToActivate: 7
 --- !u!82 &759123049
 AudioSource:
@@ -3564,7 +3562,6 @@ MonoBehaviour:
   maxVolume: 1
   minVolume: 0
   volumeRange: 100
-  PlayingCount: 1
   DistanceToActivate: 2
 --- !u!82 &829612498
 AudioSource:
@@ -4982,7 +4979,6 @@ MonoBehaviour:
   maxVolume: 2
   minVolume: 0
   volumeRange: 7.6
-  PlayingCount: 1
   DistanceToActivate: 5
 --- !u!82 &1217579982
 AudioSource:
@@ -6858,6 +6854,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2437860715664004767, guid: ba6413bbddff6ed4aacf8cb42d03769a, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2437860715664004767, guid: ba6413bbddff6ed4aacf8cb42d03769a, type: 3}
       propertyPath: m_Size.x
       value: 0.8372093
       objectReference: {fileID: 0}
@@ -7023,6 +7023,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6214446067207826024, guid: ba6413bbddff6ed4aacf8cb42d03769a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1577804265}
+    - targetCorrespondingSourceObject: {fileID: 6214446067207826024, guid: ba6413bbddff6ed4aacf8cb42d03769a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1577804273}
   m_SourcePrefab: {fileID: 100100000, guid: ba6413bbddff6ed4aacf8cb42d03769a, type: 3}
 --- !u!4 &1577804235 stripped
 Transform:
@@ -7155,6 +7158,7 @@ MonoBehaviour:
   IsDied: 0
   isScaryFloor: 1
   characterSprite: {fileID: 1577804264}
+  flashlight: {fileID: 0}
 --- !u!114 &1577804260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7284,6 +7288,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1577804273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830493600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee9250f0e7d65a48bbba8d9d68b99b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1617803674
 GameObject:
   m_ObjectHideFlags: 0
@@ -7393,7 +7409,6 @@ MonoBehaviour:
   maxVolume: 1
   minVolume: 0
   volumeRange: 100
-  PlayingCount: 1
   DistanceToActivate: 2
 --- !u!82 &1641532447
 AudioSource:
@@ -7651,7 +7666,6 @@ MonoBehaviour:
   maxVolume: 1
   minVolume: 0
   volumeRange: 13.14
-  PlayingCount: 1
   DistanceToActivate: 9.96
 --- !u!1 &1686012621
 GameObject:
@@ -7817,7 +7831,6 @@ MonoBehaviour:
   maxVolume: 1
   minVolume: 0
   volumeRange: 100
-  PlayingCount: 1
   DistanceToActivate: 2
 --- !u!82 &1689960823
 AudioSource:
@@ -9093,7 +9106,6 @@ MonoBehaviour:
   maxVolume: 1
   minVolume: 0
   volumeRange: 100
-  PlayingCount: 1
   DistanceToActivate: 2
 --- !u!82 &1933539872
 AudioSource:
@@ -9240,7 +9252,6 @@ MonoBehaviour:
   maxVolume: 1
   minVolume: 0
   volumeRange: 100
-  PlayingCount: 1
   DistanceToActivate: 2
 --- !u!82 &1954315723
 AudioSource:
@@ -9580,7 +9591,6 @@ MonoBehaviour:
   maxVolume: 1
   minVolume: 0
   volumeRange: 10
-  PlayingCount: 100
   DistanceToActivate: 100
 --- !u!82 &2080887000
 AudioSource:
@@ -9802,7 +9812,6 @@ MonoBehaviour:
   maxVolume: 1
   minVolume: 0
   volumeRange: 100
-  PlayingCount: 1
   DistanceToActivate: 2
 --- !u!82 &2103192929
 AudioSource:

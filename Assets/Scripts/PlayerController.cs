@@ -1,7 +1,5 @@
-using System.Drawing;
-using Unity.VisualScripting;
+
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -10,36 +8,34 @@ public class PlayerController : MonoBehaviour
     private Vector3 input;
     private bool isWalking;
     private bool isRunning;
-    
+
     private Animator animator;
-    private bool isRight;
+    private bool isRight = true; // Предполагаем, что персонаж изначально смотрит вправо
     private float timer = 0f;
-    private float startTime;
     private float endTime;
     private float elapsedTime;
     public Text quantity;
+    public static int Balance;
 
-    public static int Ticket;
-    public static int Dkr;
-    public static int Ship;
-    public static int Morsynka;
-    public static int Balance = 0;
-    public static int Feather;
+    public static float StartTime;
     public bool IsDied;
 
-
-    [SerializeField] 
+    [SerializeField]
     private bool isScaryFloor;
+
+    [SerializeField]
+    private SpriteRenderer characterSprite;
     
-    [SerializeField] 
-    private SpriteRenderer characterSprite; 
-    
+    [SerializeField]
+    private Light flashlight; // Добавляем ссылку на источник света
+
     private void Start()
     {
+        Balance = 0;
         animator = GetComponent<Animator>();
-        startTime = Time.realtimeSinceStartup;
+        StartTime = Time.realtimeSinceStartup;
     }
-    
+
     private void Update()
     {
         MoveCharacter();
@@ -49,19 +45,17 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateQuantity()
     {
-        if (quantity != null)
+        if (quantity != null) 
             quantity.text = "<size=10><color=#fff>x " + Balance.ToString() + "</color></size>";
     }
 
     private void MoveCharacter()
     {
-        if (IsDied)
+        if (IsDied) 
             return;
-        
         input = new Vector2(Input.GetAxis("Horizontal"), 0);
         isWalking = input.x != 0;
         isRunning = input.x != 0 && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift));
-
         if (isWalking || isRunning)
         {
             var animationToPlay = isRunning ? "Run" : "Walk";
@@ -78,11 +72,9 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateFear()
     {
-        if (!isScaryFloor)
-            return;
+        if (!isScaryFloor) return;
         endTime = Time.realtimeSinceStartup;
-        elapsedTime = endTime - startTime;
-        
+        elapsedTime = endTime - StartTime;
         if (elapsedTime >= 10f && !IsDied)
         {
             Fear.FearValue = 1;
@@ -93,20 +85,28 @@ public class PlayerController : MonoBehaviour
             IsDied = true;
             animator.Play("Falling");
             Fear.FearValue = 0;
-            elapsedTime = 0f;
+            StartTime = Time.realtimeSinceStartup;
         }
-        
-        
     }
 
     private void Reflect(Vector2 movement)
     {
-        if (movement.x > 0 && !isRight || movement.x < 0 && isRight)
+        if ((!(movement.x > 0) || isRight) && (!(movement.x < 0) || !isRight)) 
+            return;
+        isRight = !isRight;
+
+        var newScale = transform.localScale;
+        newScale.x *= -1;
+        transform.localScale = newScale;
+
+        if (flashlight != null)
         {
-            transform.localScale *= new Vector2(-1, 1);
-            isRight = !isRight;
-            Fear.FearValue = 0;
-            startTime = Time.realtimeSinceStartup;
+            var lightRotation = flashlight.transform.localEulerAngles;
+            lightRotation.y += 180f;
+            flashlight.transform.localEulerAngles = lightRotation;
         }
+
+        Fear.FearValue = 0;
+        StartTime = Time.realtimeSinceStartup;
     }
 }

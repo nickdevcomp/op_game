@@ -53,6 +53,7 @@ public class GooseTrigger : MonoBehaviour
 
     private void Start()
     {
+        meetingCount = 0;
 
         Color color = feather.color;
         color.a = 0.03f;
@@ -70,26 +71,26 @@ public class GooseTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerController.Dkr == 1)
+        if (Inventory.Dkr == 1)
         {
-            PlayerController.Dkr = 0;
+            Inventory.Dkr = 0;
             dkrV.enabled = true;
             IsDKRInInventory = true;
             StartCoroutine(FadeInD());
             GetComponent<AudioSource>().Play();
             
         }
-        if (PlayerController.Ticket == 1)
+        if (Inventory.Ticket == 1)
         {
-            PlayerController.Ticket = 0;
+            Inventory.Ticket = 0;
             ticketV.enabled = true;
             IsTicketInInventory = true;
             StartCoroutine(FadeInT());
             GetComponent<AudioSource>().Play();
         }
-        if (PlayerController.Morsynka == 1)
+        if (Inventory.Morsynka == 1)
         {
-            PlayerController.Morsynka = 0;
+            Inventory.Morsynka = 0;
             MorsynkaV.enabled = true;
             StartCoroutine(FadeInM());
             GetComponent<AudioSource>().Play();
@@ -178,7 +179,7 @@ public class GooseTrigger : MonoBehaviour
         }
 
         MorsynkaV.enabled = false;
-        MorsyankaTrigger.MorsynkaPlay = 1;
+        MorsyankaTrigger.IsPlay = true;
         Color color = feather.color;
         color.a = 1f;
         feather.color = color;
@@ -195,7 +196,7 @@ public class GooseTrigger : MonoBehaviour
             //GetComponent<AudioSource>().Play();
             GooseSound3.Play();
             meetingCount += 1;
-            PlayerController.Feather = 1;
+            Inventory.Feather = 1;
         }
 
         if (meetingCount == 2 && IsDKRInInventory)

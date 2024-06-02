@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -6,7 +7,7 @@ using UnityEngine.UI;
 
 public class MorsyankaTrigger : MonoBehaviour
 {
-    public static int MorsynkaPlay;
+    public static bool IsPlay;
     public Image game;
     public Button ButtonWin;
     public Sprite winBoard;
@@ -20,12 +21,17 @@ public class MorsyankaTrigger : MonoBehaviour
     public Texture2D cursorTexture; // Текстура для кастомного курсора
     public Vector2 hotSpot = Vector2.zero; // Точка фокуса курсора
     public CursorMode cursorMode = CursorMode.Auto;
-    
+
+    private void Start()
+    {
+        IsPlay = false;
+    }
+
     void Update()
     {
-        if (MorsynkaPlay == 1)
+        if (IsPlay)
         {
-            MorsynkaPlay = 0;
+            IsPlay = false;
             HandleGame();
             player.SetActive(false);
             feather.SetActive(false);
@@ -44,6 +50,7 @@ public class MorsyankaTrigger : MonoBehaviour
         game.sprite = winBoard;
         GetComponent<AudioSource>().Play();
         key.SetActive(true);
+        PlayerController.StartTime = Time.realtimeSinceStartup;
         StartCoroutine(StartTimer());
     }
 

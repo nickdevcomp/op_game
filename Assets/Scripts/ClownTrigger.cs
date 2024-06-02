@@ -1,13 +1,19 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class ClownTrigger : MonoBehaviour
 {
-    public Image shipInventary;
+    public Image shipInventory;
     public GameObject money;
     public GameObject balance;
     public int meetingCount;
     public AudioSource Source;
+
+    private void Start()
+    {
+        meetingCount = 0;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -20,13 +26,13 @@ public class ClownTrigger : MonoBehaviour
             balance.SetActive(true);
             PlayerController.Balance += 1;
         }
-        if (meetingCount == 0 && PlayerController.Ship == 1)
+        if (meetingCount == 0 && Inventory.Ship == 1)
         {
-            var color = shipInventary.color;
+            var color = shipInventory.color;
             color.a = 0.03f;
-            shipInventary.color = color;
+            shipInventory.color = color;
             meetingCount += 1;
-            PlayerController.Ship = 0;
+            Inventory.Ship = 0;
             Source.Play();
         }
     }

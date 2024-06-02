@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class ChessTrigger : MonoBehaviour
 {
     private bool isPlayerNear;
-    public static int win;
-    public static int isPlay;
+    private static int win;
+    private static int isPlay;
     public GameObject balance;
     public GameObject board;
     public GameObject boardOnLavka;
@@ -20,8 +20,8 @@ public class ChessTrigger : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip buttonClickSound;
 
-    public int gameState = 0;
-    public float timeToCount = 2f;
+    public int gameState;
+    public float timeToCount;
     private bool isCounting;
 
     private void Start()
@@ -29,11 +29,16 @@ public class ChessTrigger : MonoBehaviour
         ButtonONE.onClick.AddListener(OnButtonClick1);
         ButtonTWO.onClick.AddListener(OnButtonClick2);
         audioSource = gameObject.AddComponent<AudioSource>();
+        win = 0;
+        isPlay = 0;
+        gameState = 0;
+        timeToCount = 2f;
+        isCounting = false;
     }
 
     private void Update()
     {
-        if ((!isPlayerNear && isPlay == 0))
+        if (!isPlayerNear && isPlay == 0)
             return;
         if (Input.GetKeyDown(KeyCode.E) && win == 0 && isPlay == 0)
         {
@@ -43,13 +48,14 @@ public class ChessTrigger : MonoBehaviour
             board.SetActive(true);
             isPlay = 1;
         }
-        else if (Input.GetKeyDown(KeyCode.E) && win == 0 && isPlay == 1)
+        else if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Escape)) && win == 0 && isPlay == 1)
         {
             GetComponent<AudioSource>().Play();
             boardOnLavka.SetActive(true);
             player.SetActive(true);
             board.SetActive(false);
             isPlay = 0;
+            PlayerController.StartTime = Time.realtimeSinceStartup;
         }
     }
 
@@ -74,6 +80,7 @@ public class ChessTrigger : MonoBehaviour
             win = 1;
             PlayerController.Balance += 1;
             balance.SetActive(true);
+            PlayerController.StartTime = Time.realtimeSinceStartup;
             StartCoroutine(StartTimer());
         }
             

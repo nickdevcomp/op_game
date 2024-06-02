@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CasinoTrigger : MonoBehaviour
 {
-    public float timeToCount = 2f;
+    public float timeToCount;
     private bool isCounting;
     private bool isPlayerNear;
 
@@ -16,9 +16,16 @@ public class CasinoTrigger : MonoBehaviour
 
     public GameObject balance;
 
-    public void Update()
+    private void Start()
     {
-        if (!isPlayerNear || (PlayerController.Feather == 0 && meetingCount == 2)) 
+        timeToCount = 2f;
+        isCounting = false;
+        isPlayerNear = false;
+    }
+
+    private void Update()
+    {
+        if (!isPlayerNear || (Inventory.Feather == 0 && meetingCount == 2)) 
             return;
         if (Input.GetKeyDown(KeyCode.E) && PlayerController.Balance != 0 && meetingCount <= 2)
         {
@@ -43,15 +50,15 @@ public class CasinoTrigger : MonoBehaviour
         switch (meetingCount)
         {
             case 2:
-                PlayerController.Morsynka = 1;
+                Inventory.Morsynka = 1;
                 MorsyankaSound.Play();
                 break;
             case 1:
-                PlayerController.Dkr = 1;
+                Inventory.Dkr = 1;
                 DKRSound.Play();
                 break;
             case 0:
-                PlayerController.Ticket = 1;
+                Inventory.Ticket = 1;
                 TicketSound.Play();
                 break;
         }

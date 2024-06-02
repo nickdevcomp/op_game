@@ -484,7 +484,6 @@ MonoBehaviour:
   maxVolume: 1
   minVolume: 0
   volumeRange: 100
-  PlayingCount: 1
   DistanceToActivate: 2
 --- !u!82 &371940133
 AudioSource:
@@ -739,7 +738,6 @@ MonoBehaviour:
   maxVolume: 1
   minVolume: 0
   volumeRange: 5
-  PlayingCount: 100
   DistanceToActivate: 100
 --- !u!82 &534937121
 AudioSource:
@@ -1203,7 +1201,6 @@ MonoBehaviour:
   maxVolume: 1
   minVolume: 0
   volumeRange: 100
-  PlayingCount: 1
   DistanceToActivate: 2
 --- !u!82 &646889827
 AudioSource:
@@ -1425,7 +1422,6 @@ MonoBehaviour:
   maxVolume: 1
   minVolume: 0
   volumeRange: 100
-  PlayingCount: 1
   DistanceToActivate: 2
 --- !u!82 &739553662
 AudioSource:
@@ -1981,7 +1977,6 @@ MonoBehaviour:
   maxVolume: 1
   minVolume: 0
   volumeRange: 100
-  PlayingCount: 1
   DistanceToActivate: 2
 --- !u!82 &1090846894
 AudioSource:
@@ -3544,7 +3539,7 @@ SpriteRenderer:
   m_SortingOrder: 10
   m_Sprite: {fileID: -30542257, guid: 135f9426acbb9c74a9ff6de760ad3430, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.7826087, y: 1.0434783}
@@ -3663,6 +3658,7 @@ MonoBehaviour:
   IsDied: 0
   isScaryFloor: 0
   characterSprite: {fileID: 1643112836}
+  flashlight: {fileID: 0}
 --- !u!114 &1643112845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4471,7 +4467,6 @@ MonoBehaviour:
   maxVolume: 1
   minVolume: 0
   volumeRange: 100
-  PlayingCount: 1
   DistanceToActivate: 2
 --- !u!82 &2135041033
 AudioSource:

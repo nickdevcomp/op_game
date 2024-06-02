@@ -6,8 +6,14 @@ using UnityEngine.Serialization;
 public class Fear : MonoBehaviour
 {
 
-    public static int FearValue = 0;
+    public static int FearValue;
     public int Saved;
+    
+    private void Start()
+    {
+        FearValue = 0;
+        Saved = 0;
+    }
 
     void Update()
     {
