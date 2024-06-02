@@ -7,6 +7,7 @@ public class OldLiftButtonTrigger : MonoBehaviour
     public GameObject otherObject;
     private Animator otherObjectAnimator;
     private Animator animator;
+    public AudioSource ChatacterThoughs;
     
     public AudioSource LiftSound;
 
@@ -58,6 +59,10 @@ public class OldLiftButtonTrigger : MonoBehaviour
             isPlayLiftAnimation = true;
             otherObjectAnimator.SetBool("IsSwitchOn", true);
             LiftSound.Play();
+            Invoke("PlayThoughs",LiftSound.clip.length + 1f);
+            
         }
     }
+    
+    private void PlayThoughs() => ChatacterThoughs.Play();
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
@@ -10,8 +8,8 @@ public class Inventory : MonoBehaviour
     public static int Morsynka;
     public static int Feather;
     public static int Key;
-    
-    void Start()
+
+    private void Start()
     {
         Ticket = 0;
         Dkr = 0;

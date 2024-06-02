@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class CasinoTrigger : MonoBehaviour
@@ -11,6 +12,8 @@ public class CasinoTrigger : MonoBehaviour
     public AudioSource TicketSound;
     public AudioSource DKRSound;
     public AudioSource MorsyankaSound;
+
+    public AudioSource ErrorSound;
 
     public int meetingCount;
 
@@ -25,8 +28,17 @@ public class CasinoTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (!isPlayerNear || (Inventory.Feather == 0 && meetingCount == 2)) 
+        if (!isPlayerNear)
+        {
             return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && Inventory.Feather == 0 && meetingCount == 2)
+        {
+            ErrorSound.Play(); 
+            return; 
+        }
+
         if (Input.GetKeyDown(KeyCode.E) && PlayerController.Balance != 0 && meetingCount <= 2)
         {
             PlayerController.Balance -= 1;
@@ -35,7 +47,7 @@ public class CasinoTrigger : MonoBehaviour
         }
     }
 
-    IEnumerator StartTimer()
+    private IEnumerator StartTimer()
     {
         isCounting = true;
         while (timeToCount > 0) 
