@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Scripts/LiftController.cs" />
+    <Compile Include="Assets/Scripts/WastedScreen.cs" />
     <Compile Include="Assets/Scripts/OldLiftButtonTrigger.cs" />
     <Compile Include="Assets/Scripts/HintManager.cs" />
     <Compile Include="Assets/Scripts/Inventory.cs" />
@@ -54,7 +55,6 @@
     <Compile Include="Assets/Scripts/PostersManager.cs" />
     <Compile Include="Assets/Scripts/GooseTrigger.cs" />
     <Compile Include="Assets/Scripts/WinTrigger.cs" />
-    <Compile Include="Assets/Scripts/WST.cs" />
     <Compile Include="Assets/Scripts/OpenLift.cs" />
     <Compile Include="Assets/Scripts/FootSteep.cs" />
     <Compile Include="Assets/Scripts/BackGroundLoop.cs" />

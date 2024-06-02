@@ -1554,8 +1554,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -93.58995, y: -94.62}
-  m_SizeDelta: {x: 9.242, y: 4.9809}
+  m_AnchoredPosition: {x: -93.377426, y: -94.50547}
+  m_SizeDelta: {x: 9.4453, y: 5.0904}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &206631953
 MonoBehaviour:
@@ -6689,9 +6689,9 @@ MonoBehaviour:
   dkr: {fileID: 1774653148}
   money: {fileID: 921766973}
   wool: {fileID: 2139641069}
-  dkrV: {fileID: 1617803676}
-  ticketV: {fileID: 1376854035}
-  MorsynkaV: {fileID: 290310706}
+  dkrView: {fileID: 1617803676}
+  ticketView: {fileID: 1376854035}
+  MorsynkaView: {fileID: 290310706}
   imageComponent: {fileID: 381124387}
   GooseSound1: {fileID: 1145529087}
   GooseSound2: {fileID: 1039147834}

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine;
-using UnityEngine.UI;
 
 public class RailTrigger : MonoBehaviour
 {
@@ -14,7 +9,7 @@ public class RailTrigger : MonoBehaviour
 
     private Animator animator;
     
-    public float timeToCount = 2f;
+    public float timeToCount = 1f;
     private bool isCounting;
     private bool btns;
 
@@ -52,15 +47,14 @@ public class RailTrigger : MonoBehaviour
     IEnumerator StartTimer()
     {
         isCounting = true;
-        while (timeToCount > 0) // Пока время не истечет
+        while (timeToCount > 0) 
         {
-            yield return new WaitForSeconds(1f); // Ждем одну секунду
-            timeToCount -= 1f; // Уменьшаем время на одну секунду
-            Debug.Log(timeToCount); // Выводим оставшееся время в консоль
+            yield return new WaitForSeconds(1f); 
+            timeToCount -= 1f; 
+            Debug.Log(timeToCount); 
         }
-        isCounting = false; // Таймер закончился, сбрасываем флаг
-                            // Сообщаем, что время истекло
-        timeToCount = 2f;
+        isCounting = false; 
+        timeToCount = 1f;
         Player.SetActive(true);
     }
 

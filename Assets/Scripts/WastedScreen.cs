@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class WST : MonoBehaviour
+public class WastedScreen : MonoBehaviour
 {
     public Image image;
     private bool isShowed;
@@ -45,8 +45,7 @@ public class WST : MonoBehaviour
 
         yield return new WaitForSeconds(10);
         
-        SceneManager.LoadScene("Menu");
-
+        SceneManager.LoadScene("Dungeon");
         StartCoroutine(FadeOut());
     }
 
