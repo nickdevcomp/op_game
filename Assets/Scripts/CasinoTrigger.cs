@@ -8,6 +8,10 @@ public class CasinoTrigger : MonoBehaviour
     private bool isCounting;
     private bool isPlayerNear;
 
+    public AudioSource TicketSound;
+    public AudioSource DKRSound;
+    public AudioSource MorsyankaSound;
+
     public int meetingCount;
 
     public GameObject balance;
@@ -40,12 +44,15 @@ public class CasinoTrigger : MonoBehaviour
         {
             case 2:
                 PlayerController.Morsynka = 1;
+                MorsyankaSound.Play();
                 break;
             case 1:
                 PlayerController.Dkr = 1;
+                DKRSound.Play();
                 break;
             case 0:
                 PlayerController.Ticket = 1;
+                TicketSound.Play();
                 break;
         }
 

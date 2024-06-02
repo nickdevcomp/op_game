@@ -7,9 +7,11 @@ public class ClownTrigger : MonoBehaviour
     public GameObject money;
     public GameObject balance;
     public int meetingCount;
+    public AudioSource Source;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        
         if (meetingCount == 1)
         {
             GetComponent<AudioSource>().Play();
@@ -20,11 +22,12 @@ public class ClownTrigger : MonoBehaviour
         }
         if (meetingCount == 0 && PlayerController.Ship == 1)
         {
-            Color color = shipInventary.color;
+            var color = shipInventary.color;
             color.a = 0.03f;
             shipInventary.color = color;
             meetingCount += 1;
             PlayerController.Ship = 0;
+            Source.Play();
         }
     }
 

@@ -12,7 +12,7 @@ public class ShipTrigger : MonoBehaviour
 
     private void Start()
     {
-        Color color = shipInventary.color;
+        var color = shipInventary.color;
         color.a = 0.03f;
         shipInventary.color = color;
     }
@@ -24,7 +24,7 @@ public class ShipTrigger : MonoBehaviour
         GetComponent<AudioSource>().Play();
         shipWithPuddle.SetActive(false);
         puddle.SetActive(true);
-        Color color = shipInventary.color;
+        var color = shipInventary.color;
         color.a = 1f;
         shipInventary.color = color;
         meetingCount++;
