@@ -520,7 +520,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 05e23465b61db4d5dbf16e46c257eaf0, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.497
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3729,7 +3729,7 @@ MonoBehaviour:
   minVolume: 0
   volumeRange: 20
   DistanceToActivate: 5
-  PlayingCount: 1
+  PlayingCount: 10
 --- !u!82 &771939352
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3742,7 +3742,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 40c7db904ac59441fa16e45bb7545fae, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.497
+  m_Volume: 0.787
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -9277,7 +9277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1577804235}
-  maxVolume: 1
+  maxVolume: 0.4
   minVolume: 0
   volumeRange: 100
   DistanceToActivate: 2
@@ -9738,7 +9738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1577804235}
-  maxVolume: 0.6
+  maxVolume: 0.2
   minVolume: 0
   volumeRange: 12
   DistanceToActivate: 5
@@ -9755,7 +9755,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 000b300a0d5c841fab018a8422a661e5, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.412
   m_Pitch: 1
   Loop: 0
   Mute: 0

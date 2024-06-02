@@ -59,7 +59,6 @@
     <Compile Include="Assets/Scripts/FootSteep.cs" />
     <Compile Include="Assets/Scripts/BackGroundLoop.cs" />
     <Compile Include="Assets/Scripts/CameraFollow.cs" />
-    <Compile Include="Assets/Scripts/MA sound.cs" />
     <Compile Include="Assets/Scripts/Sounds/GetVolumeByDistance.cs" />
     <Compile Include="Assets/Scripts/CasinoTrigger.cs" />
     <Compile Include="Assets/Scripts/MorsyankaTrigger.cs" />
