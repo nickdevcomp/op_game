@@ -20,14 +20,7 @@ public class MorsyankaTrigger : MonoBehaviour
     public Texture2D cursorTexture; // Текстура для кастомного курсора
     public Vector2 hotSpot = Vector2.zero; // Точка фокуса курсора
     public CursorMode cursorMode = CursorMode.Auto;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (MorsynkaPlay == 1)
