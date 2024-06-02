@@ -14,7 +14,7 @@ public class ShipTrigger : MonoBehaviour
     private void Start()
     {
         var color = shipInventory.color;
-        color.a = 0.03f;
+        color.a = 0f;
         shipInventory.color = color;
         meetingCount = 0;
     }

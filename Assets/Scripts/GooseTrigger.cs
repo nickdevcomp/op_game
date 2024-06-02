@@ -56,15 +56,15 @@ public class GooseTrigger : MonoBehaviour
         meetingCount = 0;
 
         Color color = feather.color;
-        color.a = 0.03f;
+        color.a = 0f;
         feather.color = color;
 
         color = ticket.color;
-        color.a = 0.03f;
+        color.a = 0f;
         ticket.color = color;
 
         color = dkr.color;
-        color.a = 0.03f;
+        color.a = 0f;
         dkr.color = color;
     }
 
@@ -203,7 +203,7 @@ public class GooseTrigger : MonoBehaviour
         {
             IsDKRInInventory = false;
             Color color = dkr.color;
-            color.a = 0.03f;
+            color.a = 0f;
             dkr.color = color;
             //GetComponent<AudioSource>().Play();
             GooseSound2.Play();
@@ -222,7 +222,7 @@ public class GooseTrigger : MonoBehaviour
         {
             IsTicketInInventory = false;
             Color color = ticket.color;
-            color.a = 0.03f;
+            color.a = 0f;
             ticket.color = color;
             //GetComponent<AudioSource>().Play(); 
             GooseSound1.Play();

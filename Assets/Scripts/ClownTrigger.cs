@@ -29,7 +29,7 @@ public class ClownTrigger : MonoBehaviour
         if (meetingCount == 0 && Inventory.Ship == 1)
         {
             var color = shipInventory.color;
-            color.a = 0.03f;
+            color.a = 0f;
             shipInventory.color = color;
             meetingCount += 1;
             Inventory.Ship = 0;
