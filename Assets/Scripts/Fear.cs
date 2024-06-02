@@ -8,7 +8,8 @@ public class Fear : MonoBehaviour
 
     public static int FearValue;
     public int Saved;
-    public AudioSource deathSound;
+    public AudioSource DeathSound;
+    public AudioSource DontTurnAround;
     
     private void Start()
     {
@@ -24,13 +25,15 @@ public class Fear : MonoBehaviour
         switch (FearValue)
         {
             case 1:
-                deathSound.Play();
+                DeathSound.Play();
+                DontTurnAround.Play();
                 GetComponent<AudioSource>().Play();
                 CameraController.FearValue = 1;
                 break;
             case 0:
                 GetComponent<AudioSource>().Pause();
-                deathSound.Stop();
+                DontTurnAround.Stop();
+                DeathSound.Stop();
                 CameraController.FearValue = 0;
                 break;
         }
