@@ -9,28 +9,27 @@ public class MorsyankaTrigger : MonoBehaviour
     public Button ButtonWin;
     public Sprite winBoard;
     public GameObject player;
-    public GameObject key;
     public GameObject feather;
 
     public float timeToCount = 2f;
     private bool isCounting;
 
-    public Texture2D cursorTexture; // Текстура для кастомного курсора
-    public Vector2 hotSpot = Vector2.zero; // Точка фокуса курсора
+    public Texture2D cursorTexture;
+    public Vector2 hotSpot = Vector2.zero;
     public CursorMode cursorMode = CursorMode.Auto;
 
     private void Start() => IsPlay = false;
 
     void Update()
     {
-        if (IsPlay)
-        {
-            IsPlay = false;
-            HandleGame();
-            player.SetActive(false);
-            feather.SetActive(false);
-            Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
-        }
+        if (!IsPlay)
+            return;
+        
+        IsPlay = false;
+        HandleGame();
+        player.SetActive(false);
+        feather.SetActive(false);
+        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
     }
 
     public void HandleGame()
@@ -43,9 +42,9 @@ public class MorsyankaTrigger : MonoBehaviour
     {
         game.sprite = winBoard;
         GetComponent<AudioSource>().Play();
-        key.SetActive(true);
         PlayerController.StartTime = Time.realtimeSinceStartup;
         StartCoroutine(StartTimer());
+        Inventory.Key = 1;
     }
 
     IEnumerator StartTimer()

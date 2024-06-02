@@ -56,8 +56,6 @@ public class WinTrigger : MonoBehaviour
         if (startLoadScene && Input.GetKey(KeyCode.E) && trigger)
         {
             trigger = false;
-            otherObjectAnimator.SetBool("IsSwitchOn", true);
-            GetComponent<AudioSource>().Play();
             StartCoroutine(StartTimer());
         }
     }

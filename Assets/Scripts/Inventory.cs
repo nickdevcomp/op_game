@@ -9,6 +9,7 @@ public class Inventory : MonoBehaviour
     public static int Ship;
     public static int Morsynka;
     public static int Feather;
+    public static int Key;
     
     void Start()
     {
@@ -17,5 +18,6 @@ public class Inventory : MonoBehaviour
         Ship = 0;
         Morsynka = 0;
         Feather = 0;
+        Key = 0;
     }
 }

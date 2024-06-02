@@ -8,9 +8,13 @@ public class OldLiftButtonTrigger : MonoBehaviour
     private Animator otherObjectAnimator;
     private Animator animator;
     
+    public AudioSource LiftSound;
+
+    
     public float timeToCount;
     private bool isCounting;
     private bool startLoadScene;
+    private bool isPlayLiftAnimation;
     
     void Start()
     {
@@ -44,11 +48,16 @@ public class OldLiftButtonTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (startLoadScene && Input.GetKey(KeyCode.E))
+        if (startLoadScene && Input.GetKey(KeyCode.E) && Inventory.Key == 1)
         {
-            otherObjectAnimator.SetBool("IsSwitchOn", true);
-            GetComponent<AudioSource>().Play();
             StartCoroutine(StartTimer());
+        }
+
+        if (Inventory.Key == 1 && !isPlayLiftAnimation)
+        {
+            isPlayLiftAnimation = true;
+            otherObjectAnimator.SetBool("IsSwitchOn", true);
+            LiftSound.Play();
         }
     }
 }
