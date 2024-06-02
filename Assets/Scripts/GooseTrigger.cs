@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -18,6 +19,10 @@ public class GooseTrigger : MonoBehaviour
     public Image ticketV;
     public Image MorsynkaV;
     public Image imageComponent;
+
+    public AudioSource GooseSound1;
+    public AudioSource GooseSound2;
+    public AudioSource GooseSound3;
 
     public float timeToCount = 5f;
     private bool isCounting;
@@ -72,6 +77,7 @@ public class GooseTrigger : MonoBehaviour
             IsDKRInInventory = true;
             StartCoroutine(FadeInD());
             GetComponent<AudioSource>().Play();
+            
         }
         if (PlayerController.Ticket == 1)
         {
@@ -186,7 +192,8 @@ public class GooseTrigger : MonoBehaviour
             Color color = feather.color;
             color.a = 1f;
             feather.color = color;
-            GetComponent<AudioSource>().Play();
+            //GetComponent<AudioSource>().Play();
+            GooseSound3.Play();
             meetingCount += 1;
             PlayerController.Feather = 1;
         }
@@ -197,7 +204,8 @@ public class GooseTrigger : MonoBehaviour
             Color color = dkr.color;
             color.a = 0.03f;
             dkr.color = color;
-            GetComponent<AudioSource>().Play();
+            //GetComponent<AudioSource>().Play();
+            GooseSound2.Play();
             meetingCount += 1;
         }
         
@@ -215,7 +223,8 @@ public class GooseTrigger : MonoBehaviour
             Color color = ticket.color;
             color.a = 0.03f;
             ticket.color = color;
-            GetComponent<AudioSource>().Play();
+            //GetComponent<AudioSource>().Play(); 
+            GooseSound1.Play();
             meetingCount += 1;
         }
     }

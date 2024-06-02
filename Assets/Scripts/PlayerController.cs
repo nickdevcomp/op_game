@@ -49,7 +49,8 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateQuantity()
     {
-        quantity.text = "<size=10><color=#fff>x " + Balance.ToString() + "</color></size>";
+        if (quantity != null)
+            quantity.text = "<size=10><color=#fff>x " + Balance.ToString() + "</color></size>";
     }
 
     private void MoveCharacter()
