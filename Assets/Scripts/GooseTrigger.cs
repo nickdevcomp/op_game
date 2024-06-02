@@ -15,9 +15,9 @@ public class GooseTrigger : MonoBehaviour
     public Image dkr;
     public GameObject money;
     public GameObject wool;
-    public Image dkrV;
-    public Image ticketV;
-    public Image MorsynkaV;
+    public Image dkrView;
+    public Image ticketView;
+    public Image MorsynkaView;
     public Image imageComponent;
 
     public AudioSource GooseSound1;
@@ -26,6 +26,7 @@ public class GooseTrigger : MonoBehaviour
 
     public float timeToCount = 5f;
     private bool isCounting;
+    private bool isNear;
 
     // Новое изображение для замены
     public Sprite Big;
@@ -71,145 +72,151 @@ public class GooseTrigger : MonoBehaviour
 
     private void Update()
     {
+        ShowItem();
+        
+        if (!isNear || !Input.GetKeyDown(KeyCode.E))
+            return;
+
+        if (meetingCount == 2 && IsDKRInInventory)
+        {
+            IsDKRInInventory = false;
+            var color = dkr.color;
+            color.a = 0f;
+            dkr.color = color;
+            GooseSound2.Play();
+            meetingCount += 1;
+        }
+        
+        if (meetingCount == 0 && IsTicketInInventory)
+        {
+            IsTicketInInventory = false;
+            var color = ticket.color;
+            color.a = 0f;
+            ticket.color = color;
+            GooseSound1.Play();
+            meetingCount += 1;
+        }
+    }
+
+    private void ShowItem()
+    {
         if (Inventory.Dkr == 1)
         {
             Inventory.Dkr = 0;
-            dkrV.enabled = true;
+            dkrView.enabled = true;
             IsDKRInInventory = true;
-            StartCoroutine(FadeInD());
+            StartCoroutine(FadeInDKR());
             GetComponent<AudioSource>().Play();
-            
         }
+
         if (Inventory.Ticket == 1)
         {
             Inventory.Ticket = 0;
-            ticketV.enabled = true;
+            ticketView.enabled = true;
             IsTicketInInventory = true;
-            StartCoroutine(FadeInT());
+            StartCoroutine(FadeInTicket());
             GetComponent<AudioSource>().Play();
         }
+
         if (Inventory.Morsynka == 1)
         {
             Inventory.Morsynka = 0;
-            MorsynkaV.enabled = true;
-            StartCoroutine(FadeInM());
+            MorsynkaView.enabled = true;
+            StartCoroutine(FadeInMorsyanka());
             GetComponent<AudioSource>().Play();
         }
     }
 
-    IEnumerator FadeInD()
+    IEnumerator FadeInDKR()
     {
-        dkrV.color = new Color(dkrV.color.r, dkrV.color.g, dkrV.color.b, 0);
+        dkrView.color = new Color(dkrView.color.r, dkrView.color.g, dkrView.color.b, 0);
 
-        while (dkrV.color.a < 1)
+        while (dkrView.color.a < 1)
         {
-            dkrV.color = new Color(dkrV.color.r, dkrV.color.g, dkrV.color.b, dkrV.color.a + Time.deltaTime);
+            dkrView.color = new Color(dkrView.color.r, dkrView.color.g, dkrView.color.b, dkrView.color.a + Time.deltaTime);
             yield return null;
         }
 
         yield return new WaitForSeconds(1);
 
-        StartCoroutine(FadeOutD());
+        StartCoroutine(FadeOutDKR());
     }
 
-    IEnumerator FadeOutD()
+    IEnumerator FadeOutDKR()
     {
-        while (dkrV.color.a > 0)
+        while (dkrView.color.a > 0)
         {
-            dkrV.color = new Color(dkrV.color.r, dkrV.color.g, dkrV.color.b, dkrV.color.a - Time.deltaTime);
+            dkrView.color = new Color(dkrView.color.r, dkrView.color.g, dkrView.color.b, dkrView.color.a - Time.deltaTime);
             yield return null;
         }
 
-        dkrV.enabled = false;
+        dkrView.enabled = false;
         Color color = dkr.color;
         color.a = 1f;
         dkr.color = color;
     }
 
-    IEnumerator FadeInT()
+    IEnumerator FadeInTicket()
     {
-        ticketV.color = new Color(ticketV.color.r, ticketV.color.g, ticketV.color.b, 0);
-
-        while (ticketV.color.a < 1)
+        ticketView.color = new Color(ticketView.color.r, ticketView.color.g, ticketView.color.b, 0);
+                while (ticketView.color.a < 1)
         {
-            ticketV.color = new Color(ticketV.color.r, ticketV.color.g, ticketV.color.b, ticketV.color.a + Time.deltaTime);
+            ticketView.color = new Color(ticketView.color.r, ticketView.color.g, ticketView.color.b, ticketView.color.a + Time.deltaTime);
             yield return null;
         }
 
         yield return new WaitForSeconds(1);
 
-        StartCoroutine(FadeOutT());
+        StartCoroutine(FadeOutTicket());
     }
 
-    IEnumerator FadeOutT()
+    IEnumerator FadeOutTicket()
     {
-        while (ticketV.color.a > 0)
+        while (ticketView.color.a > 0)
         {
-            ticketV.color = new Color(ticketV.color.r, ticketV.color.g, ticketV.color.b, ticketV.color.a - Time.deltaTime);
+            ticketView.color = new Color(ticketView.color.r, ticketView.color.g, ticketView.color.b, ticketView.color.a - Time.deltaTime);
             yield return null;
         }
 
-        ticketV.enabled = false;
+        ticketView.enabled = false;
         Color color = ticket.color;
         color.a = 1f;
         ticket.color = color;
     }
 
-    IEnumerator FadeInM()
+    IEnumerator FadeInMorsyanka()
     {
-        MorsynkaV.color = new Color(MorsynkaV.color.r, MorsynkaV.color.g, MorsynkaV.color.b, 0);
+        MorsynkaView.color = new Color(MorsynkaView.color.r, MorsynkaView.color.g, MorsynkaView.color.b, 0);
 
-        while (MorsynkaV.color.a < 1)
+        while (MorsynkaView.color.a < 1)
         {
-            MorsynkaV.color = new Color(MorsynkaV.color.r, MorsynkaV.color.g, MorsynkaV.color.b, MorsynkaV.color.a + Time.deltaTime);
+            MorsynkaView.color = new Color(MorsynkaView.color.r, MorsynkaView.color.g, MorsynkaView.color.b, MorsynkaView.color.a + Time.deltaTime);
             yield return null;
         }
 
         yield return new WaitForSeconds(1);
 
-        StartCoroutine(FadeOutM());
+        StartCoroutine(FadeOutMorsyanka());
     }
 
-    IEnumerator FadeOutM()
+    IEnumerator FadeOutMorsyanka()
     {
-        while (MorsynkaV.color.a > 0)
+        while (MorsynkaView.color.a > 0)
         {
-            MorsynkaV.color = new Color(MorsynkaV.color.r, MorsynkaV.color.g, MorsynkaV.color.b, MorsynkaV.color.a - Time.deltaTime);
+            MorsynkaView.color = new Color(MorsynkaView.color.r, MorsynkaView.color.g, MorsynkaView.color.b, MorsynkaView.color.a - Time.deltaTime);
             yield return null;
         }
 
-        MorsynkaV.enabled = false;
+        MorsynkaView.enabled = false;
         MorsyankaTrigger.IsPlay = true;
-        Color color = feather.color;
+        var color = feather.color;
         color.a = 1f;
         feather.color = color;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (meetingCount == 4)
-        {
-            wool.SetActive(false);
-            Color color = feather.color;
-            color.a = 1f;
-            feather.color = color;
-            //GetComponent<AudioSource>().Play();
-            GooseSound3.Play();
-            meetingCount += 1;
-            Inventory.Feather = 1;
-        }
-
-        if (meetingCount == 2 && IsDKRInInventory)
-        {
-            IsDKRInInventory = false;
-            Color color = dkr.color;
-            color.a = 0f;
-            dkr.color = color;
-            //GetComponent<AudioSource>().Play();
-            GooseSound2.Play();
-            meetingCount += 1;
-        }
-        
+        isNear = true;
         if (meetingCount == 1)
         {
             money.SetActive(false);
@@ -217,21 +224,22 @@ public class GooseTrigger : MonoBehaviour
             PlayerController.Balance += 1;
             meetingCount += 1;
         }
-        
-        if (meetingCount == 0 && IsTicketInInventory)
+
+        if (meetingCount == 4)
         {
-            IsTicketInInventory = false;
-            Color color = ticket.color;
-            color.a = 0f;
-            ticket.color = color;
-            //GetComponent<AudioSource>().Play(); 
-            GooseSound1.Play();
+            wool.SetActive(false);
+            var color = feather.color;
+            color.a = 1f;
+            feather.color = color;
+            GooseSound3.Play();
             meetingCount += 1;
+            Inventory.Feather = 1;
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        isNear = false;
         if (other.CompareTag("Player"))
         {
             ChangeSourceImage(meetingCount);

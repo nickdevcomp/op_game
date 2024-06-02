@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,10 +19,7 @@ public class MorsyankaTrigger : MonoBehaviour
     public Vector2 hotSpot = Vector2.zero; // Точка фокуса курсора
     public CursorMode cursorMode = CursorMode.Auto;
 
-    private void Start()
-    {
-        IsPlay = false;
-    }
+    private void Start() => IsPlay = false;
 
     void Update()
     {
