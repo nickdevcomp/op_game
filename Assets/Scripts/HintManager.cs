@@ -4,7 +4,9 @@ public class HintManager : MonoBehaviour
 {
     public Transform player;
     public Transform hintObject;
-    private readonly float hintDistance = 0.6f;
+    
+    [SerializeField]
+    private float hintDistance = 0.6f;
 
     private void Update()
     {
