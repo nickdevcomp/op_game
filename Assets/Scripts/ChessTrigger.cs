@@ -38,7 +38,7 @@ public class ChessTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && isPlayerNear)
         {
             PlayerController.StartTime = Time.realtimeSinceStartup;
             Fear.FearValue = 0;

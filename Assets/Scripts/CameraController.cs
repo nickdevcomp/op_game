@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
     
     private Transform player;
     private int lastX;
-    public static float ShakeAmount = 0.07f;
+    public static float ShakeAmount;
 
     [SerializeField] 
     private float leftLimit;
@@ -42,6 +42,7 @@ public class CameraController : MonoBehaviour
     
     private void Update()
     {
+        ShakeAmount = 0.07f;
         var currentX = Mathf.RoundToInt(player.position.x);
         if (currentX > lastX)
             isLeft = false;

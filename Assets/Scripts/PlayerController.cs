@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     private const float DeathVolume = 0.067f;
     private const float DontTurnAroundVolume = 1;
     private const float ShakeAmount = 0.07f;
+    private const float BrokeFearTime = 1.5f;
     
     public AudioSource DeathSound;
     public AudioSource DontTurnAround;
@@ -50,6 +51,12 @@ public class PlayerController : MonoBehaviour
         Balance = 0;
         animator = GetComponent<Animator>();
         StartTime = Time.realtimeSinceStartup;
+        reflectStartTime = 0f;  
+        isAdditionalTimerStarted = false;
+        isTimerRunning = false;
+        DeathSound.volume = DeathVolume;
+        DontTurnAround.volume = DontTurnAroundVolume;
+
     }
 
     private void Update()
@@ -73,15 +80,12 @@ public class PlayerController : MonoBehaviour
             return;
         input = new Vector2(Input.GetAxis("Horizontal"), 0);
         isWalking = input.x != 0;
-        isRunning = !isScaryFloor && input.x != 0 
-                                  && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift));        
-        if (isWalking || isRunning)
+        if (isWalking)
         {
-            var animationToPlay = isRunning ? "Run" : "Walk";
-            var movementSpeed = isRunning ? 3f * speed : speed;
+            var animationToPlay = "Walk";
             animator.Play(animationToPlay);
             Reflect(input);
-            transform.position += input * (movementSpeed * Time.deltaTime);
+            transform.position += input * (speed * Time.deltaTime);
         }
         else
         {
@@ -114,8 +118,6 @@ public class PlayerController : MonoBehaviour
     {
         if ((!(movement.x > 0) || isRight) && (!(movement.x < 0) || !isRight)) 
             return;
-        /*if (Fear.FearValue == 1 && RasinSound != null)
-            RasinSound.Play();*/
 
         if (Fear.FearValue == 1)
         {
@@ -123,8 +125,10 @@ public class PlayerController : MonoBehaviour
         }
         
         isRight = !isRight;
+        
         if (isTimerRunning)
         {
+            isTimerRunning = false;
             isAdditionalTimerStarted = false;
         }
 
@@ -145,10 +149,10 @@ public class PlayerController : MonoBehaviour
         isTimerRunning = reflectStartTime > 0;
         StartTime += Time.deltaTime;
         reflectStartTime += Time.deltaTime;
-        DeathSound.volume = (2f - reflectStartTime) / 2f * DeathVolume;
-        DontTurnAround.volume = (2f - reflectStartTime) / 2f * DontTurnAroundVolume;
-        CameraController.ShakeAmount = (2f - reflectStartTime) / 2f * ShakeAmount;
-        if (reflectStartTime > 2f)
+        DeathSound.volume = (BrokeFearTime - reflectStartTime) / BrokeFearTime * DeathVolume;
+        DontTurnAround.volume = (BrokeFearTime - reflectStartTime) / BrokeFearTime * DontTurnAroundVolume;
+        CameraController.ShakeAmount = (BrokeFearTime - reflectStartTime) / BrokeFearTime * ShakeAmount;
+        if (reflectStartTime >= BrokeFearTime)
         {
             var rnd = new Random();
             var shouldPlay = rnd.Next(5, 8);

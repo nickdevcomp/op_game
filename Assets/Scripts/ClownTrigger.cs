@@ -9,6 +9,7 @@ public class ClownTrigger : MonoBehaviour
     public GameObject balance;
     public int meetingCount;
     public AudioSource Source;
+    public AudioSource Beep;
     private bool isNear;
 
     private void Start()
@@ -19,7 +20,15 @@ public class ClownTrigger : MonoBehaviour
     private void Update()
     {
         if (!isNear)
+        {
             return;
+        }
+
+        if (isNear && Input.GetKeyDown(KeyCode.E) && Inventory.Ship == 0)
+        {
+            Beep.Play();
+            return;
+        }
         
         if (meetingCount == 0 && Inventory.Ship == 1 && Input.GetKeyDown(KeyCode.E))
         {

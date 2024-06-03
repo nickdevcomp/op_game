@@ -77,6 +77,12 @@ public class GooseTrigger : MonoBehaviour
         if (!isNear || !Input.GetKeyDown(KeyCode.E))
             return;
 
+        if (!IsDKRInInventory && !IsTicketInInventory)
+        {
+            GooseSound3.Play();
+            return;
+        }
+
         if (meetingCount == 2 && IsDKRInInventory)
         {
             IsDKRInInventory = false;
