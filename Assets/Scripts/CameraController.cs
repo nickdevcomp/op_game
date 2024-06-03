@@ -10,6 +10,7 @@ public class CameraController : MonoBehaviour
     
     private Transform player;
     private int lastX;
+    public static float ShakeAmount = 0.07f;
 
     [SerializeField] 
     private float leftLimit;
@@ -69,9 +70,8 @@ public class CameraController : MonoBehaviour
         {
             var camTransform = GetComponent<Transform>();
             var originPos = camTransform.localPosition;
-            float shakeDur = 0.1f, shakeAmount = 0.07f, decreaseFact = 0.5f;
 
-            var shakeVector = UnityEngine.Random.insideUnitSphere * shakeAmount;
+            var shakeVector = UnityEngine.Random.insideUnitSphere * ShakeAmount;
             shakeVector.z = 0;
             
             camTransform.localPosition = originPos + shakeVector;

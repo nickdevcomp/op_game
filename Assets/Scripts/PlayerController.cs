@@ -1,6 +1,8 @@
 
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = System.Random;
 
 public class PlayerController : MonoBehaviour
 {
@@ -29,6 +31,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Light flashlight; // Добавляем ссылку на источник света
 
+    [CanBeNull] public AudioSource RasinSound;
+
+    private float reflectStartTime;
+    private bool isAdditionalTimerStarted;
+    private float startTime;
+    private bool isTimerRunning;
+
+    private const float DeathVolume = 0.067f;
+    private const float DontTurnAroundVolume = 1;
+    private const float ShakeAmount = 0.07f;
+    
+    public AudioSource DeathSound;
+    public AudioSource DontTurnAround;
+
     private void Start()
     {
         Balance = 0;
@@ -41,6 +57,8 @@ public class PlayerController : MonoBehaviour
         MoveCharacter();
         UpdateFear();
         UpdateQuantity();
+        if (isAdditionalTimerStarted)
+            AdditionalTimer();
     }
 
     private void UpdateQuantity()
@@ -96,7 +114,19 @@ public class PlayerController : MonoBehaviour
     {
         if ((!(movement.x > 0) || isRight) && (!(movement.x < 0) || !isRight)) 
             return;
+        /*if (Fear.FearValue == 1 && RasinSound != null)
+            RasinSound.Play();*/
+
+        if (Fear.FearValue == 1)
+        {
+            isAdditionalTimerStarted = true;
+        }
+        
         isRight = !isRight;
+        if (isTimerRunning)
+        {
+            isAdditionalTimerStarted = false;
+        }
 
         var newScale = transform.localScale;
         newScale.x *= -1;
@@ -108,8 +138,30 @@ public class PlayerController : MonoBehaviour
             lightRotation.y += 180f;
             flashlight.transform.localEulerAngles = lightRotation;
         }
+    }
 
-        Fear.FearValue = 0;
-        StartTime = Time.realtimeSinceStartup;
+    private void AdditionalTimer()
+    {
+        isTimerRunning = reflectStartTime > 0;
+        StartTime += Time.deltaTime;
+        reflectStartTime += Time.deltaTime;
+        DeathSound.volume = (2f - reflectStartTime) / 2f * DeathVolume;
+        DontTurnAround.volume = (2f - reflectStartTime) / 2f * DontTurnAroundVolume;
+        CameraController.ShakeAmount = (2f - reflectStartTime) / 2f * ShakeAmount;
+        if (reflectStartTime > 2f)
+        {
+            var rnd = new Random();
+            var shouldPlay = rnd.Next(5, 8);
+            if (shouldPlay == 7)
+                RasinSound.Play();
+            Fear.FearValue = 0;
+            isAdditionalTimerStarted = false;
+            StartTime = Time.realtimeSinceStartup;
+            reflectStartTime = 0f;  
+            isTimerRunning = false;
+            CameraController.ShakeAmount = ShakeAmount;
+            DeathSound.volume = DeathVolume;
+            DontTurnAround.volume = DontTurnAroundVolume;
+        }
     }
 }
