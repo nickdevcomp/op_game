@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private bool isRunning;
 
     private Animator animator;
-    private bool isRight = true; // Предполагаем, что персонаж изначально смотрит вправо
+    private bool isRight = true;
     private float timer = 0f;
     private float endTime;
     private float elapsedTime;
@@ -55,7 +55,8 @@ public class PlayerController : MonoBehaviour
             return;
         input = new Vector2(Input.GetAxis("Horizontal"), 0);
         isWalking = input.x != 0;
-        isRunning = input.x != 0 && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift));
+        isRunning = !isScaryFloor && input.x != 0 
+                                  && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift));        
         if (isWalking || isRunning)
         {
             var animationToPlay = isRunning ? "Run" : "Walk";
@@ -72,7 +73,9 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateFear()
     {
-        if (!isScaryFloor) return;
+        if (!isScaryFloor) 
+            return;
+        
         endTime = Time.realtimeSinceStartup;
         elapsedTime = endTime - StartTime;
         if (elapsedTime >= 10f && !IsDied)

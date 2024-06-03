@@ -23,6 +23,9 @@ public class ClownTrigger : MonoBehaviour
         
         if (meetingCount == 0 && Inventory.Ship == 1 && Input.GetKeyDown(KeyCode.E))
         {
+            PlayerController.StartTime = Time.realtimeSinceStartup;
+            Fear.FearValue = 0;
+            
             var color = shipInventory.color;
             color.a = 0f;
             shipInventory.color = color;

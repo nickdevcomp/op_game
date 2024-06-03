@@ -7906,7 +7906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc49cd95a94e1d41b859a3a41c63b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 42.11
   quantity: {fileID: 49947281}
   IsDied: 0
   isScaryFloor: 1

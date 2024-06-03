@@ -25,6 +25,9 @@ public class MorsyankaTrigger : MonoBehaviour
         if (!IsPlay)
             return;
         
+        PlayerController.StartTime = Time.realtimeSinceStartup;
+        Fear.FearValue = 0;
+        
         IsPlay = false;
         HandleGame();
         player.SetActive(false);

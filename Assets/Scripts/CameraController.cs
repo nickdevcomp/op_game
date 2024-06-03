@@ -69,9 +69,12 @@ public class CameraController : MonoBehaviour
         {
             var camTransform = GetComponent<Transform>();
             var originPos = camTransform.localPosition;
-            float shakeDur = 0.1f, shakeAmount = 0.01f, decreaseFact = 0.5f;
+            float shakeDur = 0.1f, shakeAmount = 0.07f, decreaseFact = 0.5f;
 
-            camTransform.localPosition = originPos + UnityEngine.Random.insideUnitSphere * shakeAmount;
+            var shakeVector = UnityEngine.Random.insideUnitSphere * shakeAmount;
+            shakeVector.z = 0;
+            
+            camTransform.localPosition = originPos + shakeVector;
         }
     }
 }

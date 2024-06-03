@@ -31,7 +31,7 @@ public class CasinoTrigger : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && Inventory.Feather == 0 && meetingCount == 2)
+        if (Input.GetKeyDown(KeyCode.E) && ((Inventory.Feather == 0 && meetingCount == 2) || PlayerController.Balance == 0))
         {
             ErrorSound.Play(); 
             return; 
@@ -39,6 +39,9 @@ public class CasinoTrigger : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && PlayerController.Balance != 0 && meetingCount <= 2)
         {
+            PlayerController.StartTime = Time.realtimeSinceStartup;
+            Fear.FearValue = 0;
+
             PlayerController.Balance -= 1;
             GetComponent<AudioSource>().Play();
             StartCoroutine(StartTimer());
