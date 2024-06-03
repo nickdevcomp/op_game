@@ -38,8 +38,15 @@ public class ChessTrigger : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            PlayerController.StartTime = Time.realtimeSinceStartup;
+            Fear.FearValue = 0;
+        }
         if (!isPlayerNear && isPlay == 0)
+        {
             return;
+        }
         if (Input.GetKeyDown(KeyCode.E) && win == 0 && isPlay == 0)
         {
             GetComponent<AudioSource>().Play();
