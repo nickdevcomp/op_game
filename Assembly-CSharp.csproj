@@ -69,6 +69,7 @@
     <Compile Include="Assets/Scripts/PlayerController.cs" />
     <Compile Include="Assets/Scripts/LiftButtonTrigger.cs" />
     <Compile Include="Assets/Scripts/ShipTrigger.cs" />
+    <Compile Include="Assets/Scripts/FinalScene.cs" />
     <Compile Include="Assets/Scripts/Rail trigger.cs" />
     <Compile Include="Assets/Scripts/CameraController.cs" />
     <Compile Include="Assets/Scripts/ChessTrigger.cs" />
