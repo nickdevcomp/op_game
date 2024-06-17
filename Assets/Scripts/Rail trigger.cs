@@ -4,6 +4,7 @@ using UnityEngine;
 public class RailTrigger : MonoBehaviour
 {
     public GameObject Player;
+    public PlayerController playerController;
 
     private Animator otherObjectAnimator;
 
@@ -29,6 +30,8 @@ public class RailTrigger : MonoBehaviour
             return;
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && !isHighestFloor)
         {
+            playerController.ResetFear();
+
             Player.SetActive(false);
             GetComponent<AudioSource>().Play();
             StartCoroutine(StartTimer());
@@ -36,6 +39,7 @@ public class RailTrigger : MonoBehaviour
         }
         if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && !isLowestFloor)
         {
+            playerController.ResetFear();
             Player.SetActive(false);
             GetComponent<AudioSource>().Play();
             StartCoroutine(StartTimer());

@@ -18,6 +18,7 @@ public class ButtonManager : MonoBehaviour
         audioSource.Pause();
         Application.targetFrameRate = 120;
         fadeSpeed = 0.5f;
+        StopCoroutine(FadeIn());
     }
 
     public void Play()
@@ -27,7 +28,6 @@ public class ButtonManager : MonoBehaviour
         Invoke("Fade", 0);
         Invoke("PlayAudio", 2f);
         Invoke("LoadFirstScene", 9f);
-        Application.targetFrameRate = 120;
     }
 
     private void Fade() =>  StartCoroutine(FadeIn());

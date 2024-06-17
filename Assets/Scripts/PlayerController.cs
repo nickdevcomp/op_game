@@ -1,6 +1,7 @@
 
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = System.Random;
 
@@ -34,15 +35,15 @@ public class PlayerController : MonoBehaviour
     private Light flashlight; 
 
 
-    private float reflectStartTime;
+    public static float ReflectStartTime;
     private bool isAdditionalTimerStarted;
     private float startTime;
     private bool isTimerRunning;
 
     private const float DeathVolume = 0.067f;
     private const float DontTurnAroundVolume = 1;
-    private const float ShakeAmount = 0.07f;
-    private const float BrokeFearTime = 1.5f;
+    public const float ShakeAmount = 0.15f;
+    public const float BrokeFearTime = 2.5f;
     
     public AudioSource DeathSound;
     public AudioSource DontTurnAround;
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour
         Balance = 0;
         animator = GetComponent<Animator>();
         StartTime = Time.realtimeSinceStartup;
-        reflectStartTime = 0f;  
+        ReflectStartTime = 0f;  
         isAdditionalTimerStarted = false;
         isTimerRunning = false;
         DeathSound.volume = DeathVolume;
@@ -103,12 +104,13 @@ public class PlayerController : MonoBehaviour
         
         endTime = Time.realtimeSinceStartup;
         elapsedTime = endTime - StartTime;
-        if (elapsedTime >= 10f && !IsDied)
+        
+        if (elapsedTime >= 15f && !IsDied)
         {
             Fear.FearValue = 1;
         }
 
-        if (elapsedTime >= 15f)
+        if (elapsedTime >= 20f)
         {
             IsDied = true;
             animator.Play("Falling");
@@ -126,14 +128,18 @@ public class PlayerController : MonoBehaviour
         {
             isAdditionalTimerStarted = true;
         }
-        
-        isRight = !isRight;
+        else
+        {
+            StartTime = Time.realtimeSinceStartup;
+        }
         
         if (isTimerRunning)
         {
             isTimerRunning = false;
             isAdditionalTimerStarted = false;
         }
+
+        isRight = !isRight;
 
         var newScale = transform.localScale;
         newScale.x *= -1;
@@ -149,22 +155,27 @@ public class PlayerController : MonoBehaviour
 
     private void AdditionalTimer()
     {
-        isTimerRunning = reflectStartTime > 0;
+        isTimerRunning = ReflectStartTime > 0f;
         StartTime += Time.deltaTime;
-        reflectStartTime += Time.deltaTime;
-        DeathSound.volume = (BrokeFearTime - reflectStartTime) / BrokeFearTime * DeathVolume;
-        DontTurnAround.volume = (BrokeFearTime - reflectStartTime) / BrokeFearTime * DontTurnAroundVolume;
-        CameraController.ShakeAmount = (BrokeFearTime - reflectStartTime) / BrokeFearTime * ShakeAmount;
-        if (reflectStartTime >= BrokeFearTime)
+        ReflectStartTime += Time.deltaTime;
+        DeathSound.volume = DeathVolume * (BrokeFearTime - ReflectStartTime) / BrokeFearTime;
+        DontTurnAround.volume = DontTurnAroundVolume * (BrokeFearTime - ReflectStartTime) / BrokeFearTime;
+        CameraController.ShakeAmount = ShakeAmount * (BrokeFearTime - ReflectStartTime) / BrokeFearTime;
+        if (ReflectStartTime >= BrokeFearTime)
         {
-            Fear.FearValue = 0;
-            isAdditionalTimerStarted = false;
-            StartTime = Time.realtimeSinceStartup;
-            reflectStartTime = 0f;  
-            isTimerRunning = false;
-            CameraController.ShakeAmount = ShakeAmount;
-            DeathSound.volume = DeathVolume;
-            DontTurnAround.volume = DontTurnAroundVolume;
+            ResetFear();
         }
+    }
+
+    public void ResetFear()
+    {
+        Fear.FearValue = 0;
+        isAdditionalTimerStarted = false;
+        StartTime = Time.realtimeSinceStartup;
+        ReflectStartTime = 0f;  
+        isTimerRunning = false;
+        CameraController.ShakeAmount = ShakeAmount;
+        DeathSound.volume = DeathVolume;
+        DontTurnAround.volume = DontTurnAroundVolume;
     }
 }

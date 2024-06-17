@@ -42,7 +42,7 @@ public class CameraController : MonoBehaviour
     
     private void Update()
     {
-        ShakeAmount = 0.07f;
+        ShakeAmount = PlayerController.ShakeAmount * (PlayerController.BrokeFearTime - PlayerController.ReflectStartTime) / PlayerController.BrokeFearTime;
         var currentX = Mathf.RoundToInt(player.position.x);
         if (currentX > lastX)
             isLeft = false;

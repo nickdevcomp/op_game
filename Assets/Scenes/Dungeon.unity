@@ -1026,6 +1026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 830493600}
+  playerController: {fileID: 1577804254}
   timeToCount: 2
   upY: 444
   downY: 420.85
@@ -2938,6 +2939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 830493600}
+  playerController: {fileID: 1577804254}
   timeToCount: 2
   upY: 0
   downY: 432.29
@@ -11159,6 +11161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 830493600}
+  playerController: {fileID: 1577804254}
   timeToCount: 2
   upY: 432.29
   downY: 0
