@@ -9,13 +9,15 @@ public class ButtonManager : MonoBehaviour
 {
     public Image fadeImage;
     public AudioSource audioSource;
-    private readonly float fadeSpeed = 0.5f;
+    private float fadeSpeed;
     public AudioSource backgroundMusic;
     private void Start()
     {
         fadeImage.GameObject().SetActive(false);
+        backgroundMusic.Play();
         audioSource.Pause();
         Application.targetFrameRate = 120;
+        fadeSpeed = 0.5f;
     }
 
     public void Play()
@@ -32,7 +34,7 @@ public class ButtonManager : MonoBehaviour
 
     private void PlayAudio() => audioSource.Play();
 
-    private void LoadFirstScene() => SceneManager.LoadScene(1);
+    private void LoadFirstScene() => SceneManager.LoadScene("6 floor");
 
     private IEnumerator FadeIn()
     {
