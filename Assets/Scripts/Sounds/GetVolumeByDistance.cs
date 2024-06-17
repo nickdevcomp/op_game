@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
@@ -13,22 +12,53 @@ public class SoundManager : MonoBehaviour
     public int PlayingCount;
     private int count;
 
-    private void Start() =>  audioSource = GetComponent<AudioSource>();
+    public bool isSpeech;
+
+    private void Start() => audioSource = GetComponent<AudioSource>();
 
     void Update()
     {
         var distance = Vector2.Distance(player.position, transform.position);
 
-        if (!audioSource.isPlaying && distance <= DistanceToActivate)
-        {
-            if (count < PlayingCount)
-            {
-                audioSource.Play();
-                count += 1;
-            }
-        }
+        if (isSpeech)
+            HandleSpeech(distance);
+        else
+            HandleBackgroundSound(distance);
 
+        AdjustVolume(distance);
+    }
+
+    private void HandleSpeech(float distance)
+    {
+        if (PlayerController.IsAudioPlaying || audioSource.isPlaying)
+            return;
+
+        if (!(distance <= DistanceToActivate) || count >= PlayingCount) 
+            return;
+        
+        audioSource.Play();
+        PlayerController.IsAudioPlaying = true;
+        Invoke(nameof(ResetAudioPlayingFlag), audioSource.clip.length);
+        count += 1;
+    }
+
+    private void HandleBackgroundSound(float distance)
+    {
+        if (audioSource.isPlaying)
+            return;
+
+        if (!(distance <= DistanceToActivate) || count >= PlayingCount) 
+            return;
+        
+        audioSource.Play();
+        count += 1;
+    }
+
+    private void AdjustVolume(float distance)
+    {
         var volume = maxVolume - distance / volumeRange * (maxVolume - minVolume);
         audioSource.volume = Mathf.Clamp(volume, minVolume, maxVolume);
     }
+
+    private void ResetAudioPlayingFlag() => PlayerController.IsAudioPlaying = false;
 }

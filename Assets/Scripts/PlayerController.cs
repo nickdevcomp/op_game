@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private bool isWalking;
     private bool isRunning;
 
+    public static bool IsAudioPlaying;
+
     private Animator animator;
     private bool isRight = true;
     private float timer = 0f;
