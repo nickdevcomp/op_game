@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 59334093}
   - component: {fileID: 59334092}
   m_Layer: 0
-  m_Name: Yandex Trigger
+  m_Name: volcano Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,7 +164,7 @@ Transform:
   m_GameObject: {fileID: 59334091}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.967053, y: 0.03633535, z: -10.297112}
+  m_LocalPosition: {x: 9.468, y: 0.03633535, z: -10.297112}
   m_LocalScale: {x: 1.0297112, y: 1.0297112, z: 1.0297112}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -841,7 +841,7 @@ GameObject:
   - component: {fileID: 329835737}
   - component: {fileID: 329835736}
   m_Layer: 5
-  m_Name: Naumen
+  m_Name: trubu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -863,8 +863,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.661, y: -0.000000059603}
-  m_SizeDelta: {x: 3.4159, y: 1.5965}
+  m_AnchoredPosition: {x: 11.027, y: -0.000000059603}
+  m_SizeDelta: {x: 2.2172, y: 1.5965}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &329835736
 MonoBehaviour:
@@ -886,7 +886,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9f68e5bb011a64205bacfac7ba1d5eb0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfb2662f425de4b64bd91a5a87f40bf5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -916,7 +916,7 @@ GameObject:
   - component: {fileID: 335467790}
   - component: {fileID: 335467789}
   m_Layer: 5
-  m_Name: Cikoriy
+  m_Name: village
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -938,8 +938,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.093, y: 0}
-  m_SizeDelta: {x: 3.4519, y: 1.5965}
+  m_AnchoredPosition: {x: -5.276, y: 0}
+  m_SizeDelta: {x: 8.7267, y: 1.5965}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &335467789
 MonoBehaviour:
@@ -961,7 +961,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a27caf05f9b5f44bb87ce4d50473993e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2fa775f2e756f49fc822390aefbdef45, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1139,7 +1139,7 @@ GameObject:
   - component: {fileID: 380984225}
   - component: {fileID: 380984224}
   m_Layer: 0
-  m_Name: Cikoriy button
+  m_Name: village button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1155,7 +1155,7 @@ Animator:
   m_GameObject: {fileID: 380984223}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 24d95625c48c1d14893ad372984f14db, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7e0e009334ce7384bbb3c1c69324d369, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1691,7 +1691,7 @@ GameObject:
   - component: {fileID: 572407118}
   - component: {fileID: 572407117}
   m_Layer: 0
-  m_Name: Cikoriy trigger
+  m_Name: village trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1721,7 +1721,7 @@ Transform:
   m_GameObject: {fileID: 572407116}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.403073, y: 0.03633535, z: -10.297112}
+  m_LocalPosition: {x: 6.155, y: 0.03633535, z: -10.297112}
   m_LocalScale: {x: 1.0297112, y: 1.0297112, z: 1.0297112}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2121,7 +2121,7 @@ GameObject:
   - component: {fileID: 654669518}
   - component: {fileID: 654669517}
   m_Layer: 5
-  m_Name: Kontur
+  m_Name: senya52
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2143,8 +2143,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.076, y: 0}
-  m_SizeDelta: {x: 3.4519, y: 1.5965}
+  m_AnchoredPosition: {x: 5.499, y: 0.0584}
+  m_SizeDelta: {x: 2.9985, y: 1.5965}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &654669517
 MonoBehaviour:
@@ -2166,7 +2166,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b04a48396cb61420cb67b370397cb7d8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 482e37815efc24ab18eeba06252417a7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2344,7 +2344,7 @@ GameObject:
   - component: {fileID: 755605780}
   - component: {fileID: 755605779}
   m_Layer: 5
-  m_Name: Tinkoff1
+  m_Name: metamorfos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2366,7 +2366,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.94, y: 0}
+  m_AnchoredPosition: {x: 1.61, y: 0}
   m_SizeDelta: {x: 1.8202, y: 1.8085}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &755605779
@@ -2389,7 +2389,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 575f8b22b926b42d2a02f34f6458a7bb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a0105b12ec25b431982baaaf6e208b72, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2454,7 +2454,7 @@ GameObject:
   - component: {fileID: 802103139}
   - component: {fileID: 802103138}
   m_Layer: 0
-  m_Name: billboard Trigger
+  m_Name: singular Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2484,7 +2484,7 @@ Transform:
   m_GameObject: {fileID: 802103137}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.118143, y: 0.03633535, z: -10.297112}
+  m_LocalPosition: {x: 8.266, y: 0.03633535, z: -10.297112}
   m_LocalScale: {x: 1.0297112, y: 1.0297112, z: 1.0297112}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2592,7 +2592,7 @@ GameObject:
   - component: {fileID: 909191271}
   - component: {fileID: 909191270}
   m_Layer: 5
-  m_Name: billboard
+  m_Name: singular
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2614,7 +2614,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.18, y: 0.00000035763}
+  m_AnchoredPosition: {x: -3.147, y: 0.00000035763}
   m_SizeDelta: {x: 3.0109, y: 1.7133}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &909191270
@@ -2637,7 +2637,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f16db36e2499d4623b8c66f4f3e07300, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5fe04a298fadb4395b0cb23dc7e6f5cb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2667,7 +2667,7 @@ GameObject:
   - component: {fileID: 924846845}
   - component: {fileID: 924846844}
   m_Layer: 0
-  m_Name: E button SHAD
+  m_Name: 'exsilium E button '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2698,7 +2698,7 @@ Animator:
   m_GameObject: {fileID: 924846842}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 24d95625c48c1d14893ad372984f14db, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7e0e009334ce7384bbb3c1c69324d369, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2773,7 +2773,7 @@ GameObject:
   - component: {fileID: 984260620}
   - component: {fileID: 984260619}
   m_Layer: 0
-  m_Name: 'Naumen E button '
+  m_Name: 'trubu E button '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2789,7 +2789,7 @@ Animator:
   m_GameObject: {fileID: 984260618}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 24d95625c48c1d14893ad372984f14db, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7e0e009334ce7384bbb3c1c69324d369, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3082,7 +3082,7 @@ MonoBehaviour:
   maxVolume: 1
   minVolume: 0
   volumeRange: 100
-  DistanceToActivate: 2
+  DistanceToActivate: 1.5
   PlayingCount: 1
   isSpeech: 1
 --- !u!82 &1090846894
@@ -3311,7 +3311,7 @@ GameObject:
   - component: {fileID: 1118847725}
   - component: {fileID: 1118847726}
   m_Layer: 0
-  m_Name: Tinkoff1 Trigger
+  m_Name: metamorfos Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3326,7 +3326,7 @@ Transform:
   m_GameObject: {fileID: 1118847723}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.64752, y: -0.04604155, z: -10.297112}
+  m_LocalPosition: {x: 13.16, y: -0.04604155, z: -10.297112}
   m_LocalScale: {x: 1.0297112, y: 1.0297112, z: 1.0297112}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3461,7 +3461,7 @@ GameObject:
   - component: {fileID: 1128691991}
   - component: {fileID: 1128691990}
   m_Layer: 0
-  m_Name: Yandex E button
+  m_Name: volcano E button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3477,7 +3477,7 @@ Animator:
   m_GameObject: {fileID: 1128691989}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 24d95625c48c1d14893ad372984f14db, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7e0e009334ce7384bbb3c1c69324d369, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3567,7 +3567,7 @@ GameObject:
   - component: {fileID: 1194227387}
   - component: {fileID: 1194227386}
   m_Layer: 5
-  m_Name: Tinkoff2
+  m_Name: pinuibunga
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3589,8 +3589,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.036, y: 0.00000035763}
-  m_SizeDelta: {x: 3.0109, y: 1.7133}
+  m_AnchoredPosition: {x: -6.916, y: 0.00000035763}
+  m_SizeDelta: {x: 3.4087, y: 1.7133}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1194227386
 MonoBehaviour:
@@ -3612,7 +3612,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 476c0f3a02b4244f5a5b76b60b24b70e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a1cb15ada1f6f452497e76bb19d4e326, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3642,7 +3642,7 @@ GameObject:
   - component: {fileID: 1197432130}
   - component: {fileID: 1197432129}
   m_Layer: 0
-  m_Name: 'DMM E button '
+  m_Name: 'slavyane E button '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3658,7 +3658,7 @@ Animator:
   m_GameObject: {fileID: 1197432128}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 24d95625c48c1d14893ad372984f14db, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7e0e009334ce7384bbb3c1c69324d369, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4021,7 +4021,7 @@ GameObject:
   - component: {fileID: 1241633386}
   - component: {fileID: 1241633385}
   m_Layer: 0
-  m_Name: Tonkoff2 E button
+  m_Name: pinguibunga E button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4037,7 +4037,7 @@ Animator:
   m_GameObject: {fileID: 1241633384}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 24d95625c48c1d14893ad372984f14db, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7e0e009334ce7384bbb3c1c69324d369, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4160,7 +4160,7 @@ GameObject:
   - component: {fileID: 1281970584}
   - component: {fileID: 1281970583}
   m_Layer: 0
-  m_Name: 'Kontur E button '
+  m_Name: 'senya52 E button '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4191,7 +4191,7 @@ Animator:
   m_GameObject: {fileID: 1281970581}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 24d95625c48c1d14893ad372984f14db, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7e0e009334ce7384bbb3c1c69324d369, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4265,7 +4265,7 @@ GameObject:
   - component: {fileID: 1313410125}
   - component: {fileID: 1313410124}
   m_Layer: 0
-  m_Name: DMM Trigger
+  m_Name: slavyane Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4295,7 +4295,7 @@ Transform:
   m_GameObject: {fileID: 1313410123}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.400261, y: 0.03633535, z: -10.297112}
+  m_LocalPosition: {x: 11.569, y: 0.03633535, z: -10.297112}
   m_LocalScale: {x: 1.0297112, y: 1.0297112, z: 1.0297112}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4329,7 +4329,7 @@ Animator:
   m_GameObject: {fileID: 1352191630}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 24d95625c48c1d14893ad372984f14db, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7e0e009334ce7384bbb3c1c69324d369, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4550,7 +4550,7 @@ GameObject:
   - component: {fileID: 1478438956}
   - component: {fileID: 1478438955}
   m_Layer: 0
-  m_Name: Naumen Trigger
+  m_Name: trubu Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4580,7 +4580,7 @@ Transform:
   m_GameObject: {fileID: 1478438954}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.730173, y: 0.03633535, z: -10.297112}
+  m_LocalPosition: {x: 22.803, y: 0.03633535, z: -10.297112}
   m_LocalScale: {x: 1.0297112, y: 1.0297112, z: 1.0297112}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4728,7 +4728,7 @@ GameObject:
   - component: {fileID: 1558062569}
   - component: {fileID: 1558062568}
   m_Layer: 5
-  m_Name: SHAD
+  m_Name: exsilium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4750,7 +4750,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.763, y: 0.00000023842}
+  m_AnchoredPosition: {x: 2.98, y: -0.042}
   m_SizeDelta: {x: 1.7163, y: 1.7133}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1558062568
@@ -4773,7 +4773,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c50636a782d224d059d4821e56ebb7f1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5fec8cc3447454e9c91bcb80d49dc839, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4819,15 +4819,15 @@ RectTransform:
   m_LocalScale: {x: 0.971146, y: 0.971146, z: 0.971146}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1759986428}
+  - {fileID: 2077402938}
+  - {fileID: 572407118}
   - {fileID: 535358047}
   - {fileID: 1118847725}
-  - {fileID: 1759986428}
   - {fileID: 1478438956}
-  - {fileID: 2077402938}
   - {fileID: 1313410125}
   - {fileID: 59334093}
   - {fileID: 2117006888}
-  - {fileID: 572407118}
   - {fileID: 802103139}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4848,7 +4848,7 @@ GameObject:
   - component: {fileID: 1595707572}
   - component: {fileID: 1595707571}
   m_Layer: 0
-  m_Name: E button Tinkoff1
+  m_Name: metamorfos E button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4864,7 +4864,7 @@ Animator:
   m_GameObject: {fileID: 1595707570}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 24d95625c48c1d14893ad372984f14db, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7e0e009334ce7384bbb3c1c69324d369, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4954,7 +4954,7 @@ GameObject:
   - component: {fileID: 1601731847}
   - component: {fileID: 1601731846}
   m_Layer: 0
-  m_Name: billboard E button
+  m_Name: singular  E button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4970,7 +4970,7 @@ Animator:
   m_GameObject: {fileID: 1601731845}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 24d95625c48c1d14893ad372984f14db, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7e0e009334ce7384bbb3c1c69324d369, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5144,10 +5144,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 654669516}
+  - {fileID: 1558062567}
   - {fileID: 335467788}
   - {fileID: 755605777}
   - {fileID: 329835735}
-  - {fileID: 1558062567}
   - {fileID: 2027358998}
   - {fileID: 2067324340}
   - {fileID: 1194227385}
@@ -5482,7 +5482,7 @@ GameObject:
   - component: {fileID: 1759986428}
   - component: {fileID: 1759986429}
   m_Layer: 0
-  m_Name: Kontur Trigger
+  m_Name: senya52 Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5497,7 +5497,7 @@ Transform:
   m_GameObject: {fileID: 1759986427}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.70832, y: -0.034714725, z: -10.297112}
+  m_LocalPosition: {x: 17.185, y: -0.035, z: -10.297112}
   m_LocalScale: {x: 1.0297112, y: 1.0297112, z: 1.0297112}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5547,15 +5547,15 @@ Transform:
   m_LocalScale: {x: 195.5921, y: 330.32016, z: 195.5921}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1281970582}
   - {fileID: 924846843}
+  - {fileID: 380984226}
   - {fileID: 1352191633}
   - {fileID: 1595707573}
-  - {fileID: 1281970582}
   - {fileID: 984260621}
   - {fileID: 1197432131}
   - {fileID: 1128691992}
   - {fileID: 1241633387}
-  - {fileID: 380984226}
   - {fileID: 1601731848}
   m_Father: {fileID: 1122710911}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5663,7 +5663,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 16decf087c9ce4546ba98356de86fde3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 906d2084f42804d94a9139082b2cbf71, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5955,7 +5955,7 @@ GameObject:
   - component: {fileID: 2027359000}
   - component: {fileID: 2027358999}
   m_Layer: 5
-  m_Name: DMM
+  m_Name: slavyane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5977,8 +5977,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.035, y: 0.00000035763}
-  m_SizeDelta: {x: 2.4371, y: 1.7133}
+  m_AnchoredPosition: {x: 0.045, y: 0.00000035763}
+  m_SizeDelta: {x: 3.0331, y: 1.7133}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2027358999
 MonoBehaviour:
@@ -6000,7 +6000,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 17f019ba7547e433c81cf79ceb90604e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ee32429180b8b42dca4ba2c94df2e086, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6111,7 +6111,7 @@ GameObject:
   - component: {fileID: 2067324342}
   - component: {fileID: 2067324341}
   m_Layer: 5
-  m_Name: Yandex
+  m_Name: volcano
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6133,7 +6133,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.501, y: 0.00000035763}
+  m_AnchoredPosition: {x: -2.024, y: 0.00000035763}
   m_SizeDelta: {x: 3.3266, y: 1.7133}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2067324341
@@ -6156,7 +6156,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a287a4c14557945fb8ab8858bd7aeedd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6117633cbf76d422b99ddd0396365f5d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6185,7 +6185,7 @@ GameObject:
   - component: {fileID: 2077402938}
   - component: {fileID: 2077402937}
   m_Layer: 0
-  m_Name: SHAD Trigger
+  m_Name: exsilium Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6215,7 +6215,7 @@ Transform:
   m_GameObject: {fileID: 2077402936}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.424523, y: 0.03633535, z: -10.297112}
+  m_LocalPosition: {x: 14.591, y: 0.03633535, z: -10.297112}
   m_LocalScale: {x: 1.0297112, y: 1.0297112, z: 1.0297112}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6321,7 +6321,7 @@ Transform:
   m_GameObject: {fileID: 2114952017}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.615725, y: 0.41219997, z: 0}
+  m_LocalPosition: {x: 7.783, y: 0.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6338,7 +6338,7 @@ GameObject:
   - component: {fileID: 2117006888}
   - component: {fileID: 2117006887}
   m_Layer: 0
-  m_Name: Tonkoff2 Trigger
+  m_Name: pinguibunga Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6368,7 +6368,7 @@ Transform:
   m_GameObject: {fileID: 2117006886}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.251856, y: 0.03633535, z: -10.297112}
+  m_LocalPosition: {x: 4.407, y: 0.03633535, z: -10.297112}
   m_LocalScale: {x: 1.0297112, y: 1.0297112, z: 1.0297112}
   m_ConstrainProportionsScale: 0
   m_Children: []
