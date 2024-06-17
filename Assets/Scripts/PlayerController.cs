@@ -48,6 +48,8 @@ public class PlayerController : MonoBehaviour
     public AudioSource DeathSound;
     public AudioSource DontTurnAround;
 
+    public static bool IsPosterActive;
+
     private void Start()
     {
         Balance = 0;

@@ -44,6 +44,7 @@ public class PostersManager : MonoBehaviour
 
     private IEnumerator FadeIn()
     {
+        PlayerController.IsPosterActive = true;
         var delta = 0.0f;
         while (delta < 1)
         {
@@ -55,6 +56,7 @@ public class PostersManager : MonoBehaviour
 
     private IEnumerator FadeOut()
     {
+        PlayerController.IsPosterActive = false;
         var delta = 1.0f;
         while (delta > 0)
         {
