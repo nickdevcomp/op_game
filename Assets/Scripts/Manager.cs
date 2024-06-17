@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -11,6 +10,7 @@ public class ButtonManager : MonoBehaviour
     public AudioSource audioSource;
     private float fadeSpeed;
     public AudioSource backgroundMusic;
+    private bool isFirst = true;
     private void Start()
     {
         fadeImage.GameObject().SetActive(false);
@@ -23,11 +23,19 @@ public class ButtonManager : MonoBehaviour
 
     public void Play()
     {
-        fadeImage.GameObject().SetActive(true);
-        backgroundMusic.Pause();
-        Invoke("Fade", 0);
-        Invoke("PlayAudio", 2f);
-        Invoke("LoadFirstScene", 9f);
+        if (isFirst)
+        {
+            isFirst = false;
+            fadeImage.GameObject().SetActive(true);
+            backgroundMusic.Pause();
+            Invoke("Fade", 0);
+            Invoke("PlayAudio", 2f);
+            Invoke("LoadFirstScene", 9f);
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
     private void Fade() =>  StartCoroutine(FadeIn());
