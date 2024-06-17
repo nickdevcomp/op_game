@@ -16,7 +16,7 @@ public class SoundManager : MonoBehaviour
 
     private void Start() => audioSource = GetComponent<AudioSource>();
 
-    void Update()
+    private void Update()
     {
         var distance = Vector2.Distance(player.position, transform.position);
 

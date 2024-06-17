@@ -31,9 +31,8 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer characterSprite;
     
     [SerializeField]
-    private Light flashlight; // Добавляем ссылку на источник света
+    private Light flashlight; 
 
-    [CanBeNull] public AudioSource RasinSound;
 
     private float reflectStartTime;
     private bool isAdditionalTimerStarted;
@@ -73,7 +72,7 @@ public class PlayerController : MonoBehaviour
     private void UpdateQuantity()
     {
         if (quantity != null) 
-            quantity.text = "<size=10><color=#fff>x " + Balance.ToString() + "</color></size>";
+            quantity.text = "<size=10><color=#fff>x " + Balance + "</color></size>";
     }
 
     private void MoveCharacter()
@@ -82,12 +81,14 @@ public class PlayerController : MonoBehaviour
             return;
         input = new Vector2(Input.GetAxis("Horizontal"), 0);
         isWalking = input.x != 0;
-        if (isWalking)
+        isRunning = input.x != 0 && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift));        
+        if (isWalking || isRunning)
         {
-            var animationToPlay = "Walk";
+            var animationToPlay = isRunning ? "Run" : "Walk";
+            var movementSpeed = isRunning ? 3f * speed : speed;
             animator.Play(animationToPlay);
             Reflect(input);
-            transform.position += input * (speed * Time.deltaTime);
+            transform.position += input * (movementSpeed * Time.deltaTime);
         }
         else
         {
@@ -156,10 +157,6 @@ public class PlayerController : MonoBehaviour
         CameraController.ShakeAmount = (BrokeFearTime - reflectStartTime) / BrokeFearTime * ShakeAmount;
         if (reflectStartTime >= BrokeFearTime)
         {
-            var rnd = new Random();
-            var shouldPlay = rnd.Next(5, 8);
-            if (shouldPlay == 7)
-                RasinSound.Play();
             Fear.FearValue = 0;
             isAdditionalTimerStarted = false;
             StartTime = Time.realtimeSinceStartup;
