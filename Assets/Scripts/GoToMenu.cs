@@ -5,6 +5,6 @@ public class GoToMenu : MonoBehaviour
 {
     public void Update()
     {
-        SceneManager.LoadScene("Menu");
+        Application.Quit();
     }
 }
