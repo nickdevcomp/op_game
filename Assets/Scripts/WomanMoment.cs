@@ -4,12 +4,13 @@ using System.Collections;
 public class GirlAppear : MonoBehaviour
 {
     public GameObject girl;
-    public float appearDuration = 1.5f;
+    public float appearDuration = 4f;
     private float moveSpeed = 5f;
     private AudioSource audioSource;
     private bool hasAppeared;
     private Transform playerTransform;
     public PlayerController Player;
+    public bool IsLast;
 
     void Start()
     {
@@ -24,8 +25,11 @@ public class GirlAppear : MonoBehaviour
     {
         if (!hasAppeared && other.CompareTag("Player") && girl != null)
         {
-            playerTransform = other.transform;
-            StartCoroutine(ShowGirl());
+            if (!IsLast || (IsLast && Inventory.Feather == 1))
+            {
+                playerTransform = other.transform;
+                StartCoroutine(ShowGirl());
+            }
         }
     }
 
@@ -36,9 +40,11 @@ public class GirlAppear : MonoBehaviour
         audioSource.Play();
         var elapsedTime = 0f;
         var startPosition = girl.transform.position;
+        
 
         while (elapsedTime < appearDuration)
         {
+            Fear.FearValue = 1;
             elapsedTime += Time.deltaTime;
             var direction = (playerTransform.position - startPosition).normalized;
             girl.transform.position = Vector3.MoveTowards(girl.transform.position, playerTransform.position, moveSpeed * Time.deltaTime);
@@ -53,7 +59,6 @@ public class GirlAppear : MonoBehaviour
 
             yield return null;
         }
-
         girl.SetActive(false);
     }
 }
