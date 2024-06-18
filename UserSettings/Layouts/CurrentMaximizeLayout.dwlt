@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 67551
+  controlID: 67852
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 67552
+  controlID: 67853
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 67553
+  controlID: 67854
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -235,24 +235,24 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 332}
-      m_SelectedIDs: 4a4d0200
-      m_LastClickedID: 150858
-      m_ExpandedIDs: 3835feff9a38feffb83cfeff983dfeffb23efeff3846feff2c4dfeff1a53feff5e53feff2a57fefffe58feff265dfeff7063feffbe63feff7e65feffe265feff0666feff2066feff4666feff20b8feff6ab8feff74c3feff60c5fefff823ffff4024ffff0226ffff6826ffff9026ffffae26ffffd826ffffa054ffff0266ffff5495ffff08adffff06b0ffffe4c1fffff8c5ffff30cbffffdacdffff8acefffff0d2ffff50d3ffffc4d3ffff2cd4ffff9ad4fffffad4ffff68d5ffff5cd9ffffa8d9ffff60dbffffc0dbffffe4dbfffffedbffff24dcffff0ae6ffff1cf9ffff1afbfffffe6e0000a26f0000507000001a80000014830000da840000de9d0000aca30000caa300007aa50000a6a60000f8a600002ec40000d2c40000f4c400004ac500005ec5000092e20000a2e200005ce8000022ea0000aeea000014eb000038eb00008aeb0000a01a0100be1a0100201e0100927c0100f67e01002ee0010088e00100fef801006c0c02007e200200762102006a220200f62202005c23020080230200da2302005235020046360200d2360200383702005c370200b6370200f84a0200fa4d0200544e0200
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 0c1afeff
+      m_LastClickedID: -124404
+      m_ExpandedIDs: d61afeff901cfeff3835feff9a38feffb83cfeff983dfeffb23efeff3846feff2c4dfeff1a53feff5e53feff2a57fefffe58feff265dfeff7063feffbe63feff7e65feffe265feff0666feff2066feff4666feff20b8feff6ab8feff74c3feff60c5fefff823ffff4024ffff0226ffff6826ffff9026ffffae26ffffd826ffffa054ffff0266ffff5495ffff08adffff06b0ffffe4c1fffff8c5ffff30cbffffdacdffff8acefffff0d2ffff50d3ffffc4d3ffff2cd4ffff9ad4fffffad4ffff68d5ffff5cd9ffffa8d9ffff60dbffffc0dbffffe4dbfffffedbffff24dcffff0ae6ffff1cf9ffff1afbfffffe6e0000a26f0000507000001a80000014830000da840000de9d0000aca30000caa300007aa50000a6a60000f8a600002ec40000d2c40000f4c400004ac500005ec5000092e20000a2e200005ce8000022ea0000aeea000014eb000038eb00008aeb0000a01a0100be1a0100201e0100927c0100f67e01002ee0010088e00100fef801006c0c02007e200200762102006a220200f62202005c23020080230200da2302005235020046360200d2360200383702005c370200b6370200f84a0200fa4d0200544e020060820200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: falling man scream sound (1)
+        m_OriginalName: falling man scream sound (1)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -124404
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 5}
       m_SearchString: 
@@ -658,9 +658,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 977.4385, y: 461.0327, z: -10.19008}
+    m_Target: {x: 914.1179, y: 444.87192, z: -9.783336}
     speed: 2
-    m_Value: {x: 977.4385, y: 461.0327, z: -10.19008}
+    m_Value: {x: 914.1179, y: 444.87192, z: -9.783336}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -710,9 +710,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 47.06287
+    m_Target: 6.3891706
     speed: 2
-    m_Value: 47.06287
+    m_Value: 6.3891706
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -809,7 +809,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sound/-1st floor
+    - Assets/Sound/-1st floor/horror
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -817,7 +817,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sound/-1st floor
+  - Assets/Sound/-1st floor/horror
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "/Users/konstantin/Documents/University/\u041F\u0440\u043E\u0435\u043A\u0442
     \u0438\u0433\u0440\u0430/op_game"
@@ -825,8 +825,8 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: bc650000
-    m_LastClickedID: 26044
+    m_SelectedIDs: 2ca90000
+    m_LastClickedID: 43308
     m_ExpandedIDs: 00000000ac650000ae650000b0650000b2650000b4650000b6650000b8650000ba650000bc650000be650000e265000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -880,9 +880,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 4a4d0200
-    m_LastClickedInstanceID: 150858
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 0c1afeff
+    m_LastClickedInstanceID: -124404
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300005a640000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
