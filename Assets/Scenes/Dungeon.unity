@@ -10118,10 +10118,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1577804235}
-  maxVolume: 1
+  maxVolume: 0.3
   minVolume: 0
-  volumeRange: 13.14
-  DistanceToActivate: 9.96
+  volumeRange: 12
+  DistanceToActivate: 5
   PlayingCount: 1
   isSpeech: 0
 --- !u!1 &1681088172

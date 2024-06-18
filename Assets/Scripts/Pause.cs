@@ -38,25 +38,26 @@ public class Pause : MonoBehaviour
                     AuidosToContinue.Add(audio);
                     audio.Pause();
                 }
-                if (PlayerController.IsPosterActive)
+            }
+            if (PlayerController.IsPosterActive)
+            {
+                foreach (var image in FindObjectsOfType<Image>())
                 {
-                    foreach (var image in FindObjectsOfType<Image>())
-                    {
-                        image.GameObject().SetActive(false);
-                    }
-                    PlayerController.IsPosterActive = false;
+                    image.GameObject().SetActive(false);
                 }
+                PlayerController.IsPosterActive = false;
+            }
 
-                if (PlayerController.isScaryForPause)
+            if (PlayerController.isScaryForPause)
+            {
+                var canvases = FindObjectsOfType<Canvas>();
+                foreach (var canvas in canvases)
                 {
-                    var canvases = FindObjectsOfType<Canvas>();
-                    foreach (var canvas in canvases)
-                    {
-                        if (canvas.name == "inven")
-                            canvas.gameObject.SetActive(false);
-                    }
+                    if (canvas.name == "inven")
+                        canvas.gameObject.SetActive(false);
                 }
             }
+            
             Panel.SetActive(true);
             ContinueButton.SetActive(true);
             GoToMenuButton.SetActive(true);

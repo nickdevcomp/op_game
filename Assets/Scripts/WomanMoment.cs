@@ -5,7 +5,7 @@ public class GirlAppear : MonoBehaviour
 {
     public GameObject girl;
     public float appearDuration = 4f;
-    private float moveSpeed = 5f;
+    private float moveSpeed = 4f;
     private AudioSource audioSource;
     private bool hasAppeared;
     private Transform playerTransform;

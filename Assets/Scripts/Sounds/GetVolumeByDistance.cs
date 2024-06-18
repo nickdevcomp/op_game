@@ -14,7 +14,11 @@ public class SoundManager : MonoBehaviour
 
     public bool isSpeech;
 
-    private void Start() => audioSource = GetComponent<AudioSource>();
+    private void Start() 
+    {
+        audioSource = GetComponent<AudioSource>();
+        PlayerController.IsAudioPlaying = false;
+    }
 
     private void Update()
     {
