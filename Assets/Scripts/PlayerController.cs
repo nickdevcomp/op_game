@@ -42,9 +42,9 @@ public class PlayerController : MonoBehaviour
     private float startTime;
     private bool isTimerRunning;
 
-    private const float DeathVolume = 0.067f;
+    private const float DeathVolume = 0.1f;
     private const float DontTurnAroundVolume = 1;
-    public const float ShakeAmount = 0.15f;
+    public const float ShakeAmount = 0.1f;
     public const float BrokeFearTime = 2.5f;
     
     public AudioSource DeathSound;
@@ -110,12 +110,12 @@ public class PlayerController : MonoBehaviour
         endTime = Time.realtimeSinceStartup;
         elapsedTime = endTime - StartTime;
         
-        if (elapsedTime >= 10f && !IsDied)
+        if (elapsedTime >= 13f && !IsDied)
         {
             Fear.FearValue = 1;
         }
 
-        if (elapsedTime >= 15f)
+        if (elapsedTime >= 19f)
         {
             IsDied = true;
             animator.Play("Falling");

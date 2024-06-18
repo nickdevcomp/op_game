@@ -7,6 +7,8 @@ public class AnimationFadeOut : MonoBehaviour
     private bool hasKeyPressed;
     private Coroutine fadeCoroutine;
     private SpriteRenderer spriteRenderer;
+    public bool isAorD;
+    public bool isShift;
 
     void Start()
     {
@@ -15,8 +17,28 @@ public class AnimationFadeOut : MonoBehaviour
 
     void Update()
     {
-        if (!hasKeyPressed && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)
-            || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow)))
+        if (isShift)
+            UpdateShift();
+        else if (isAorD)
+            UpdateAorD();
+    }
+
+    private void UpdateAorD()
+    {
+        if (!hasKeyPressed 
+            && (Input.GetKeyDown(KeyCode.A) 
+                || Input.GetKeyDown(KeyCode.D)
+                || Input.GetKeyDown(KeyCode.LeftArrow) 
+                || Input.GetKeyDown(KeyCode.RightArrow)))
+        {
+            hasKeyPressed = true;
+            StartCoroutine(WaitAndStartFadeOut(1.3f)); 
+        }
+    }
+    
+    private void UpdateShift()
+    {
+        if (!hasKeyPressed && (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)))
         {
             hasKeyPressed = true;
             StartCoroutine(WaitAndStartFadeOut(1.3f)); 

@@ -720,9 +720,9 @@ MonoBehaviour:
   player: {fileID: 1577804235}
   maxVolume: 1
   minVolume: 0
-  volumeRange: 10
-  DistanceToActivate: 5
-  PlayingCount: 2
+  volumeRange: 13.31
+  DistanceToActivate: 6.59
+  PlayingCount: 1
   isSpeech: 0
 --- !u!82 &69524912
 AudioSource:
@@ -738,7 +738,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -4387,7 +4387,7 @@ MonoBehaviour:
   minVolume: 0
   volumeRange: 20
   DistanceToActivate: 5
-  PlayingCount: 10
+  PlayingCount: 1
   isSpeech: 0
 --- !u!82 &771939352
 AudioSource:
@@ -4401,9 +4401,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 40c7db904ac59441fa16e45bb7545fae, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.787
+  m_Volume: 0.91
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -9428,7 +9428,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -10074,7 +10074,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 2.282, y: 0}
+  m_AnchoredPosition: {x: -0.7, y: 0}
   m_SizeDelta: {x: 455.648, y: 264}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1725844471
@@ -11199,11 +11199,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1577804235}
-  maxVolume: 0.2
+  maxVolume: 0.48
   minVolume: 0
   volumeRange: 12
   DistanceToActivate: 5
-  PlayingCount: 100
+  PlayingCount: 2
   isSpeech: 0
 --- !u!82 &1911451237
 AudioSource:
@@ -12511,7 +12511,7 @@ MonoBehaviour:
   minVolume: 0
   volumeRange: 10
   DistanceToActivate: 100
-  PlayingCount: 100
+  PlayingCount: 1
   isSpeech: 0
 --- !u!82 &2080887000
 AudioSource:
@@ -12527,7 +12527,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
