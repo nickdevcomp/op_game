@@ -60,6 +60,7 @@
     <Compile Include="Assets/Scripts/FootSteep.cs" />
     <Compile Include="Assets/Scripts/BackGroundLoop.cs" />
     <Compile Include="Assets/Scripts/CameraFollow.cs" />
+    <Compile Include="Assets/Scripts/OldLiftExitE.cs" />
     <Compile Include="Assets/Scripts/StartHintFadeOut.cs" />
     <Compile Include="Assets/Scripts/GoToMenu.cs" />
     <Compile Include="Assets/Scripts/Sounds/GetVolumeByDistance.cs" />
