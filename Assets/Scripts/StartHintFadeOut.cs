@@ -15,7 +15,8 @@ public class AnimationFadeOut : MonoBehaviour
 
     void Update()
     {
-        if (!hasKeyPressed && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)))
+        if (!hasKeyPressed && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)
+            || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow)))
         {
             hasKeyPressed = true;
             StartCoroutine(WaitAndStartFadeOut(1.3f)); 
