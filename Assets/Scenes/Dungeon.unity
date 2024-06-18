@@ -4471,7 +4471,7 @@ MonoBehaviour:
   player: {fileID: 1577804235}
   maxVolume: 0.75
   minVolume: 0
-  volumeRange: 20
+  volumeRange: 10
   DistanceToActivate: 5
   PlayingCount: 1
   isSpeech: 0
