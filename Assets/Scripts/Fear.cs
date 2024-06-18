@@ -32,7 +32,7 @@ public class Fear : MonoBehaviour
                 break;
             case 0:
                 GetComponent<AudioSource>().Pause();
-                DontTurnAround.Stop();
+                DontTurnAround.Pause();
                 DeathSound.Stop();
                 CameraController.FearValue = 0;
                 break;
