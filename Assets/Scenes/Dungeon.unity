@@ -488,6 +488,8 @@ MonoBehaviour:
   Panel: {fileID: 1681088172}
   ContinueButton: {fileID: 1302601655}
   GoToMenuButton: {fileID: 724542342}
+  LiftInside: {fileID: 1241370529}
+  Darkness: {fileID: 1241370529}
 --- !u!4 &57115669
 Transform:
   m_ObjectHideFlags: 0
@@ -8872,7 +8874,7 @@ MonoBehaviour:
   speed: 4
   quantity: {fileID: 49947281}
   IsDied: 0
-  isScaryFloor: 1
+  IsScaryFloor: 1
   characterSprite: {fileID: 1577804264}
   flashlight: {fileID: 0}
   DeathSound: {fileID: 1722430268}

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
@@ -16,6 +17,9 @@ public class Pause : MonoBehaviour
     public GameObject GoToMenuButton;
     public static List<AudioSource> AuidosToContinue = new List<AudioSource>();
     public static bool isPaused;
+
+    public GameObject LiftInside;
+    public GameObject Darkness;
     
 
     public void Update()
@@ -56,6 +60,8 @@ public class Pause : MonoBehaviour
             Panel.SetActive(true);
             ContinueButton.SetActive(true);
             GoToMenuButton.SetActive(true);
+            LiftInside.SetActive(true);
+            Darkness.SetActive(true);
             Time.timeScale = 0f;
         }
     }

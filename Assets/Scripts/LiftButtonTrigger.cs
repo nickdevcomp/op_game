@@ -6,23 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class LiftButtonTrig : MonoBehaviour
 {
-    public GameObject otherObject; // ссылка на другой объект
+    public GameObject otherObject;
 
-    private Animator otherObjectAnimator; // компонент аниматора другого объекта
 
     private Animator animator;
     
     [SerializeField]
-    public float timeToCount; // Время таймера в секундах
-    private bool isCounting; // Флаг, показывающий, запущен ли таймер
+    public float timeToCount;
+    private bool isCounting;
     private bool startLoadScene;
 
     
-    void Start()
-    {
-        otherObjectAnimator = otherObject.GetComponent<Animator>();
-    }
-
     IEnumerator StartTimer()
     {
         isCounting = true;
@@ -30,7 +24,6 @@ public class LiftButtonTrig : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             timeToCount -= 1f;
-            Debug.Log(timeToCount);
         }
         isCounting = false;
         SceneManager.LoadScene("Lift");
@@ -50,7 +43,7 @@ public class LiftButtonTrig : MonoBehaviour
     {
         if (startLoadScene && Input.GetKey(KeyCode.E))
         {
-            otherObjectAnimator.SetBool("IsSwitchOn", true);
+            otherObject.GetComponent<Animator>().SetBool("IsSwitchOn", true);
             GetComponent<AudioSource>().Play();
             StartCoroutine(StartTimer());
         }

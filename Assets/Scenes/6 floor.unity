@@ -503,6 +503,8 @@ MonoBehaviour:
   Panel: {fileID: 1003472083}
   ContinueButton: {fileID: 283356112}
   GoToMenuButton: {fileID: 1475006820}
+  LiftInside: {fileID: 86702715}
+  Darkness: {fileID: 86702715}
 --- !u!4 &219464311
 Transform:
   m_ObjectHideFlags: 0

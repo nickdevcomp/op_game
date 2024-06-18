@@ -523,18 +523,18 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 318613208}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2013518683}
   - {fileID: 1929120710}
   - {fileID: 1575674879}
-  m_Father: {fileID: 1597670822}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 559, y: 402.99994}
+  m_AnchoredPosition: {x: 959.9778, y: 539.99994}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &318613210
@@ -775,7 +775,7 @@ GameObject:
   - component: {fileID: 1101980366}
   - component: {fileID: 1101980365}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: LiftCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -897,6 +897,8 @@ MonoBehaviour:
   Panel: {fileID: 2013518682}
   ContinueButton: {fileID: 1929120709}
   GoToMenuButton: {fileID: 1575674875}
+  LiftInside: {fileID: 1538327836}
+  Darkness: {fileID: 1550778303}
 --- !u!4 &1234517662
 Transform:
   m_ObjectHideFlags: 0
@@ -1340,8 +1342,7 @@ Transform:
   m_LocalPosition: {x: 401, y: 137, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 318613209}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1671692440
@@ -1693,7 +1694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 0.7610062, g: 0.7610062, b: 0.7610062, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1967,6 +1968,7 @@ SceneRoots:
   - {fileID: 1597670822}
   - {fileID: 2134933948}
   - {fileID: 1538376504}
+  - {fileID: 318613209}
   - {fileID: 1101980368}
   - {fileID: 1054420280}
   - {fileID: 1742458469}

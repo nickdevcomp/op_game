@@ -24,8 +24,9 @@ public class Continue : MonoBehaviour
         }
         Pause.isPaused = false;
         var audios = Pause.AuidosToContinue;
-        foreach (var audio in audios)
+        while (audios.Count > 0)
         {
+            var audio = audios.First();
             audio.Play();
             audios.Remove(audio);
         }

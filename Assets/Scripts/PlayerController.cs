@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     public bool IsDied;
 
     [SerializeField]
-    private bool isScaryFloor;
+    public bool IsScaryFloor;
 
     public static bool isScaryForPause;
 
@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
         isTimerRunning = false;
         DeathSound.volume = DeathVolume;
         DontTurnAround.volume = DontTurnAroundVolume;
-        isScaryForPause = isScaryFloor;
+        isScaryForPause = IsScaryFloor;
 
     }
 
@@ -104,18 +104,18 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateFear()
     {
-        if (!isScaryFloor) 
+        if (!IsScaryFloor) 
             return;
         
         endTime = Time.realtimeSinceStartup;
         elapsedTime = endTime - StartTime;
         
-        if (elapsedTime >= 15f && !IsDied)
+        if (elapsedTime >= 10f && !IsDied)
         {
             Fear.FearValue = 1;
         }
 
-        if (elapsedTime >= 20f)
+        if (elapsedTime >= 15f)
         {
             IsDied = true;
             animator.Play("Falling");
