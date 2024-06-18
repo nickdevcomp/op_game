@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Continue : MonoBehaviour
 {    
@@ -12,6 +13,15 @@ public class Continue : MonoBehaviour
 
     public void Update()
     {
+        if (PlayerController.isScaryForPause)
+        {
+            var canvases = FindObjectsOfType(typeof(Canvas), true);
+            foreach (var canvas in canvases)
+            {
+                if (canvas.name == "inven")
+                    canvas.GameObject().SetActive(true);
+            }
+        }
         Pause.isPaused = false;
         var audios = Pause.AuidosToContinue;
         foreach (var audio in audios)

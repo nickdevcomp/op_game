@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private bool isScaryFloor;
 
+    public static bool isScaryForPause;
+
     [SerializeField]
     private SpriteRenderer characterSprite;
     
@@ -60,6 +62,7 @@ public class PlayerController : MonoBehaviour
         isTimerRunning = false;
         DeathSound.volume = DeathVolume;
         DontTurnAround.volume = DontTurnAroundVolume;
+        isScaryForPause = isScaryFloor;
 
     }
 
