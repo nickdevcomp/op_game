@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
     public static bool IsAudioPlaying;
 
-    private Animator animator;
+    public Animator animator;
     private bool isRight = true;
     private float timer = 0f;
     private float endTime;

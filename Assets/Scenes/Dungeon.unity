@@ -3090,6 +3090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   girl: {fileID: 1168192961}
   appearDuration: 2
+  Player: {fileID: 1577804254}
 --- !u!4 &392932878
 Transform:
   m_ObjectHideFlags: 0
@@ -6461,7 +6462,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c00559b3c628a477aa9067e90d29d846, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2f3820603f1a54ff3bbdea6d2f63e9c3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -7523,7 +7524,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c00559b3c628a477aa9067e90d29d846, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2f3820603f1a54ff3bbdea6d2f63e9c3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -7708,6 +7709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   girl: {fileID: 1326244933}
   appearDuration: 2
+  Player: {fileID: 1577804254}
 --- !u!4 &1337090602
 Transform:
   m_ObjectHideFlags: 0
@@ -9447,6 +9449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4.75
+  animator: {fileID: 0}
   quantity: {fileID: 49947281}
   IsDied: 0
   IsScaryFloor: 1
