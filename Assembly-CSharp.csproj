@@ -48,6 +48,7 @@
     <Compile Include="Assets/Scripts/LiftController.cs" />
     <Compile Include="Assets/Scripts/ExitButton.cs" />
     <Compile Include="Assets/Scripts/WastedScreen.cs" />
+    <Compile Include="Assets/Scripts/WomanMoment.cs" />
     <Compile Include="Assets/Scripts/OldLiftButtonTrigger.cs" />
     <Compile Include="Assets/Scripts/HintManager.cs" />
     <Compile Include="Assets/Scripts/Inventory.cs" />
