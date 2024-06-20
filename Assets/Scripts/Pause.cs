@@ -39,7 +39,7 @@ public class Pause : MonoBehaviour
                     audio.Pause();
                 }
             }
-            if (PlayerController.IsPosterActive)
+            if (PlayerController.IsPosterActive && !PlayerController.isScaryForPause)
             {
                 foreach (var image in FindObjectsOfType<Image>())
                 {
