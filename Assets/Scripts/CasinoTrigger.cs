@@ -10,8 +10,10 @@ public class CasinoTrigger : MonoBehaviour
     public AudioSource TicketSound;
     public AudioSource DKRSound;
     public AudioSource MorsyankaSound;
+    public AudioSource GoAway;
 
     public AudioSource ErrorSound;
+    private AudioSource casinoSound;
 
     public int meetingCount;
 
@@ -19,6 +21,7 @@ public class CasinoTrigger : MonoBehaviour
 
     private void Start()
     {
+        casinoSound = GetComponent<AudioSource>();
         timeToCount = 2f;
         isCounting = false;
         isPlayerNear = false;
@@ -30,20 +33,34 @@ public class CasinoTrigger : MonoBehaviour
         {
             return;
         }
+        
+        if (Input.GetKeyDown(KeyCode.E) && Inventory.Feather == 0 && meetingCount == 2 && PlayerController.Balance == 1)
+        {
+            if (!GoAway.isPlaying)
+            {
+                GoAway.Play();
+                return;
+            }
+            return;
+        }
+        
 
         if (Input.GetKeyDown(KeyCode.E) && ((Inventory.Feather == 0 && meetingCount == 2) || PlayerController.Balance == 0))
         {
+            if (TicketSound.isPlaying || DKRSound.isPlaying || MorsyankaSound.isPlaying 
+                || GoAway.isPlaying || casinoSound.isPlaying) return;
             ErrorSound.Play(); 
             return; 
         }
 
         if (Input.GetKeyDown(KeyCode.E) && PlayerController.Balance != 0 && meetingCount <= 2)
         {
+            if (TicketSound.isPlaying || DKRSound.isPlaying || MorsyankaSound.isPlaying 
+                || GoAway.isPlaying || casinoSound.isPlaying) return;
+            casinoSound.Play();
             PlayerController.StartTime = Time.realtimeSinceStartup;
             Fear.FearValue = 0;
-
             PlayerController.Balance -= 1;
-            GetComponent<AudioSource>().Play();
             StartCoroutine(StartTimer());
         }
     }

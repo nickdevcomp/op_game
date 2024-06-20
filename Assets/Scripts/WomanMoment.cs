@@ -25,7 +25,7 @@ public class GirlAppear : MonoBehaviour
     {
         if (!hasAppeared && other.CompareTag("Player") && girl != null)
         {
-            if (!IsLast || (IsLast && Inventory.Feather == 1))
+            if (!IsLast || (IsLast && Inventory.Feather == 1 && PlayerController.Balance == 1))
             {
                 playerTransform = other.transform;
                 StartCoroutine(ShowGirl());

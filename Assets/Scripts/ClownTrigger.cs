@@ -10,6 +10,8 @@ public class ClownTrigger : MonoBehaviour
     public int meetingCount;
     public AudioSource Source;
     public AudioSource Beep;
+    public AudioSource GoAway;
+    private bool isShipReturned;
     private bool isNear;
 
     private void Start()
@@ -26,7 +28,10 @@ public class ClownTrigger : MonoBehaviour
 
         if (isNear && Input.GetKeyDown(KeyCode.E) && Inventory.Ship == 0)
         {
-            Beep.Play();
+            if (!GoAway.isPlaying && isShipReturned && !Source.isPlaying)
+                GoAway.Play();
+            else if (!isShipReturned)
+                Beep.Play();
             return;
         }
         
@@ -41,16 +46,16 @@ public class ClownTrigger : MonoBehaviour
             meetingCount += 1;
             Inventory.Ship = 0;
             Source.Play();
+            isShipReturned = true;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         isNear = true;
-        
         if (meetingCount == 1)
         {
-            GetComponent<AudioSource>().Play();
+            Beep.Play();
             meetingCount += 1;
             money.SetActive(false);
             balance.SetActive(true);
