@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class ChessTrigger : MonoBehaviour
 {
     private bool isPlayerNear;
-    private static int win;
-    private static int isPlay;
+    private static int win;    // review(30.06.2024): bool?
+    private static int isPlay; // review(30.06.2024): Почему статичекое поле и почему не bool?
     public GameObject balance;
     public GameObject board;
     public GameObject boardOnLavka;
@@ -20,7 +20,7 @@ public class ChessTrigger : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip buttonClickSound;
 
-    public int gameState;
+    public int gameState; // review(30.06.2024): enum GameState, пусть даже приватный
     public float timeToCount;
     private bool isCounting;
 
@@ -109,6 +109,7 @@ public class ChessTrigger : MonoBehaviour
         isPlay = 0;
     }
 
+    // review(30.06.2024): Тут как будто не хватает проверки на то, что это действительно игрок столкнулся
     private void OnTriggerEnter2D(Collider2D other) => isPlayerNear = true;
 
     private void OnTriggerExit2D(Collider2D other) => isPlayerNear = false;

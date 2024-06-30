@@ -53,6 +53,7 @@ public class AnimationFadeOut : MonoBehaviour
 
     private IEnumerator FadeOutAnimation()
     {
+        // review(30.06.2024): var
         float elapsedTime = 0.0f;
         Color initialColor = spriteRenderer.color;
 

@@ -35,7 +35,7 @@ public class RailTrigger : MonoBehaviour
             Player.SetActive(false);
             GetComponent<AudioSource>().Play();
             StartCoroutine(StartTimer());
-            Player.transform.position = new Vector3(980, upY, -2);
+            Player.transform.position = new Vector3(980, upY, -2); // review(30.06.2024): Почему захардкожены константы? Может, стоило вынести весь вектор в поле?
         }
         if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && !isLowestFloor)
         {

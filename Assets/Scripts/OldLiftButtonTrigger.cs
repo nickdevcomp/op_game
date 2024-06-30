@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// review(30.06.2024): Если он старый, то почему используется?
 public class OldLiftButtonTrigger : MonoBehaviour
 {
     public GameObject otherObject;

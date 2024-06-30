@@ -12,6 +12,7 @@ public class LiftController : MonoBehaviour
 
     IEnumerator StartTimer()
     {
+        // review(30.06.2024): Слишком много комментариев. Они все не нужны
         isCounting = true; // Устанавливаем флаг, что таймер запущен
         while (timeToCount > 0) // Пока время не истечет
         {

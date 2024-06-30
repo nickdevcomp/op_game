@@ -48,6 +48,7 @@ public class SoundManager : MonoBehaviour
 
     private void HandleBackgroundSound(float distance)
     {
+        // review(30.06.2024): Проверки дублируют те, что выше
         if (audioSource.isPlaying)
             return;
 

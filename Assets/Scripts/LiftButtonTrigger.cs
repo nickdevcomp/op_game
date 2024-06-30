@@ -19,6 +19,7 @@ public class LiftButtonTrig : MonoBehaviour
     
     IEnumerator StartTimer()
     {
+        // review(30.06.2024): Очередное дублирование логики таймера
         isCounting = true;
         while (timeToCount > 0 && isCounting)
         {
