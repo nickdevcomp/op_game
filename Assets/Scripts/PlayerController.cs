@@ -75,6 +75,7 @@ public class PlayerController : MonoBehaviour
             AdditionalTimer();
     }
 
+    // review(30.06.2024): Непонятно, что такое Quantity, quantity чего?
     private void UpdateQuantity()
     {
         if (quantity != null) 

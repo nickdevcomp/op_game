@@ -46,6 +46,7 @@ public class ButtonManager : MonoBehaviour
 
     private IEnumerator FadeIn()
     {
+        // review(30.06.2024): Дублирование FadeIn-а
         var delta = 0.0f;
         while (delta < 1)
         {

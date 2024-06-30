@@ -56,6 +56,7 @@ public class GooseTrigger : MonoBehaviour
     {
         meetingCount = 0;
 
+        // review(30.06.2024): Код дублируется. Мне кажется, было бы уместно создать extension типа public static Color WithAlpha(this Color color, float alpha);
         Color color = feather.color;
         color.a = 0f;
         feather.color = color;
@@ -86,6 +87,7 @@ public class GooseTrigger : MonoBehaviour
         if (meetingCount == 2 && IsDKRInInventory)
         {
             IsDKRInInventory = false;
+            // review(30.06.2024): Дублирование кода из Start()
             var color = dkr.color;
             color.a = 0f;
             dkr.color = color;
@@ -112,7 +114,7 @@ public class GooseTrigger : MonoBehaviour
             dkrView.enabled = true;
             IsDKRInInventory = true;
             StartCoroutine(FadeInDKR());
-            GetComponent<AudioSource>().Play();
+            GetComponent<AudioSource>().Play(); // review(30.06.2024): Наверное, имело смысл запросить этот компонент в Start()
         }
 
         if (Inventory.Ticket == 1)
@@ -133,6 +135,7 @@ public class GooseTrigger : MonoBehaviour
         }
     }
 
+    // review(30.06.2024): Почти все FadeIn/Out дублируются. Стоило выделить один общий метод, а не дублировать так много
     IEnumerator FadeInDKR()
     {
         dkrView.color = new Color(dkrView.color.r, dkrView.color.g, dkrView.color.b, 0);
@@ -196,6 +199,7 @@ public class GooseTrigger : MonoBehaviour
 
         while (MorsynkaView.color.a < 1)
         {
+            // review(30.06.2024): Вот тут тоже бы пригодился extension WithAlpha
             MorsynkaView.color = new Color(MorsynkaView.color.r, MorsynkaView.color.g, MorsynkaView.color.b, MorsynkaView.color.a + Time.deltaTime);
             yield return null;
         }

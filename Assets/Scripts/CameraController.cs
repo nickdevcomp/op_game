@@ -32,6 +32,10 @@ public class CameraController : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("CameraView").transform;
         lastX = Mathf.RoundToInt(player.position.x);
+
+        // review(30.06.2024): Можно еще так было, кмк более читаемо
+        var direction = playerIsLeft ? Vector3.left : Vector3.right;
+        transform.position = player.position + direction * offset.x;
         
         transform.position = playerIsLeft 
             ? new Vector3(player.position.x - offset.x, player.position.y,
@@ -50,6 +54,7 @@ public class CameraController : MonoBehaviour
             isLeft = true;
         lastX = Mathf.RoundToInt(player.position.x);
 
+        // review(30.06.2024): Дублируется логика
         var target = isLeft 
             ? new Vector3(player.position.x - offset.x, player.position.y, 
                 transform.position.z) 
